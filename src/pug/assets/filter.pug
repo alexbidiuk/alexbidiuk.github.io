@@ -1,0 +1,7 @@
+svg(style='position: absolute; width: 140px; height: 140px; visibility: hidden;')
+    defs
+        filter#glow
+            feGaussianBlur(stdDeviation='3', result='coloredBlur')/
+            feMerge
+                feMergeNode(in='coloredBlur')/
+                feMergeNode(in='SourceGraphic')/

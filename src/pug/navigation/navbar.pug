@@ -1,0 +1,22 @@
+- var routes = require('../../js/configurations/routes');
+.header
+  .menu-toggle
+    .menu-trigger.is-active
+      i.menu-trigger-bar.top
+      i.menu-trigger-bar.middle
+      i.menu-trigger-bar.bottom
+
+    .close-trigger
+      i.close-trigger-bar.left
+      i.close-trigger-bar.right
+
+nav.menu
+    .menu-bg-container
+        i.menu-bg.top
+        i.menu-bg.middle
+        i.menu-bg.bottom
+    .menu-container
+      .menu-list
+        each val, index in routes
+          li
+            a(href=val)=index

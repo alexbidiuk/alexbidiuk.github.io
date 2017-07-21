@@ -1,0 +1,12 @@
+{
+    "preloader": {
+        "fading": "0.55s",
+        "fading_delay": "0.8s",
+        "fading_function": "cubic-bezier(0.42, 0, 1, 0.21)",
+        "background": "30s",
+        "logo_changing": "0.8s"
+    },
+    "logo": {
+        "glowing": "1s"
+    }
+}

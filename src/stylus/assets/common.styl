@@ -1,0 +1,264 @@
+@import "../variables.styl"
+json('../../js/configurations/animation.json');
+/* Common styles */
+html
+  height 100%
+html
+body
+  position relative
+  width 100%
+  height 100%
+  min-height 100%
+  margin 0px
+  overflow hidden
+  font-family 'ADAM.CG PRO'
+  background #050614
+  background-image linear-gradient(to bottom, #050614 0%, #01020a 100%)  
+body
+  // text-rendering optimizeLegibility
+    
+  // -webkit-font-smoothing antialiased
+    
+  // -moz-osx-font-smoothing grayscale
+    
+  // text-size-adjust none
+    
+    //если элемент отвернут от пользователя, то контент не виден//
+  -webkit-backface-visibility hidden
+  
+  //letter-spacing $common-body-letter-spacing
+  
+  -webkit-tap-highlight-color rgba(255, 255, 255, 0)
+svg
+  size 100%
+  display block
+  fill inherit
+button
+input
+textarea
+  font-family inherit
+  
+input-webkit-autofill
+input-webkit-autofillhover
+input-webkit-autofillfocus
+input-webkit-autofillactive
+  color inherit !important
+  -webkit-text-fill-color white !important
+  -webkit-box-shadow 0 0 0px 1000px #000 inset
+  transition background-color 5000s ease-in-out 0s
+.bold
+  font-weight 700
+.logo 
+  absolute 50% false false 50%
+  transform translate(-50%, -50%)
+  width 400px
+  filter url(#glow)
+  cursor pointer
+  animation neon logo-glowing ease-in-out infinite alternate
+
+.logo-title 
+  absolute 100% false false 50%
+  width 100%
+  font-size 50px
+  line-height 50px
+  margin-top 20px 
+  color white
+  text-align center
+  text-shadow 0px 0px 5px rgba(255, 255, 255, .8)
+  cursor pointer
+  transform translate(-50%, 100%)
+  z-index 1
+.container
+  visibility hidden
+  opacity 0
+  &.loaded
+    visibility visible
+    opacity 1   
+.main-greeting
+    absolute 50% false false 50%;
+    width 100%
+    text-align center
+    transform translate(-50%, -50%)
+.header 
+  display flex
+  align-items center
+  justify-content space-between
+  padding 20px
+  absolute 0 0 false 0
+  z-index 2
+  background-color $transparent
+  z-index 1100
+.menu 
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
+    overflow hidden
+    visibility hidden
+    opacity 0
+    transition all .5s linear
+    z-index 1000
+    &.is-active 
+        visibility visible
+        opacity 1
+        .menu-container 
+            visibility visible
+            opacity 1
+        .menu-bg
+            &.top 
+                transform translate(0, 0)
+            &.middle 
+                transform scaleX(1)
+            &.bottom 
+                transform translate(0, 0)
+.menu-container 
+    display flex
+    align-items center
+    visibility hidden
+    height 100%
+    opacity 0
+    transition all .5s linear .6s
+.menu-list 
+    display flex
+    width 100%
+    justify-content space-around
+    li 
+        text-align left
+        display block
+        padding 15px 0
+        font-size 22px
+     a 
+        text-decoration none
+        color #222222
+        display inline-block
+        padding 10px 0
+        position relative
+        &:before 
+            content ""
+            display block
+            position absolute
+            left 0
+            bottom 0
+            width 18px
+            height 4px
+            opacity 0
+            background-color #222222
+            transform translateX(100px)
+            transition all 0.3s cubic-bezier(.55, 0, .1, 1)
+        &:hover:before
+            opacity 1
+            transform translateX(0px)
+.menu-bg-container 
+    display flex
+    position absolute
+    align-items center
+    justify-content center
+    height 10000px
+    width 10000px
+    top 50%
+    left 50%
+    overflow hidden
+    transform translate(-50%, -50%) rotate(45deg)
+    transform-origin 50% 50%
+.menu-bg 
+    flex 0 0 1000px
+    height 100%
+    background-color rgba(255, 255, 255, 1)
+    transition all .6s ease-in-out
+    &.top 
+        background-color #d1c5c8
+        transform translate(-100%, -100%)
+    &.middle 
+        flex 0 0 700px
+        background-color #a48b91
+        transform scaleX(0)
+    &.bottom 
+        background-color #683e48
+        transform translate(100%, 100%)
+.menu-toggle 
+    position absolute
+    top 24px
+    right 14px
+    width 42px
+    height 42px
+    cursor pointer      
+.menu-trigger,
+.close-trigger 
+    display block
+    visibility hidden
+    opacity 0
+    transition opacity 1s linear
+    &.is-active
+        visibility visible
+        opacity 1
+    &:hover
+        .menu-trigger-bar
+            &:before
+                width 100%  
+.menu-trigger
+    &.is-active 
+        .menu-trigger-bar 
+            transform translate(0, 0) rotate(-45deg)    
+
+.close-trigger 
+    z-index 5
+    margin-top -20px
+    transition opacity .8s linear
+    &.is-active 
+        .close-trigger-bar
+            &.left 
+                transform translate(0, 0) rotate(-45deg)
+            &.right 
+                transform translate(0, 0) rotate(45deg)
+.menu-trigger-bar 
+    display block
+    width 100%
+    height 4px
+    background-color white
+    margin-bottom 6px
+    position relative
+    transition all .5s cubic-bezier(0.24, 0.65, 0.36, 0.96)
+    transform translateX(100px) translateY(-100px) rotate(-45deg)       
+    &:before 
+        display block
+        content ""
+        absolute 0 false false 0
+        width 0%
+        height 100%
+        background-color rgba(0, 0, 0, 0.2)
+        transition all 0.3s cubic-bezier(0.55, 0, 0.1, 1)
+    &.top 
+        width 50%
+    &.middle 
+        transition all .5s cubic-bezier(0.24, 0.65, 0.36, 0.96) .1s
+        &:before 
+            left auto
+            right 0
+    &.bottom 
+        width 50%
+        margin-left 50%
+.close-trigger-bar 
+    display block
+    width 100%
+    height 4px
+    background-color #fff
+    position relative
+    transition all .5s cubic-bezier(0, 0.46, 0.36, 0.96) .2s
+    &:before 
+        content ""
+        position absolute
+        top 0
+        left 0
+        display block
+        width 0%
+        height 100%
+        background-color rgba(255, 255, 255, 0.2)
+        transition all 0.3s cubic-bezier(0.55, 0, 0.1, 1)
+    &.left 
+        transform translateX(100px) translateY(-100px) rotate(-45deg)
+    &.right 
+        transform translateX(-100px) translateY(-100px) rotate(45deg)
+        top -3px
+        transition all .5s cubic-bezier(0, 0.46, 0.36, 0.96) .3s
+  
