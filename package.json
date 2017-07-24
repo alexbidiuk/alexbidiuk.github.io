@@ -30,6 +30,7 @@
     "resolve-url-loader": "^1.6.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",
+    "svg-inline-loader": "^0.8.0",
     "uglify-js": "^3.0.26",
     "uglify-js-plugin": "0.0.6",
     "uglifyjs-webpack-plugin": "^0.4.6",
