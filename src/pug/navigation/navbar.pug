@@ -18,5 +18,5 @@ nav.menu
     .menu-container
       .menu-list
         each val, index in routes
-          li
-            a(href=val)=index
+          li.menu-element
+            a.menu-link(href=val,data-text=index)=index

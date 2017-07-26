@@ -4,13 +4,15 @@ module.exports = class Preloader {
     constructor() {
         this.preloader = document.querySelectorAll('.preloader')[0];
         this.container = document.querySelectorAll('.container')[0];
-        this.logoDrawTimeout = logoDrawingTime.replace(/[^0-9]+/, '');
+        this.logoDrawTimeout = this.timeParser(logoDrawingTime);
         this.preloaderEnder();
+    }
+    timeParser(logoDrawingTime) {
+        return logoDrawingTime.replace(/[^0-9]+/, '');
     }
     contentLoadPromise() {
        return new Promise((resolve, reject) => {
             window.addEventListener('load', function() {
-                console.log('loaded');
                 resolve();
             });
         });

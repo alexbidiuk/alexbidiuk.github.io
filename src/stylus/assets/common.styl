@@ -69,6 +69,8 @@ input-webkit-autofillactive
 .container
   visibility hidden
   opacity 0
+  visibility visible !important // for dev
+  opacity 1 !important // for dev
   &.loaded
     visibility visible
     opacity 1   
@@ -95,58 +97,53 @@ input-webkit-autofillactive
     overflow hidden
     visibility hidden
     opacity 0
-    transition all .5s linear
+    transition all menu-in_out linear
     z-index 1000
     &.is-active 
         visibility visible
         opacity 1
-        .menu-container 
-            visibility visible
-            opacity 1
-        .menu-bg
-            &.top 
-                transform translate(0, 0)
-            &.middle 
-                transform scaleX(1)
-            &.bottom 
-                transform translate(0, 0)
+
 .menu-container 
     display flex
     align-items center
     visibility hidden
     height 100%
     opacity 0
-    transition all .5s linear .6s
+    transition all menu-menu_container linear menu-menu_container_delay
+    .menu.is-active &
+        visibility visible
+        opacity 1
+
 .menu-list 
     display flex
     width 100%
     justify-content space-around
-    li 
-        text-align left
-        display block
-        padding 15px 0
-        font-size 22px
-     a 
-        text-decoration none
-        color #222222
-        display inline-block
-        padding 10px 0
-        position relative
-        &:before 
-            content ""
-            display block
-            position absolute
-            left 0
-            bottom 0
-            width 18px
-            height 4px
-            opacity 0
-            background-color #222222
-            transform translateX(100px)
-            transition all 0.3s cubic-bezier(.55, 0, .1, 1)
-        &:hover:before
-            opacity 1
-            transform translateX(0px)
+    li.menu-element
+      display block
+      flex 1 1 auto
+      text-align center
+      padding 15px 0
+      font-size 22px
+     a.menu-link
+       display inline-block
+       position relative
+       padding 10px 0
+       text-decoration none
+       color #222222
+       &:before
+         content ""
+         display block
+         absolute false false 0 0
+         width 18px
+         height 4px
+         opacity 0
+         background-color #222222
+         transform translateX(100px)
+         transition all menu-menu_list_link_decor cubic-bezier(.55, 0, .1, 1)
+       &:hover:before
+         opacity 1
+         transform translateX(0px)
+
 .menu-bg-container 
     display flex
     position absolute
@@ -163,7 +160,7 @@ input-webkit-autofillactive
     flex 0 0 1000px
     height 100%
     background-color rgba(255, 255, 255, 1)
-    transition all .6s ease-in-out
+    transition all menu-menu_bg ease-in-out
     &.top 
         background-color #d1c5c8
         transform translate(-100%, -100%)
@@ -174,6 +171,13 @@ input-webkit-autofillactive
     &.bottom 
         background-color #683e48
         transform translate(100%, 100%)
+    .menu.is-active &
+      &.top
+        transform translate(0, 0)
+      &.middle
+        transform scaleX(1)
+      &.bottom
+        transform translate(0, 0)
 .menu-toggle 
     position absolute
     top 24px
@@ -186,7 +190,7 @@ input-webkit-autofillactive
     display block
     visibility hidden
     opacity 0
-    transition opacity 1s linear
+    transition opacity menu-menu_trigger linear
     &.is-active
         visibility visible
         opacity 1
@@ -202,7 +206,7 @@ input-webkit-autofillactive
 .close-trigger 
     z-index 5
     margin-top -20px
-    transition opacity .8s linear
+    transition opacity  menu-close_trigger linear
     &.is-active 
         .close-trigger-bar
             &.left 
@@ -216,7 +220,7 @@ input-webkit-autofillactive
     background-color white
     margin-bottom 6px
     position relative
-    transition all .5s cubic-bezier(0.24, 0.65, 0.36, 0.96)
+    transition all menu-menu_trigger_bar cubic-bezier(0.24, 0.65, 0.36, 0.96)
     transform translateX(100px) translateY(-100px) rotate(-45deg)       
     &:before 
         display block
@@ -225,11 +229,11 @@ input-webkit-autofillactive
         width 0%
         height 100%
         background-color rgba(0, 0, 0, 0.2)
-        transition all 0.3s cubic-bezier(0.55, 0, 0.1, 1)
+        transition all menu-menu_trigger_bar_before cubic-bezier(0.55, 0, 0.1, 1)
     &.top 
         width 50%
     &.middle 
-        transition all .5s cubic-bezier(0.24, 0.65, 0.36, 0.96) .1s
+        transition all menu-menu_trigger_bar_middle cubic-bezier(0.24, 0.65, 0.36, 0.96) menu-menu_trigger_bar_middle_delay
         &:before 
             left auto
             right 0
@@ -242,7 +246,7 @@ input-webkit-autofillactive
     height 4px
     background-color #fff
     position relative
-    transition all .5s cubic-bezier(0, 0.46, 0.36, 0.96) .2s
+    transition all menu-close_trigger_bar cubic-bezier(0, 0.46, 0.36, 0.96) menu-close_trigger_bar_delay
     &:before 
         content ""
         position absolute
@@ -252,11 +256,11 @@ input-webkit-autofillactive
         width 0%
         height 100%
         background-color rgba(255, 255, 255, 0.2)
-        transition all 0.3s cubic-bezier(0.55, 0, 0.1, 1)
+        transition all menu-close_trigger_bar_before cubic-bezier(0.55, 0, 0.1, 1)
     &.left 
         transform translateX(100px) translateY(-100px) rotate(-45deg)
     &.right 
         transform translateX(-100px) translateY(-100px) rotate(45deg)
         top -3px
-        transition all .5s cubic-bezier(0, 0.46, 0.36, 0.96) .3s
+        transition all menu-close_trigger_bar_right cubic-bezier(0, 0.46, 0.36, 0.96) menu-close_trigger_bar_right_delay
   

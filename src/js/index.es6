@@ -30,13 +30,12 @@ require('./utilities/ie_fixes');
         // new Next();
         // console.log('Next')
 
-        // let Modal = require('./assets/modal');
-        // new Modal();
-        // console.log('Modal')
-
         // let Router = require('./assets/router');
         // new Router();
         // console.log('Router')
+
+        let Menu = require('./assets/menu');
+        new Menu();
 
         let Preloader = require('./assets/preloader');
         new Preloader();
@@ -46,25 +45,18 @@ require('./utilities/ie_fixes');
         let abstractionStop = abstraction.pause;
 
 
-
-        var menu_toggle = document.querySelectorAll('.menu-toggle')[0],
-            menu_close = document.querySelectorAll('.menu-trigger')[0],
-            menu_open = document.querySelectorAll('.close-trigger')[0],
-            menu = document.querySelectorAll('.menu')[0];
-
-        menu_toggle.addEventListener('click', function (e) {
-            menu_open.classList.toggle('is-active');
-            menu_close.classList.toggle('is-active');
-            menu.classList.toggle('is-active');
-            abstractionStop();
-        });
-
-        // var preload = document.querySelectorAll('.preloader')[0],
-        //     container = document.querySelectorAll('.container')[0];
-        // setTimeout(function () {
-        //     preload.classList.toggle('ended');
-        //     container.classList.toggle('loaded');
-        // }, 5000);
+        //
+        // var menu_toggle = document.querySelectorAll('.menu-toggle')[0],
+        //     menu_close = document.querySelectorAll('.menu-trigger')[0],
+        //     menu_open = document.querySelectorAll('.close-trigger')[0],
+        //     menu = document.querySelectorAll('.menu')[0];
+        //
+        // menu_toggle.addEventListener('click', function (e) {
+        //     menu_open.classList.toggle('is-active');
+        //     menu_close.classList.toggle('is-active');
+        //     menu.classList.toggle('is-active');
+        //     abstractionStop();
+        // });
 
     };
     document.addEventListener('DOMContentLoaded', initialize);

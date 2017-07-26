@@ -1,16 +1,18 @@
 /* History module */
+let routes = require('../configurations/routes');
 module.exports = class History {
   constructor() {
-    this.title = 'Nodio'
+    this.title = 'CREATO'
     this.states = [];
     this.state = 0
     this.replace = false;
+    this.defaultRoute = routes.portfolio;
     window.addEventListener('popstate', this.popstateHandler.bind(this));
   }
   popstateHandler(event) {
     if(this.states !== event.state) {
       this.replace = true;
-      let page = event.state.page || '#product';
+      let page = event.state.page || this.defaultRoute;
       let event_detail = {
         detail: {
           page: page,

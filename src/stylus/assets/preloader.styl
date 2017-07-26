@@ -8,12 +8,14 @@ json('../../js/configurations/animation.json');
         fill none
         animation dash preloader-logo_drawer ease-in-out forwards
 .logo.preloader-logo
+    display none !important // for dev
     width 690px
     height 200px
     transition all preloader-logo_changing ease-in-out
 
 
 .preloader
+    display none !important // for dev
     position absolute
     opacity 1
     visibility visible
@@ -24,7 +26,7 @@ json('../../js/configurations/animation.json');
     background-image linear-gradient(270deg, #944f60, #a75065, #01020a)
     background-size 600% 600%
     animation preloaderBg preloader-background ease infinite
-    transition all preloader-fading preloader-fading_function preloader-fading_delay
+    transition all preloader-fading cubic-bezier(0.42, 0, 1, 0.21) preloader-fading_delay
     z-index 1000000
     &.ended 
         opacity: 0;
