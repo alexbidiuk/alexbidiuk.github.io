@@ -35,6 +35,9 @@ module.exports = class Router {
     if(!page || page == '/' || !document.querySelector(page)) {
       return this.default_page;
     }
+    if(page !== '/') {
+        document.dispatchEvent(new CustomEvent('pause_webgl'));
+    }
     return page;
   }
 
@@ -66,7 +69,6 @@ module.exports = class Router {
     // this.active = this.checkPage(page);
     document.dispatchEvent(new CustomEvent('unset_menu'));
     this.hidePages();
-
     this.setPage();
   }
 

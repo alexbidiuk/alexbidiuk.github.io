@@ -63,14 +63,20 @@ module.exports = class Menu {
     }
 
     selectItemAction(event) {
-        let page = event.detail.page.split('-')[0];
+        let page = event.detail.page;
+        if(page == '#home') {
+            page = '/'
+        }
+        console.log(page);
         this.selectItem(page);
     }
 
     selectItem(active) {
         this.active = active;
+        console.log(active);
         for (let i = this.links_length - 1; i >= 0; i--) {
             let href = this.links[i].getAttribute('href');
+
             if (active == href) {
                 this.links[i].classList.add('active');
             }
