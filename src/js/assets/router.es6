@@ -1,6 +1,6 @@
 /* Router module */
-let Menu = require('./menu');
-let Pagination = require('./pagination');
+// let Menu = require('./menu');
+// let Pagination = require('./pagination');
 let History = require('./history');
 let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let routerConfig = require('../../js/configurations/router');
@@ -10,10 +10,6 @@ module.exports = class Router {
     this.default_page = routerConfig.default.page;
     this.page_fade_time = routerConfig.page_fade_time;
     this.active = null;
-    this.menu_value = null;
-
-    this.menu = new Menu();
-
     this.history = new History();
 
     this.pages = document.querySelectorAll('.page');
@@ -22,8 +18,7 @@ module.exports = class Router {
     this.body = document.querySelector('body');
     this.scrollbar = new GeminiScrollbar({element: this.body}).create();
 
-    this.product = document.querySelector('#product');
-    this.pagination = new Pagination();
+    // this.pagination = new Pagination();
 
     document.addEventListener('change_page', this.changePage.bind(this));
 
@@ -48,7 +43,6 @@ module.exports = class Router {
     let event_detail = {
       detail: {
         page: this.active,
-        slide: this.slide
       }
     };
     document.dispatchEvent(new CustomEvent('set_navigation', event_detail));
@@ -68,68 +62,12 @@ module.exports = class Router {
     if(this.active == page) {
       return false;
     }
-
     this.active = page;
     // this.active = this.checkPage(page);
+    document.dispatchEvent(new CustomEvent('unset_menu'));
     this.hidePages();
 
-    if(!this.menu_visible) {
-      this.menu_visible = true;
-      document.dispatchEvent(new CustomEvent('show_menu'));
-    }
-
-    this.menu_value = page.split('-')[0];
-    if(this.menu.getCurrent() !== this.menu_value) {
-      document.dispatchEvent(new CustomEvent('unset_menu'));
-    }
-
-    setTimeout(this.setPage.bind(this), this.page_fade_time);
+    this.setPage();
   }
 
-  setSlide(slide = false) {
-    if(!slide) {
-      this.slide++;
-      slide = this.slide;
-    }
-    else {
-      this.slide = slide;
-    }
-    if(slide > 3) {
-      this.slide = 3;
-      let page = '#' + document.querySelector('.page.show').nextSibling.id;
-      this.glow.classList.add('show');
-      let event_detail = {
-        detail: {
-          page: page,
-          source: 'slide'
-        }
-      };
-      document.dispatchEvent(new CustomEvent('change_page', event_detail));
-      return false;
-    }
-    if(slide == 2) {
-      setTimeout(
-        function() {
-          let event_detail = {
-            detail: {
-              page: window.location.hash,
-              source: 'next'
-            }
-          };
-          document.dispatchEvent(new CustomEvent('change_page', event_detail));
-        }
-        , 2500
-      );
-    }
-    this.product.classList.remove('slide-1','slide-2','slide-3');
-    this.product.classList.add('slide-'+this.slide);
-    this.glow.classList.remove('show');
-    let event_detail = {
-      detail: {
-        page: this.active,
-        slide: this.slide
-      }
-    };
-    document.dispatchEvent(new CustomEvent('set_navigation', event_detail));
-  }
 }

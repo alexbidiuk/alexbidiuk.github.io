@@ -36,6 +36,7 @@ a:focus
 a:visited
   color $white
   text-decoration none
+  outline none
 button
 input
 textarea
@@ -46,8 +47,8 @@ input-webkit-autofill:hover
 input-webkit-autofill:focus
 input-webkit-autofill:active
   color inherit !important
-  -webkit-text-fill-color white !important
-  -webkit-box-shadow 0 0 0px 1000px #000 inset
+  text-fill-color $white !important
+  box-shadow 0 0 0px 1000px $white inset
   transition background-color 5000s ease-in-out 0s
 .bold
   font-weight 700

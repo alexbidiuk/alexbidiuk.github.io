@@ -30,9 +30,9 @@ require('./utilities/ie_fixes');
         new Next();
         console.log('Next')
 
-        // let Router = require('./assets/router');
-        // new Router();
-        // console.log('Router')
+        let Router = require('./assets/router');
+        new Router();
+        console.log('Router');
 
         let Menu = require('./assets/menu');
         new Menu();

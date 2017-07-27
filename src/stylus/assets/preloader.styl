@@ -1,20 +1,14 @@
 @import "../variables.styl"
 json('../../js/configurations/animation.json');
-#creato-logo
-    path
-        stroke-dasharray 1000
-        stroke-dashoffset 1000
-        stroke white
-        stroke-width 2px
-        fill none
-        animation dash preloader-logo_drawer ease-in-out forwards
+
 .logo.preloader-logo
-    display none !important // for dev
     width $preloader-logo-width
     height $preloader-logo-height
+    stroke-dasharray 1000
+    stroke-dashoffset 1000
+    animation dash preloader-logo_drawer ease-in-out forwards
     transition all preloader-logo_changing ease-in-out
 .preloader
-    display none !important // for dev
     position absolute
     opacity 1
     visibility visible

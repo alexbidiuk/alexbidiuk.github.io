@@ -23,15 +23,15 @@ module.exports = class Menu {
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
         document.addEventListener('set_navigation', this.selectItemAction.bind(this));
-        this.menu_toggle.addEventListener('click', this.showMenu.bind(this));
-        // document.addEventListener('show_item', this.showItem.bind(this), false);
+        this.menu_toggle.addEventListener('click', this.toggleMenu.bind(this));
+        document.addEventListener('unset_menu', this.unsetMenu.bind(this));
     }
 
     getCurrent() {
         return this.active;
     }
 
-    showMenu() {
+    toggleMenu() {
         this.menu.classList.toggle('is-active');
         this.menu_open.classList.toggle('is-active');
         this.menu_close.classList.toggle('is-active');
@@ -79,7 +79,9 @@ module.exports = class Menu {
             }
         }
     }
-
+    unsetMenu() {
+        this.toggleMenu();
+    }
     mouseEnterHandler(event) {
         if (!this.printing && !(event.target.lastChild.nodeName == 'SPAN')) {
             let target = event.target;

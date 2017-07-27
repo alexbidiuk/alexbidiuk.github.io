@@ -17,16 +17,13 @@
   opacity 0
   max-height 0
   transition opacity 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750),
-              max-height 0s cubic-bezier(0.250, 0.250, 0.750, 0.750) 500ms
+              max-height 0s cubic-bezier(0.250, 0.250, 0.750, 0.750)
   &.show
     z-index 1
     opacity 1
     height 100%
     max-height 10000px
-    overflow visible
-    transition opacity 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750),
-                max-height 0s cubic-bezier(0.250, 0.250, 0.750, 0.750)
- 
+    overflow visible  
   p
     text-align left
   .header.page-header
@@ -43,11 +40,10 @@
       font-size 24px
       text-align center
 
-
+.page-content
+    // flex 1 0 auto
 .page-footer
-    relative false
-    margin: -61px 0 0 0;
-    padding-bottom 61px
+    // flex 1 0 auto
     
 // for $i in 0..30
 //   $height = $expand_height + $i * $expand_height_step

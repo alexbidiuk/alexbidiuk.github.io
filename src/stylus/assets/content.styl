@@ -7,6 +7,9 @@ json('../../js/configurations/animation.json');
   width $logo-width
   height $logo-height
   filter url(#glow)
+  stroke white
+  stroke-width 2px
+  fill none
   cursor pointer
   animation neon logo-glowing ease-in-out infinite alternate
 
@@ -41,8 +44,7 @@ json('../../js/configurations/animation.json');
   align-items center
   justify-content flex-end
   absolute 0 0 false 0
-  padding 30px
-  min-height 62px
+  padding 50px
   background-color $transparent
   z-index 1100
 .menu
@@ -98,8 +100,10 @@ json('../../js/configurations/animation.json');
       transform translateX(100px)
       transition all menu-menu_list_link_decor cubic-bezier(.55, 0, .1, 1)
     &:hover:before
+    &.active:before
       opacity 1
       transform translateX(0px)
+    
 
 .menu-bg-container
   display flex
