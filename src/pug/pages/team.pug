@@ -1,152 +1,31 @@
-#team.page(data-title="Team")
-  .page-header
-    h1.header The Team
-    p.text-right Each member of our team is a highly skilled and talented professional that believes in the right to online privacy. We see Nodio LTD not only as a great working place but, also, as a medium to make our future safer.
-
-  .page-content
+#team.show.page(data-title="Team")
+  header.header.page-header
+    h1.header-title The Team
+    p.header-text Each member of our team is a highly skilled and talented professional that believes in quality work.
+  section.page-content
     .persons
-      a.person(href="http://fb.com/RamzesAl"
-        title="Facebook Account"
-        target="_blank")
+      a.person(href="http://fb.com/Alex", title="Facebook Account", target="_blank")
         .data
-          .name Ramzes
-          .position CEO
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/dimalagoda"
-        title="Facebook Account"
-        target="_blank")
+          .circle
+            img(src="../../images/Alex.jpg").photo
+            svg.circle-border
+              use(xlink:href='#circle')
+          .name Alex Bidiuk
+          .position Frontend
+      a.person(href="http://fb.com/Sergio", title="Facebook Account", target="_blank")
         .data
-          .name Dima
+          .circle
+            img(src="../../images/Sergio.jpg").photo
+            svg.circle-border
+              use(xlink:href='#circle')
+          .name Sergio Klimenko
+          .position Project Manager
+      a.person(href="http://fb.com/Vika", title="Facebook Account", target="_blank")
+        .data
+          .circle
+            img(src="../../images/Vika.jpg").photo
+            svg.circle-border
+              use(xlink:href='#circle')
+          .name Victoria Zuikova
           .position Lead Designer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/virdvip"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Sergey
-          .position CTO
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/profile.php?id=100004173213922"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Andrew
-          .position Senior Engineer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/"
-        title="Facebook Account"
-        target="_blank").empty
-      = "\n"
-      a.person(href="http://fb.com/irka.kravets"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Irka
-          .position Visual Designer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Dmitry
-          .position Core Developer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Anton
-          .position Engineer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/mira.konforovych"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Mira
-          .position Business Analyst
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/sergiopushkar"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Sergio
-          .position Motion Designer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/rustamdz.ua"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Rustam
-          .position iOS Developer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://vk.com/analog_devices"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Vlad
-          .position Engineer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Sveta
-          .position Legal Expert
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/mel6nuk"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Yuriy
-          .position PR Manager
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Alexander
-          .position Android Developer
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/zewslab"
-        title="Facebook Account"
-        target="_blank")
-        .data
-          .name Vladislav
-          .position Constructor
-        .point.top.left
-        .point.bottom.left
-      = "\n"
-      a.person(href="http://fb.com/"
-        title="Facebook Account"
-        target="_blank").fill
-
   .page-footer
-    include ../navigation/next.pug

@@ -26,9 +26,9 @@ require('./utilities/ie_fixes');
         // new Audio();
         // console.log('Audio')
 
-        // let Next = require('./assets/next');
-        // new Next();
-        // console.log('Next')
+        let Next = require('./assets/next');
+        new Next();
+        console.log('Next')
 
         // let Router = require('./assets/router');
         // new Router();

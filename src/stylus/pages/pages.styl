@@ -8,6 +8,9 @@
   relative 
   
 .page
+  display flex
+  flex-direction column
+  justify-content space-between
   overflow hidden
   relative false
   box-sizing border-box
@@ -18,43 +21,30 @@
   &.show
     z-index 1
     opacity 1
+    height 100%
     max-height 10000px
     overflow visible
-    // transition opacity $content-show-transition-time linear,
-    //            max-height 0s linear,
-    //            overflow 0s linear
-    -webkit-transition opacity 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750),
-                        max-height 0s cubic-bezier(0.250, 0.250, 0.750, 0.750)  
- 
     transition opacity 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750),
                 max-height 0s cubic-bezier(0.250, 0.250, 0.750, 0.750)
-  
-    -webkit-transition-timing-function cubic-bezier(0.250, 0.250, 0.750, 0.750),
-                                        cubic-bezier(0.250, 0.250, 0.750, 0.750)
-
-    transition-timing-function cubic-bezier(0.250, 0.250, 0.750, 0.750),
-                                cubic-bezier(0.250, 0.250, 0.750, 0.750)
  
   p
     text-align left
-  
-  .page-content
-    &:before
-    &:after
-      content ''
-      display block
-      size 100% 0
-      transition height 0.2s linear
-    
-  .page-header
-    .header
-      font-size 60px
-      font-weight 700
+  .header.page-header
+    position initial
+    display block
+    .header-title
+      font-size 50px
       color $white
-      letter-spacing 4px
+      letter-spacing 2px
+      text-align center
       transition font-size 0.2s linear
+    .header-text
+      padding 10px 70px
+      font-size 24px
+      text-align center
 
-  .page-footer
+
+.page-footer
     relative false
     margin: -61px 0 0 0;
     padding-bottom 61px
@@ -69,61 +59,14 @@
 
 +media-query(only screen, max-width $mobileWidth)
   .page
-    max-width 600px
-    margin 0 auto !important
-    &.product
-      max-width 100%
-      .page-footer
-        static false
-    .page-header
-      margin 0
-      padding-top 15px
-      padding-bottom 35px !important
-    .header
-      width 100% !important
-      margin-left 0 !important
-      margin-right 0 !important
-      margin-bottom 0 !important
-      padding-left 0
-      padding-right 0
-      text-align center
-    .text-right
-      margin 30px auto 0 !important
-      display block
-      max-width none !important
-      width 100% !important
-      text-align justify
-      -moz-text-align-last center
-      text-align-last center
-    .text
-      text-align justify
-      -moz-text-align-last center
-      text-align-last center
+    padding-bottom 0
 
 +media-query(only screen, max-width 780px)
   .page
-    &.product
-      .page-footer
-        margin -1px 0 50px
-        padding-bottom 0
-  #product-tech
-    .page-content
-      padding-top 83px 
-    .page-footer
-      margin -30px 0 50px  
+    padding-bottom 0
+
 +media-query(only screen, max-width 480px)
   .page
     .page-header
       .header
         font-size 45px
-    &.product
-      .page-footer
-        height auto
-        padding-bottom 95px
-        margin -101px 0 42px
-  #product-tech
-    .page-content
-      padding-top 117px 
-    .page-footer
-      margin -45px 0 42px
-      height 123px

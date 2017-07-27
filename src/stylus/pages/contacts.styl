@@ -1,82 +1,64 @@
 @import "../variables.styl"
-
 /* Contacts styles */
 #contacts
-  .page-header
-    padding 85px 0 64px
+  background-color $contacts-color
   .page-content
-    &:before
-    &:after
-      transition height .3s linear 0s
-    
-  form
-    display inline-block
-    vertical-align top
-    margin-bottom 31px
-    &.message-form
-      size 361px 299px
-      margin-right 59px
-      .send
-        margin-top -1px
-        .point
-          z-index -1
-    &.subscribe-form
-      size 421px 299px
-    &.error
-      .send
-        border-color $torch_red
-        .error-message
-          opacity 1
-          z-index 0
-        .point
-          background-color $torch_red
-          transition background-color 0.2s linear
-        button
-          opacity 0
-    &.sent
-      .form-content-wrap
-        border-color $turquoise
-      input
-      textarea
-        color $turquoise
-        border-color $turquoise
-      .send
-        border-color $turquoise
-        .send-message
-          opacity 1
-          z-index 0
-        button
-          opacity 0
-    &.hide-text
-      input
-      textarea
-        color transparent
-  .form-content-wrap
-    relative false
-    padding 30px 30px 19px
-    border 1px solid $contacts-button-border-color
-    transition border-color 0.2s linear
-    border-bottom 0 none
-    
-  .input-wrap
-    size 100% 61px
-    relative false
-    box-sizing border-box
-    
-    .error ~ .point
-      background-color $torch_red
-    .point
-      background-color $contacts-input-point-color
-      transition background-color 0.2s linear
-      &.top
-        top 0
-      &.left
-        left 0
-      &.right
-        right 0
-      &.bottom
-        bottom 0
-    
+    display flex
+    justify-content center
+    flex-wrap wrap
+    padding 0 5%
+    .contact-content-item
+      padding 0 20px
+      &.contact-info
+        display flex
+        flex-direction column
+        justify-content space-between
+        padding 18px 20px
+        font-size 18px
+        line-height 22px
+        letter-spacing 1px
+        align-content center
+        color $white
+        .contact-link
+          display block
+      &.message-form
+          display block
+          flex 0 0 500px
+          .send
+            margin-top -1px
+            .point
+              z-index -1
+        &.error
+          .send
+            border-color $torch_red
+            .error-message
+              opacity 1
+              z-index 0
+            button
+              opacity 0
+        &.sent
+          .form-content-wrap
+            border-color $turquoise
+          input
+          textarea
+            color $turquoise
+            border-color $turquoise
+          .send
+            border-color $turquoise
+            .send-message
+              opacity 1
+              z-index 0
+            button
+              opacity 0
+        &.hide-text
+          input
+          textarea
+            color transparent
+
+      &.input-wrap
+        size 100% 60px
+        relative false
+        box-sizing border-box
   input
   textarea
     font-size 18px
@@ -85,11 +67,11 @@
     box-sizing border-box
     outline none
     background-color transparent
-    color $contacts-input-color
+    color $white
     letter-spacing 1px
     border 1px solid $contacts-input-border-color
-    -webkit-appearance: none;
-    border-radius: 0;
+    -webkit-appearance none
+    border-radius 0
     margin 0
     transition border-color 0.2s linear,
                color 0.2s linear,
@@ -105,26 +87,25 @@
       color $torch_red
       -webkit-text-fill-color $torch_red
       border-color $torch_red
-      
+
   input
-    size 100% 61px
+    size 100%
   textarea
     display block
     size 100% 180px
-    border-top 0 none
-    border-bottom 0 none
     resize none
-    border-top 1px solid transparent
-    border-bottom 1px solid transparent
-    
+    margin-top -1px
+
   .send
     relative false
     size 100% 61px
     box-sizing border-box
-    border 1px solid $contacts-button-border-color
+    color $white
+    border 1px solid $white
     transition border-color 0.2s linear
     &:hover
-      border-color $contacts-button-color
+      border-color $white-50
+      color $white-50
 
   .send-message
   .error-message
@@ -155,8 +136,8 @@
       font-weight 600
     .error-text
       font-weight 400
-        
-    
+
+
   button
     size 100%
     box-sizing border-box
@@ -167,21 +148,21 @@
     font-weight 600
     letter-spacing 3px
     text-transform uppercase
-    color $contacts-button-color
+    color inherit
     background-color transparent
     border 0 none
     cursor pointer
-    transition opacity 0.2s linear
+    transition all 0.2s linear
     &.error
       opacity 0
     .mobile
       display none
-    
+
   h2
     font-size 30px
     font-weight 700
     margin-bottom 29px
-    
+
   .text
     padding-right 20px
     font-size 12px
@@ -189,7 +170,7 @@
     line-height 17px
     letter-spacing 0.5px
     margin-top 19px
-    
+
   .page-footer
     padding-bottom 0
     margin 0
@@ -250,31 +231,10 @@
       display inline-block
       margin 0 5px 0 1px
       fill $turquoise
-    
+
 +media-query(only screen, max-width $mobileWidth)
   #contacts
-    .page-header
-      padding 0 0 30px
-    .page-footer
-      margin 110px 0 0
-    form
-      &.message-form
-      &.subscribe-form
-        display block
-        width 100%
-        max-width 421px
-        margin-left auto
-        margin-right auto
-        height auto
-    .socials
-      relative false
-      size 301px 230px
-      margin auto
-      .social
-        padding 0
-        &:after
-        &:before
-          display none
+
       .facebook
         absolute 0 false false 0
       .twitter
@@ -291,6 +251,7 @@
         absolute false 0 0
         text-align center
         margin 0 auto
+
 +media-query(only screen, max-width 480px)
   #contacts
     button
@@ -298,9 +259,9 @@
         display none
       .mobile
         display inline
-        
+
 +media-query(only screen, max-width 380px)
-    #contacts     
+    #contacts
       .socials
         width 260px
         .facebook
@@ -318,41 +279,6 @@
         .nodio
           absolute false 0 0
           text-align center
-          margin 0 auto 
+          margin 0 auto
 
-$start = 720px
-$step = 60px
-$before = 0px
-$after = 0px
-for $i in 0..30
-  $height = $start + $i * $step
-  $before = floor($i / 2) * $step
-  if (!($i%2 == 0)) {
-    $after += $step
-  }  
-  +media-query(only screen, min-height $height)
-    #contacts .page-content
-      &:before
-        height $before
-      &:after
-        height $after
-+media-query(only screen, max-width 780px)
-  #contacts
-    .page-content
-      &:before
-      &:after
-        height 0
-    .page-footer
-      margin 0
-    .links
-      padding 10px 0 20px 0px
-      .link
-        display inline-block
-        margin 0 0 30px 0
-      .delimiter
-        display block
-        height 0  
-// +media-query(only screen, max-width 500px)
-//   #contacts
-//     .form
-//       margin 95px 0 0 
+

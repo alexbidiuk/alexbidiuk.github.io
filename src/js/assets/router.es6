@@ -2,25 +2,19 @@
 let Menu = require('./menu');
 let Pagination = require('./pagination');
 let History = require('./history');
-let Resize = require('./resize');
 let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
+let routerConfig = require('../../js/configurations/router');
 module.exports = class Router {
   constructor() {
 
-    this.default_page = config.default.page;
-    this.default_slide = config.default.slide;
-    this.page_fade_time = config.page_fade_time;
+    this.default_page = routerConfig.default.page;
+    this.page_fade_time = routerConfig.page_fade_time;
     this.active = null;
     this.menu_value = null;
 
-    this.resize = new Resize();
-
     this.menu = new Menu();
-    this.menu_visible = false;
 
     this.history = new History();
-
-    this.glow = document.querySelector('#glow');
 
     this.pages = document.querySelectorAll('.page');
     this.pages_length = this.pages.length;
@@ -28,7 +22,6 @@ module.exports = class Router {
     this.body = document.querySelector('body');
     this.scrollbar = new GeminiScrollbar({element: this.body}).create();
 
-    this.slide = this.default_slide;
     this.product = document.querySelector('#product');
     this.pagination = new Pagination();
 
@@ -45,7 +38,6 @@ module.exports = class Router {
 
   checkPage(page) {
     if(!page || page == '/' || !document.querySelector(page)) {
-      this.slide = this.default_slide;
       return this.default_page;
     }
     return page;
@@ -74,21 +66,9 @@ module.exports = class Router {
     // let page = event.detail.page;
     let page = this.checkPage(event.detail.page);
     if(this.active == page) {
-      if(page == '#product') {
-        this.setSlide();
-      }
       return false;
     }
-    if(page == '#product') {
-      if(event.detail.source == 'menu' || event.detail.source == 'init' || event.detail.source == 'history') {
-        this.active = this.default_page;
-        this.slide = this.default_slide;
-      } 
-      this.setSlide(this.slide);
-    }
-    else {
-      this.glow.classList.add('show');
-    }
+
     this.active = page;
     // this.active = this.checkPage(page);
     this.hidePages();

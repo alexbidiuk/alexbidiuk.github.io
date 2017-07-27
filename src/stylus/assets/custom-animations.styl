@@ -51,3 +51,25 @@
 @keyframes dash
   to
     stroke-dashoffset 0
+
+@keyframes contact-dash
+  to
+    stroke-dashoffset 10
+
+@keyframes border {
+  0% {
+    box-shadow: 60px -60px 0 2px #dddddd, -60px -60px 0 2px #dddddd, -60px 60px 0 2px #dddddd, 60px 60px 0 2px #dddddd, 0 0 0 2px black;
+  }
+  25% {
+    box-shadow: 0 -125px 0 2px #dddddd, -60px -60px 0 2px #dddddd, -60px 60px 0 2px #dddddd, 60px 60px 0 2px #dddddd, 0 0 0 2px black;
+  }
+  50% {
+    box-shadow: 0 -125px 0 2px #dddddd, -125px 0px 0 2px #dddddd, -60px 60px 0 2px #dddddd, 60px 60px 0 2px #dddddd, 0 0 0 2px black;
+  }
+  75% {
+    box-shadow: 0 -125px 0 2px #dddddd, -125px 0px 0 2px #dddddd, 0px 125px 0 2px #dddddd, 60px 60px 0 2px #dddddd, 0 0 0 2px black;
+  }
+  100% {
+    box-shadow: 0 -125px 0 2px #dddddd, -125px 0px 0 2px #dddddd, 0px 125px 0 2px #dddddd, 120px 40px 0 2px #dddddd, 0 0 0 2px black;
+  }
+}

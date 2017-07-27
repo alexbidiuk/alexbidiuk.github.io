@@ -5,10 +5,17 @@ $white-20 = rgba(255,255,255,0.2)
 $white-50 = rgba(255,255,255,0.5)
 $transparent = transparent;
 
-$purple = #391c23;
-$dark-purple = #683e48;
+$dark-purple = #391c23;
+$purple = #683e48;
 $light-purple = #a48b91;
 $extra-light-purple = #d1c5c8;
+
+
+$turquoise = #17E5B2
+$turquoise-10 = rgba(23,229,178,0.1)
+$turquoise-20 = rgba(23,229,178,0.2)
+$turquoise-50 = rgba(23,229,178,0.5)
+$torch_red = #ff004d
 
 $animation-time = 0.5s
 $transition-time = 0.2s
@@ -18,6 +25,10 @@ $content-transition-time = 0.3s
 
 
 /*** Common ***/
+
+/* Logo */
+$logo-width = 400px
+$logo-height = 200px
 
 /* Colors */
 $common-body-background-color = $black
@@ -34,6 +45,13 @@ $mobileSmall_Width = 400px
 $common-body-big-font-size = 50px
 $common-body-font-size = 16px
 $common-body-letter-spacing = 2px
+
+
+/*** Preloader ***/
+$preloader-more = 1.725 // make preloader logo to 690px width
+$preloader-unscale = 0.5797101449275362 //unscale to 400px width
+$preloader-logo-width = $logo-width * $preloader-more
+$preloader-logo-height = $logo-height * $preloader-more
 
 
 
@@ -55,12 +73,20 @@ $content-blink-animation-time = $animation-time
 
 
 
+/*** Team ***/
+
+/* Colors */
+
+$team-color = $purple
+
+
+
 /*** Contacts ***/
 
 /* Colors */
-$contacts-header-color = $white
 
-$contacts-subscribe-border-color = $turquoise-20
+$contacts-color = $dark-purple
+$contacts-header-color = $white
 
 $contacts-input-color = $white
 $contacts-input-border-color = $white-20

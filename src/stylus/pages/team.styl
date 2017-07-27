@@ -1,0 +1,39 @@
+@import "../variables.styl"
+/* Team styles */
+#team
+  background-color $team-color
+  .page-content
+    .persons
+      display flex
+      flex-wrap wrap
+      justify-content center
+      .person
+        display block
+        padding 0 20px
+        font-size 16px
+        line-height 18px
+        .data
+          text-align center
+          .circle
+            position relative
+            margin 20px
+            size 250px 250px
+            border-radius 50%
+            overflow hidden
+            .circle-border
+              absolute 50% false false 50%
+              fill none
+              stroke $white
+              stroke-dasharray 1000
+              stroke-dashoffset 1000
+              transform translate(-50%, -50%)
+              //animation contact-dash 10s ease-in-out
+              &:hover
+                animation dash 1.5s ease-in
+            .photo
+              display block
+              size 100% 100%
+              object-fit cover
+              &:hover
+                animation border 2s ease 1 forwards
+
