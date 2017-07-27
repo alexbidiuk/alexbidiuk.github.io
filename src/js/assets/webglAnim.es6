@@ -5,7 +5,7 @@ module.exports = class WebglAnim {
     constructor() {
         this.isPaused = false;
         this.pause = this.pause.bind(this);
-        this.container = document.querySelectorAll('.container')[0];
+        this.container = document.querySelectorAll('#home')[0];
         this.mouseX = 0;
         this.mouseY = 0;
         this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 10000);

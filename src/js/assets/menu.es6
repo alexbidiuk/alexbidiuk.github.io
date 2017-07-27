@@ -1,13 +1,13 @@
 /* Menu module */
-let print_config = require('../configurations/print');
-let printString = require('../utilities/print_string');
+// let print_config = require('../configurations/print');
+// let printString = require('../utilities/print_string');
 module.exports = class Menu {
     constructor() {
-        this.printString = printString;
-        this.print_config = print_config;
-        this.timeout = 500;
-        this.active = null;
-        this.printing = null;
+        // this.printString = printString;
+        // this.print_config = print_config;
+        // this.timeout = 500;
+        // this.active = null;
+        // this.printing = null;
         this.menu_toggle = document.querySelector('.menu-toggle');
         this.menu_close = document.querySelector('.menu-trigger');
         this.menu_open = document.querySelector('.close-trigger');
