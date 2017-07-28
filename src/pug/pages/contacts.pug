@@ -1,33 +1,33 @@
-#contacts.page(data-title="Contact us")
+#contacts.page(data-title="contacts")
   header.header.page-header
     h1.header-title Contact us
 
   section.page-content
-    aside.contact-content-item.contact-info
-      p.location Kyiv, Ukraine
-      p.other-info
-        span Sergey Klimenko
-        a.contact-link(href="tel:095 111 11 11") 095 111 11 11
-        a.contact-link(href="mailto:sergeyklimenko@gmail.com") sergeyklimenko@gmail.com
-    form.contact-content-item.message-form.send-form(name="message" action="/php/send.php" method="post")
-      .input-wrap
-        input(
-          type="text"
-          name="email"
-          placeholder="E-mail"
+    .form-wrapper
+      aside.contact-content-item.contact-info
+        p.location Kyiv, Ukraine
+        p.other-info
+          span Sergey Klimenko
+          a.contact-link(href="tel:095 111 11 11") 095 111 11 11
+          a.contact-link(href="mailto:sergeyklimenko@gmail.com") sergeyklimenko@gmail.com
+      form.contact-content-item.message-form.send-form(name="message" action="/php/send.php" method="post")
+        .input-wrap
+          input(
+            type="text"
+            name="email"
+            placeholder="E-mail"
+          )
+        textarea(
+          name="message"
+          placeholder="Message"
         )
-      textarea(
-        name="message"
-        placeholder="Message"
-      )
-      .send
-        button(
-          name="submit"
-          type="submit"
-          data-text="Send"
-        ) Send
-        .send-message(data-text="Message sent")
-        .error-message
-          .error-title
-          .error-text
-  footer.page-footer
+        .send
+          button(
+            name="submit"
+            type="submit"
+            data-text="Send"
+          ) Send
+          .send-message(data-text="Message sent")
+          .error-message
+            .error-title
+            .error-text

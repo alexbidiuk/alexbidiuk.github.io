@@ -6,24 +6,23 @@ json('../../js/configurations/animation.json');
   transform translate(-50%, -50%)
   width $logo-width
   height $logo-height
-  filter url(#glow)
   stroke white
   stroke-width 2px
   fill none
   cursor pointer
   animation neon logo-glowing ease-in-out infinite alternate
+  filter url(#glow)
 
 .logo-title
   absolute 100% false false 50%
-  width 100%
+  width 100vw
   font-size 50px
   line-height 50px
-  margin-top 20px
   color white
   text-align center
   text-shadow 0px 0px 5px rgba(255, 255, 255, .8)
   cursor pointer
-  transform translate(-50%, 100%)
+  transform translate(-50%, 0)
   z-index 1
 .container
   visibility hidden
@@ -35,8 +34,8 @@ json('../../js/configurations/animation.json');
     visibility visible
     opacity 1
 .main-greeting
-  absolute 50% false false 50%;
-  width 100%
+  fixed 50% false false 50%;
+  size 400px 200px
   text-align center
   transform translate(-50%, -50%)
 .header
@@ -206,7 +205,7 @@ json('../../js/configurations/animation.json');
   height 4px
   background-color #fff
   position relative
-  transition all menu-close_trigger_bar cubic-bezier(0, 0.46, 0.36, 0.96) menu-close_trigger_bar_delay
+  transition all menu-close_trigger_bar cubic-bezier(0, 0.46, 0.36, 0.96)
   &:before
     content ""
     position absolute

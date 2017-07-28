@@ -6,7 +6,7 @@ module.exports = class History {
     this.states = [];
     this.state = 0
     this.replace = false;
-    this.defaultRoute = routes.portfolio;
+    this.defaultRoute = routes.home;
     window.addEventListener('popstate', this.popstateHandler.bind(this));
   }
   popstateHandler(event) {

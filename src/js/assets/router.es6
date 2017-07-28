@@ -1,12 +1,11 @@
 /* Router module */
-// let Menu = require('./menu');
-// let Pagination = require('./pagination');
+let Menu = require('./menu');
 let History = require('./history');
 let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let routerConfig = require('../../js/configurations/router');
 module.exports = class Router {
   constructor() {
-
+    new Menu();
     this.default_page = routerConfig.default.page;
     this.page_fade_time = routerConfig.page_fade_time;
     this.active = null;
@@ -35,6 +34,16 @@ module.exports = class Router {
     if(!page || page == '/' || !document.querySelector(page)) {
       return this.default_page;
     }
+    if(page == '/' || page == '#home') {
+        let event_detail = {
+            detail: {
+                state: false
+            }
+        };
+        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+    } else {
+        document.dispatchEvent(new CustomEvent('pause_webgl'));
+    }
     return page;
   }
 
@@ -42,7 +51,7 @@ module.exports = class Router {
     this.history.setState(this.active);
     let event_detail = {
       detail: {
-        page: this.active,
+        page: this.active
       }
     };
     document.dispatchEvent(new CustomEvent('set_navigation', event_detail));
@@ -64,9 +73,7 @@ module.exports = class Router {
     }
     this.active = page;
     // this.active = this.checkPage(page);
-    document.dispatchEvent(new CustomEvent('unset_menu'));
     this.hidePages();
-
     this.setPage();
   }
 

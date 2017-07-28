@@ -26,16 +26,17 @@ require('./utilities/ie_fixes');
         // new Audio();
         // console.log('Audio')
 
-        let Next = require('./assets/next');
-        new Next();
-        console.log('Next')
+        // let Next = require('./assets/next');
+        // new Next();
+        // console.log('Next')
+
+        // let Menu = require('./assets/menu');
+        // new Menu();
 
         let Router = require('./assets/router');
         new Router();
-        console.log('Router');
 
-        let Menu = require('./assets/menu');
-        new Menu();
+        console.log('Router');
 
         let Preloader = require('./assets/preloader');
         new Preloader();

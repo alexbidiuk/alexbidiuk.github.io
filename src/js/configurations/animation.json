@@ -21,10 +21,10 @@
         "menu_trigger_bar_before": "300ms",
         "menu_trigger_bar_middle": "500ms",
         "menu_trigger_bar_middle_delay": "100ms",
-        "close_trigger_bar": "500ms",
+        "close_trigger_bar": "300ms",
         "close_trigger_bar_delay": "200ms",
         "close_trigger_bar_before": "300ms",
         "close_trigger_bar_right": "500ms",
-        "close_trigger_bar_right_delay": "300ms"
+        "close_trigger_bar_right_delay": "100ms"
     }
 }

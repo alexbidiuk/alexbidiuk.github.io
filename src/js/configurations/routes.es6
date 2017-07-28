@@ -1,5 +1,5 @@
 let routes = {
-    home: '/',
+    home: '#home',
     portfolio: '#portfolio',
     team:'#team',
     contacts:'#contacts'

@@ -20,13 +20,15 @@ module.exports = class WebglAnim {
         document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
         document.addEventListener('touchstart', this.onDocumentTouchStart.bind(this), false);
         document.addEventListener('touchmove', this.onDocumentTouchMove.bind(this), false);
+        document.addEventListener('pause_webgl', this.pause.bind(this));
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
         this.drawAbstraction();
         this.start();
     }
-    pause() {
-        this.isPaused = !this.isPaused;
+    pause(event) {
+        this.isPaused = event.detail===null ? true : false;
     }
+
     drawAbstraction() {
         let points = this.pointDrawer();
         this.lineDrawer(points);
