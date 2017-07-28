@@ -58,16 +58,13 @@ module.exports = class Menu {
                     source: 'menu'
                 }
             };
+            this.toggleMenu();
             document.dispatchEvent(new CustomEvent('change_page', event_detail));
         }
     }
 
     selectItemAction(event) {
         let page = event.detail.page;
-        if(page == '#home') {
-            page = '/'
-        }
-        console.log(page);
         this.selectItem(page);
     }
 

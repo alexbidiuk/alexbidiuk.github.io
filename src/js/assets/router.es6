@@ -67,7 +67,6 @@ module.exports = class Router {
     }
     this.active = page;
     // this.active = this.checkPage(page);
-    document.dispatchEvent(new CustomEvent('unset_menu'));
     this.hidePages();
     this.setPage();
   }
