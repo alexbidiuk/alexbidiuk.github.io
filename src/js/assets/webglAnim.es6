@@ -25,9 +25,10 @@ module.exports = class WebglAnim {
         this.drawAbstraction();
         this.start();
     }
-    pause() {
-        this.isPaused = !this.isPaused;
+    pause(event) {
+        this.isPaused = event.detail===null ? true : false;
     }
+
     drawAbstraction() {
         let points = this.pointDrawer();
         this.lineDrawer(points);

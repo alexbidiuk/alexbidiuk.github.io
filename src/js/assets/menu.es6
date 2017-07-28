@@ -22,7 +22,7 @@ module.exports = class Menu {
             // this.links[i].addEventListener('mouseenter', this.mouseEnterHandler.bind(this), false);
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
-        document.addEventListener('set_navigation', this.selectItemAction.bind(this));
+        document.addEventListener('set_navigation', this.selectItemAction.bind(this), false);
         this.menu_toggle.addEventListener('click', this.toggleMenu.bind(this));
         document.addEventListener('unset_menu', this.unsetMenu.bind(this));
     }
@@ -30,16 +30,30 @@ module.exports = class Menu {
     getCurrent() {
         return this.active;
     }
-
     toggleMenu() {
-        this.menu.classList.toggle('is-active');
-        this.menu_open.classList.toggle('is-active');
-        this.menu_close.classList.toggle('is-active');
+        this.menu.classList.contains('is-active') ? this.unsetMenu() : this.setMenu();
     }
 
+    setMenu() {
+        this.menu.classList.add('is-active');
+        this.menu_open.classList.toggle('is-active');
+        this.menu_close.classList.toggle('is-active');
+        document.dispatchEvent(new CustomEvent('pause_webgl'));
+    }
+    unsetMenu() {
+        this.menu.classList.remove('is-active');
+        this.menu_open.classList.toggle('is-active');
+        this.menu_close.classList.toggle('is-active');
+        let event_detail = {
+            detail: {
+                state: false
+            }
+        };
+        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+    }
 
     checkActive(page) {
-        if (page == '/') {
+        if (page == '#home') {
             return true;
         }
         if (document.querySelector(page).classList.contains('show')) {
@@ -51,7 +65,6 @@ module.exports = class Menu {
     selectItemHandler(event) {
         event.preventDefault();
         let page = event.currentTarget.getAttribute('href');
-        if (this.checkActive(page)) {
             let event_detail = {
                 detail: {
                     page: page,
@@ -60,7 +73,6 @@ module.exports = class Menu {
             };
             this.toggleMenu();
             document.dispatchEvent(new CustomEvent('change_page', event_detail));
-        }
     }
 
     selectItemAction(event) {
@@ -70,7 +82,6 @@ module.exports = class Menu {
 
     selectItem(active) {
         this.active = active;
-        console.log(active);
         for (let i = this.links_length - 1; i >= 0; i--) {
             let href = this.links[i].getAttribute('href');
 
@@ -82,9 +93,7 @@ module.exports = class Menu {
             }
         }
     }
-    unsetMenu() {
-        this.toggleMenu();
-    }
+
     mouseEnterHandler(event) {
         if (!this.printing && !(event.target.lastChild.nodeName == 'SPAN')) {
             let target = event.target;
