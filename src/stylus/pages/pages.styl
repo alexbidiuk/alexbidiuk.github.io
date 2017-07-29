@@ -2,10 +2,11 @@
 
 /* Pages common styles */
 .pages
-  size 100%
-  box-sizing border-box
-  margin auto
   relative
+  size 100%
+  margin auto
+  overflow auto
+  box-sizing border-box
 
 .page
   display flex
@@ -21,14 +22,15 @@
   &.show
     z-index 1
     opacity 1
+    padding 20px 0
     min-height 100%
     max-height 10000px
     overflow visible  
   p
     text-align left
-  .header.page-header
-    position initial
+.header.page-header
     display block
+    position initial
     .header-title
       font-size 50px
       color $white
@@ -36,9 +38,9 @@
       text-align center
       transition font-size 0.2s linear
     .header-text
-      padding 10px 70px
+      padding 30px 70px
       font-size 24px
-      text-align center
+      text-align center  
 
 .page-content
   display flex
@@ -47,6 +49,9 @@
   align-items center
 .page-footer
     // flex 1 0 auto
+
+#home.show
+  padding 0
     
 // for $i in 0..30
 //   $height = $expand_height + $i * $expand_height_step
@@ -56,16 +61,12 @@
 //       .page-footer
 //         margin: ((-61px) + $content) 0 0 0;
 
-+media-query(only screen, max-width $mobileWidth)
++media-query(only screen, max-width $medium)
   .page
-    padding-bottom 0
-
-+media-query(only screen, max-width 780px)
-  .page
-    padding-bottom 0
-
-+media-query(only screen, max-width 480px)
-  .page
-    .page-header
-      .header
-        font-size 45px
+    font-size 14px
+    .header.page-header
+      .header-title
+        font-size 40px
+      .header-text
+        padding 25px 0
+        font-size 20px

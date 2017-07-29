@@ -17,10 +17,10 @@ json('../../js/configurations/animation.json');
   absolute 100% false false 50%
   width 100vw
   font-size 50px
-  line-height 50px
-  color white
+  padding 0 10px
+  color$white
   text-align center
-  text-shadow 0px 0px 5px rgba(255, 255, 255, .8)
+  text-shadow 0px 0px 5px $white
   cursor pointer
   transform translate(-50%, 0)
   z-index 1
@@ -35,7 +35,7 @@ json('../../js/configurations/animation.json');
     opacity 1
 .main-greeting
   fixed 50% false false 50%;
-  size 400px 200px
+  size 500px 200px
   text-align center
   transform translate(-50%, -50%)
 .header
@@ -142,6 +142,7 @@ json('../../js/configurations/animation.json');
   display block
   width 42px
   height 42px
+  margin-top 10px
   cursor pointer
 .menu-trigger,
 .close-trigger
@@ -223,13 +224,35 @@ json('../../js/configurations/animation.json');
     top -3px
     transition all menu-close_trigger_bar_right cubic-bezier(0, 0.46, 0.36, 0.96) menu-close_trigger_bar_right_delay
 
++media-query(only screen, max-width $large)
+  .menu-bg
+    flex 0 0 350px
+    &.middle
+      flex 0 0 350px
+  .menu-list
+    flex-direction column
+    align-items flex-start
+    padding 0 30%
 
++media-query(only screen, max-width $medium)
+  .main-greeting
+    size 300px 100px
+    .logo-title
+      font-size 35px
+  .header
+    padding 25px
+    .menu-toggle
+      size 38px 38px
+      margin-top 14px
 
-+media-query(only screen, max-height 700px)
-  #back
-   size 120px
++media-query(only screen, max-width $small)
+  .main-greeting
+    size 260px 100px
+    .logo-title
+      font-size 30px
+  .menu-bg
+    flex 0 0 300px
+    &.middle
+      flex 0 0 300px 
 
-+media-query(only screen, max-width $mobileWidth)
-  #back
-   size 120px
 

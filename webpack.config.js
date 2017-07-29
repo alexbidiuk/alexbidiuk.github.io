@@ -23,7 +23,7 @@ const config = {
         index: ['./js/index']
     },
     output: {
-        publicPath: isProd ? '/www/' : '/',
+        publicPath: '/',
         path: path.join(__dirname, "www"),
         filename: !isProd ? 'js/[name].js' : 'js/[name].min.js',
         chunkFilename: !isProd ? 'js/[id].chunk.js' : 'js/[id].chunk.min.js'

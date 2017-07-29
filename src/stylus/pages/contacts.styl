@@ -237,33 +237,20 @@
       margin 0 5px 0 1px
       fill $turquoise
 
-+media-query(only screen, max-width $mobileWidth)
++media-query(only screen, max-width $medium)
   #contacts
-
-      .facebook
-        absolute 0 false false 0
-      .twitter
-        absolute 0 false false 120px
-      .slack
-        absolute 0 false false 240px
-      .reddit
-        absolute 61px false false 60px
-      .github
-        absolute 61px false false 180px
-      .btt
-        absolute 122px false false 120px
-      .nodio
-        absolute false 0 0
-        text-align center
-        margin 0 auto
-
-+media-query(only screen, max-width 480px)
+    .page-content
+      .contact-content-item
+        &.message-form
+          display block
+          flex 0 0 350px
++media-query(only screen, max-width $small)
   #contacts
-    button
-      .full
-        display none
-      .mobile
-        display inline
+    .page-content
+      .contact-content-item
+        &.message-form
+          display block
+          flex 0 0 290px
 
 +media-query(only screen, max-width 380px)
     #contacts
