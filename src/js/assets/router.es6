@@ -14,10 +14,8 @@ module.exports = class Router {
     this.pages = document.querySelectorAll('.page');
     this.pages_length = this.pages.length;
 
-    this.body = document.querySelector('body');
-    this.scrollbar = new GeminiScrollbar({element: this.body}).create();
-
-    // this.pagination = new Pagination();
+    this.pagesWrap = document.querySelector('.pages');
+    this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
 
     document.addEventListener('change_page', this.changePage.bind(this));
 

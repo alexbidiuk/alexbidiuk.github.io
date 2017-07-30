@@ -7,11 +7,10 @@ json('../../js/configurations/animation.json');
   width $logo-width
   height $logo-height
   stroke white
-  stroke-width 2px
+  stroke-width 2.5px
   fill none
   cursor pointer
   animation neon logo-glowing ease-in-out infinite alternate
-  filter url(#glow)
 
 .logo-title
   absolute 100% false false 50%
@@ -25,11 +24,10 @@ json('../../js/configurations/animation.json');
   transform translate(-50%, 0)
   z-index 1
 .container
+  relative false
   visibility hidden
   opacity 0
-  height 100%
-  visibility visible !important // for dev
-  opacity 1 !important // for dev
+  size 100%
   &.loaded
     visibility visible
     opacity 1
@@ -43,7 +41,10 @@ json('../../js/configurations/animation.json');
   align-items center
   justify-content flex-end
   absolute 0 0 false 0
+  width 100%
   padding 50px
+  padding-bottom 0  
+  box-sizing border-box
   background-color $transparent
   z-index 1100
 .menu
@@ -142,7 +143,6 @@ json('../../js/configurations/animation.json');
   display block
   width 42px
   height 42px
-  margin-top 10px
   cursor pointer
 .menu-trigger,
 .close-trigger
@@ -158,7 +158,7 @@ json('../../js/configurations/animation.json');
       &:before
         width 100%
 .menu-trigger
-  margin-top 9px
+  margin-top 4px
   &.is-active
     .menu-trigger-bar
       transform translate(0, 0) rotate(-45deg)
@@ -240,10 +240,10 @@ json('../../js/configurations/animation.json');
     .logo-title
       font-size 35px
   .header
-    padding 25px
+    padding 25px 
+    padding-bottom 0
     .menu-toggle
-      size 38px 38px
-      margin-top 14px
+      size 35px 35px
 
 +media-query(only screen, max-width $small)
   .main-greeting

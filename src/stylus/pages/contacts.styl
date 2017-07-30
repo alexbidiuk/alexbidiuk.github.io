@@ -6,7 +6,7 @@
     display flex
     justify-content center
     flex-wrap wrap
-    padding 0 5%
+    padding 20px 5%
     .form-wrapper
       display flex
       justify-content center
@@ -14,12 +14,12 @@
       flex 0 0 100%
     .contact-content-item
       padding 0 20px
+      font-size 18px
       &.contact-info
         display flex
         flex-direction column
         justify-content space-between
         padding 18px 20px
-        font-size 18px
         line-height 22px
         letter-spacing 1px
         align-content center
@@ -66,7 +66,7 @@
         box-sizing border-box
   input
   textarea
-    font-size 18px
+    font-size inherit
     font-weight 300
     padding 18px 27px
     box-sizing border-box
@@ -149,7 +149,7 @@
     padding 0 0 0 27px
     outline none
     text-align left
-    font-size 18px
+    font-size inherit
     font-weight 600
     letter-spacing 3px
     text-transform uppercase
@@ -240,10 +240,14 @@
 +media-query(only screen, max-width $medium)
   #contacts
     .page-content
+      .form-wrapper
+        justify-content flex-start
       .contact-content-item
+        font-size 15px
         &.message-form
           display block
           flex 0 0 350px
+          font-size 15px
 +media-query(only screen, max-width $small)
   #contacts
     .page-content

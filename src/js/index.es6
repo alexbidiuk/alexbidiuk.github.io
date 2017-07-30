@@ -42,8 +42,7 @@ require('./utilities/ie_fixes');
         new Preloader();
 
         let WebglAnim = require('./assets/webglAnim');
-        let abstraction = new WebglAnim();
-        let abstractionStop = abstraction.pause;
+        new WebglAnim();
 
 
         //

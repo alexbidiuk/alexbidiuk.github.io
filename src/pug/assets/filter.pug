@@ -1,7 +1,7 @@
-svg(style='position: absolute; width: 140px; height: 140px; visibility: hidden;')
+svg(style="position: absolute; width: 0; height: 0; visibility: hidden;")
     defs
-        filter#glow
-            feGaussianBlur(stdDeviation='3', result='coloredBlur')/
+        filter(color-interpolation-filters="sRGB")#glow
+            feGaussianBlur(stdDeviation="2.5" result="coloredBlur")/
             feMerge
-                feMergeNode(in='coloredBlur')/
-                feMergeNode(in='SourceGraphic')/
+                feMergeNode(in="coloredBlur")/
+                feMergeNode(in="SourceGraphic")/
