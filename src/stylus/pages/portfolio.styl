@@ -1,0 +1,43 @@
+@import "../variables.styl"
+/* Porttfolio styles */
+#portfolio
+  .page-content
+    position: relative
+    overflow-x auto
+    overflow hidden
+    .portfolio-item-wrapper
+      display flex
+      absolute 0 false false 0
+      align-items center
+      justify-content center
+      height 100vh
+      width 100vw
+      top 0
+      left 0
+      overflow hidden
+      .portfolio-item
+        position relative
+        height 100%
+        overflow hidden
+        border-left 1px solid $purple
+        border-right 1px solid $purple
+
+        &:after
+          display block
+          content ''
+          height 100vh
+          width 100vw
+          background url("/images/portfolio/nodio.png") no-repeat 100% 100%
+          background-size cover
+          z-index -1
+
+
+
++media-query(only screen, max-width $medium)
+  #team
+    .page-content
+      .persons
+        .person
+          .data
+            .circle
+              size 200px

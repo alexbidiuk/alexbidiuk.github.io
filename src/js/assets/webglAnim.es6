@@ -18,8 +18,6 @@ module.exports = class WebglAnim {
         this.windowHalfX = window.innerWidth / 2;
         this.windowHalfY = window.innerHeight / 2;
         document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
-        document.addEventListener('touchstart', this.onDocumentTouchStart.bind(this), false);
-        document.addEventListener('touchmove', this.onDocumentTouchMove.bind(this), false);
         document.addEventListener('pause_webgl', this.pause.bind(this));
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
         this.drawAbstraction();
@@ -89,29 +87,6 @@ module.exports = class WebglAnim {
     onDocumentMouseMove(event) {
         this.mouseX = (event.clientX - this.windowHalfX);
         this.mouseY = (event.clientY - this.windowHalfY);
-    }
-
-    onDocumentTouchStart(event) {
-
-        if (event.touches.length > 1) {
-
-            event.preventDefault();
-
-            this.mouseX = event.touches[0].pageX - windowHalfX;
-            this.mouseY = event.touches[0].pageY - windowHalfY;
-
-        }
-    }
-
-    onDocumentTouchMove(event) {
-
-        if (event.touches.length == 1) {
-
-            event.preventDefault();
-
-            this.mouseX = event.touches[0].pageX - this.windowHalfX;
-            this.mouseY = event.touches[0].pageY - this.windowHalfY;
-        }
     }
 
     start() {

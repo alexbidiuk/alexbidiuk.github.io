@@ -7,7 +7,7 @@ json('../../js/configurations/animation.json');
   width $logo-width
   height $logo-height
   stroke white
-  stroke-width 2px
+  stroke-width 2.5px
   fill none
   cursor pointer
   animation neon logo-glowing ease-in-out infinite alternate
@@ -17,25 +17,30 @@ json('../../js/configurations/animation.json');
   absolute 100% false false 50%
   width 100vw
   font-size 50px
-  line-height 50px
-  color white
+  padding 0 10px
+  color$white
   text-align center
-  text-shadow 0px 0px 5px rgba(255, 255, 255, .8)
+  text-shadow 0px 0px 5px $white
   cursor pointer
   transform translate(-50%, 0)
   z-index 1
 .container
+  relative false
   visibility hidden
+  overflow hidden
   opacity 0
-  height 100%
-  visibility visible !important // for dev
-  opacity 1 !important // for dev
+  visibility visible  //for dev
+  overflow visible //for dev
+  opacity 1 //for dev
+  size 0
   &.loaded
     visibility visible
+    overflow visible
     opacity 1
+    size 100%
 .main-greeting
   fixed 50% false false 50%;
-  size 400px 200px
+  size 500px 200px
   text-align center
   transform translate(-50%, -50%)
 .header
@@ -43,7 +48,10 @@ json('../../js/configurations/animation.json');
   align-items center
   justify-content flex-end
   absolute 0 0 false 0
+  width 100%
   padding 50px
+  padding-bottom 0  
+  box-sizing border-box
   background-color $transparent
   z-index 1100
 .menu
@@ -96,12 +104,12 @@ json('../../js/configurations/animation.json');
       height 4px
       opacity 0
       background-color #222222
-      transform translateX(100px)
+      transform translate3d(100px,0,0)
       transition all menu-menu_list_link_decor cubic-bezier(.55, 0, .1, 1)
     &:hover:before
     &.active:before
       opacity 1
-      transform translateX(0px)
+      transform translate3d(0,0,0)
     
 
 .menu-bg-container
@@ -114,7 +122,7 @@ json('../../js/configurations/animation.json');
   top 50%
   left 50%
   overflow hidden
-  transform translate(-50%, -50%) rotate(45deg)
+  transform translate3d(-50%, -50%,0) rotate(45deg)
   transform-origin 50% 50%
 .menu-bg
   flex 0 0 1000px
@@ -123,21 +131,21 @@ json('../../js/configurations/animation.json');
   transition all menu-menu_bg ease-in-out
   &.top
     background-color #d1c5c8
-    transform translate(-100%, -100%)
+    transform translate3d(-100%, -100%, 0)
   &.middle
     flex 0 0 700px
     background-color #a48b91
-    transform scaleX(0)
+    transform scale3d(0, 0, 0)
   &.bottom
     background-color #683e48
-    transform translate(100%, 100%)
+    transform translate3d(100%, 100%, 0)
   .menu.is-active &
     &.top
-      transform translate(0, 0)
+      transform translate3d(0, 0, 0)
     &.middle
-      transform scaleX(1)
+      transform scale3d(1, 1, 1)
     &.bottom
-      transform translate(0, 0)
+      transform translate3d(0, 0, 0)
 .menu-toggle
   display block
   width 42px
@@ -160,7 +168,7 @@ json('../../js/configurations/animation.json');
   margin-top 9px
   &.is-active
     .menu-trigger-bar
-      transform translate(0, 0) rotate(-45deg)
+      transform translate3d(0, 0, 0) rotate(-45deg)
 
 .close-trigger
   z-index 5
@@ -169,9 +177,9 @@ json('../../js/configurations/animation.json');
   &.is-active
     .close-trigger-bar
       &.left
-        transform translate(0, 0) rotate(-45deg)
+        transform translate3d(0, 0, 0) rotate(-45deg)
       &.right
-        transform translate(0, 0) rotate(45deg)
+        transform translate3d(0, 0, 0) rotate(45deg)
 .menu-trigger-bar
   display block
   width 100%
@@ -180,7 +188,7 @@ json('../../js/configurations/animation.json');
   margin-bottom 6px
   position relative
   transition all menu-menu_trigger_bar cubic-bezier(0.24, 0.65, 0.36, 0.96)
-  transform translateX(100px) translateY(-100px) rotate(-45deg)
+  transform translate3d(100px, -100px, 0) rotate(-45deg)
   &:before
     display block
     content ""
@@ -217,19 +225,41 @@ json('../../js/configurations/animation.json');
     background-color rgba(255, 255, 255, 0.2)
     transition all menu-close_trigger_bar_before cubic-bezier(0.55, 0, 0.1, 1)
   &.left
-    transform translateX(100px) translateY(-100px) rotate(-45deg)
+    transform translate3d(100px, -100px, 0) rotate(-45deg)
   &.right
-    transform translateX(-100px) translateY(-100px) rotate(45deg)
+    transform translate3d(-100px, -100px, 0) rotate(45deg)
     top -3px
     transition all menu-close_trigger_bar_right cubic-bezier(0, 0.46, 0.36, 0.96) menu-close_trigger_bar_right_delay
 
++media-query(only screen, max-width $large)
+  .menu-bg
+    flex 0 0 350px
+    &.middle
+      flex 0 0 350px
+  .menu-list
+    flex-direction column
+    align-items flex-start
+    padding 0 30%
 
++media-query(only screen, max-width $medium)
+  .main-greeting
+    size 300px 100px
+    .logo-title
+      font-size 35px
+  .header
+    padding 25px
+    padding-bottom 0
+    .menu-toggle
+      size 35px 35px
 
-+media-query(only screen, max-height 700px)
-  #back
-   size 120px
++media-query(only screen, max-width $small)
+  .main-greeting
+    size 260px 100px
+    .logo-title
+      font-size 30px
+  .menu-bg
+    flex 0 0 300px
+    &.middle
+      flex 0 0 300px 
 
-+media-query(only screen, max-width $mobileWidth)
-  #back
-   size 120px
 

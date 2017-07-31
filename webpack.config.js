@@ -23,7 +23,7 @@ const config = {
         index: ['./js/index']
     },
     output: {
-        publicPath: isProd ? '/www/' : '/',
+        publicPath: '/',
         path: path.join(__dirname, "www"),
         filename: !isProd ? 'js/[name].js' : 'js/[name].min.js',
         chunkFilename: !isProd ? 'js/[id].chunk.js' : 'js/[id].chunk.min.js'
@@ -47,7 +47,7 @@ const config = {
             test: /\.(ttf|otf|eot|woff|woff2)$/,
             loader: 'file-loader?name=[path][name].[ext]?[hash]'
         }, {
-            test: /\.(png)$/,
+            test: /\.png$/,
             loader: 'file-loader?name=[path][name].[ext]?[hash]'
         }]
     },

@@ -4,7 +4,8 @@
         "fading_delay": "800ms",
         "background": "30000ms",
         "logo_changing": "800ms",
-        "logo_drawer": "5000ms"
+        "logo_drawer": "5000ms",
+        "logo_drawer_delay": "500ms"
     },
     "logo": {
         "glowing": "1000ms"

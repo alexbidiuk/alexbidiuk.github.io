@@ -6,20 +6,20 @@
     display flex
     justify-content center
     flex-wrap wrap
-    padding 0 5%
+    padding 20px 5%
     .form-wrapper
       display flex
       justify-content center
       flex-wrap wrap
       flex 0 0 100%
     .contact-content-item
-      padding 0 20px
+      margin 0 20px
+      font-size 18px
       &.contact-info
         display flex
         flex-direction column
         justify-content space-between
-        padding 18px 20px
-        font-size 18px
+        padding 18px 27px
         line-height 22px
         letter-spacing 1px
         align-content center
@@ -66,7 +66,7 @@
         box-sizing border-box
   input
   textarea
-    font-size 18px
+    font-size inherit
     font-weight 300
     padding 18px 27px
     box-sizing border-box
@@ -149,7 +149,7 @@
     padding 0 0 0 27px
     outline none
     text-align left
-    font-size 18px
+    font-size inherit
     font-weight 600
     letter-spacing 3px
     text-transform uppercase
@@ -237,33 +237,38 @@
       margin 0 5px 0 1px
       fill $turquoise
 
-+media-query(only screen, max-width $mobileWidth)
++media-query(only screen, max-width $x_large)
   #contacts
+    .page-content
+      .contact-content-item
+        margin 0
+        &.message-form
+          flex 0 0 400px
 
-      .facebook
-        absolute 0 false false 0
-      .twitter
-        absolute 0 false false 120px
-      .slack
-        absolute 0 false false 240px
-      .reddit
-        absolute 61px false false 60px
-      .github
-        absolute 61px false false 180px
-      .btt
-        absolute 122px false false 120px
-      .nodio
-        absolute false 0 0
-        text-align center
-        margin 0 auto
-
-+media-query(only screen, max-width 480px)
++media-query(only screen, max-width $large)
   #contacts
-    button
-      .full
-        display none
-      .mobile
-        display inline
+    .page-content
+      .form-wrapper
+        display inline-flex
+        .contact-content-item
+          margin 0 20px
+          flex 0 1 450px
+          box-sizing border-box
+
+
++media-query(only screen, max-width $medium)
+  #contacts
+    .page-content
+      .contact-content-item
+        font-size 15px
+
+
++media-query(only screen, max-width $small)
+  #contacts
+    .page-content
+      .form-wrapper
+        .contact-content-item
+          flex 0 0 250px
 
 +media-query(only screen, max-width 380px)
     #contacts

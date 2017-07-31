@@ -1,0 +1,16 @@
+- var portfolio_routes = require('../../js/configurations/portfolio_routes');
+#portfolio.page(data-title="portfolio")
+    section.page-content
+        .portfolio-item-wrapper
+            each val, index in portfolio_routes
+                a.portfolio-item(href=val,data-text=index)=index
+                    div(id=index).page
+                        header.header.page-header
+                            h1.header-title The Nodio
+                            p.header-text Page in modern style with smart-grid.
+                        section.page-content
+
+
+
+
+
