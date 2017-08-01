@@ -16,9 +16,15 @@ module.exports = class Menu {
         this.elements_length = this.elements.length;
         this.links = document.querySelectorAll('.menu-link');
         this.links_length = this.links.length;
-
+        this.porfolio_links = document.querySelectorAll('.portfolio-item');
+        this.porfolio_links_length = this.porfolio_links.length;
         for (let i = this.links_length - 1; i >= 0; i--) {
             this.links[i].addEventListener('click', this.selectItemHandler.bind(this), false);
+            // this.links[i].addEventListener('mouseenter', this.mouseEnterHandler.bind(this), false);
+            // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
+        }
+        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
+            this.porfolio_links[i].addEventListener('click', this.selectItemHandler.bind(this), false);
             // this.links[i].addEventListener('mouseenter', this.mouseEnterHandler.bind(this), false);
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
@@ -65,14 +71,16 @@ module.exports = class Menu {
     selectItemHandler(event) {
         event.preventDefault();
         let page = event.currentTarget.getAttribute('href');
-            let event_detail = {
-                detail: {
-                    page: page,
-                    source: 'menu'
-                }
-            };
-            this.toggleMenu();
-            document.dispatchEvent(new CustomEvent('change_page', event_detail));
+        let pageFilter = page.split('-');
+        pageFilter.length <= 1 ? this.toggleMenu() : page = '#' + pageFilter[1];
+        console.log(page)
+        let event_detail = {
+            detail: {
+                page: page,
+                source: 'menu'
+            }
+        };
+        document.dispatchEvent(new CustomEvent('change_page', event_detail));
     }
 
     selectItemAction(event) {

@@ -1,10 +1,10 @@
 let portfolio_routes = {
-    itv: '#itv',
-    unitick: '#unitick',
-    nodio: '#nodio',
-    itvsystems: '#itvsystems',
-    hi: '#hi',
-    bye: '#bye'
+    itv: '#portfolio-itv',
+    unitick: '#portfolio-unitick',
+    nodio: '#portfolio-nodio',
+    itvsystems: '#portfolio-itvsystems',
+    hi: '#portfolio-hi',
+    bye: '#portfolio-bye'
 };
 
 module.exports = portfolio_routes;

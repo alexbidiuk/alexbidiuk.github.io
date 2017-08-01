@@ -7,10 +7,10 @@ module.exports = class Next {
       this.next_links[i].addEventListener('click', ()=> {this.pageHandler(true);});
     }
     document.addEventListener('change_page_key', this.keyHandler.bind(this));
-    window.addEventListener('scroll', this.scrollHandler());
-    window.addEventListener('touchstart', (event)=> this.touchstartHandler(event));
+    // window.addEventListener('scroll', this.scrollHandler());
+    // window.addEventListener('touchstart', (event)=> this.touchstartHandler(event));
     window.addEventListener('touchmove', (event)=> this.touchmoveHandler(event));
-    this.setMousewheelHandler();
+    // this.setMousewheelHandler();
     this.ready_prev = true;
     this.ready_next = false;
     this.touch_start = null;
@@ -80,49 +80,49 @@ module.exports = class Next {
       document.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
     }
   }
-  mousewheelHandler(event) {
-    this.scrollHandler();
-    let delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
-    if(this.ready_prev || this.ready_next) {
-      this.switchHandler(delta);
-    }
-  }
+  // mousewheelHandler(event) {
+  //   this.scrollHandler();
+  //   let delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+  //   if(this.ready_prev || this.ready_next) {
+  //     this.switchHandler(delta);
+  //   }
+  // }
   keyHandler(event) {
     let direction = event.detail.direction;
     this.switchHandler(direction);
   }
-  scrollHandler() {
-    let scroll = document.querySelector('body > .gm-scroll-view');
-    let scroll_position = window.pageYOffset || document.documentElement.scrollTop;
-    if(!scroll) {
-      scroll = document.querySelector('body');
-    }
-    else {
-      scroll_position = scroll.scrollTop;
-    }
-    let scrollHeight = scroll.scrollHeight;
-    let offsetHeight  = scroll.offsetHeight ;
-    if(scroll_position == 0) {
-      this.ready_prev = true;
-    }
-    else {
-      this.ready_prev = false;
-    }
-    if(scroll_position + offsetHeight === scrollHeight) {
-      this.ready_next = true;
-    }
-    else {
-      this.ready_next = false;
-    }
-  }
-  touchstartHandler(event) {
-    if(this.ready_next || this.ready_prev) {
-      this.touch_start = event.touches[0].pageY;
-    }
-    else {
-      this.touch_start = null;
-    }
-  }
+  // scrollHandler() {
+  //   let scroll = document.querySelector('body > .gm-scroll-view');
+  //   let scroll_position = window.pageYOffset || document.documentElement.scrollTop;
+  //   if(!scroll) {
+  //     scroll = document.querySelector('body');
+  //   }
+  //   else {
+  //     scroll_position = scroll.scrollTop;
+  //   }
+  //   let scrollHeight = scroll.scrollHeight;
+  //   let offsetHeight  = scroll.offsetHeight ;
+  //   if(scroll_position == 0) {
+  //     this.ready_prev = true;
+  //   }
+  //   else {
+  //     this.ready_prev = false;
+  //   }
+  //   if(scroll_position + offsetHeight === scrollHeight) {
+  //     this.ready_next = true;
+  //   }
+  //   else {
+  //     this.ready_next = false;
+  //   }
+  // }
+  // touchstartHandler(event) {
+  //   if(this.ready_next || this.ready_prev) {
+  //     this.touch_start = event.touches[0].pageY;
+  //   }
+  //   else {
+  //     this.touch_start = null;
+  //   }
+  // }
   touchmoveHandler(event) {
     if(this.touch_start && (this.ready_next || this.ready_prev)) {
       let move = this.touch_start - event.touches[0].pageY;

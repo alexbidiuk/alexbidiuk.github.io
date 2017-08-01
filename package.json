@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "css-loader": "^0.26.1",
+    "matrix-3d": "^0.1.0",
     "style-loader": "^0.13.1",
     "stylus-loader": "^2.4.0"
   }
