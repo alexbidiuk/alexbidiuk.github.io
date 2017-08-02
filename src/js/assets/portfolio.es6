@@ -2,13 +2,13 @@
 // let print_config = require('../configurations/print');
 let Animate = require('./animate');
 module.exports = class Portfolio {
-    constructor(elem_per_page = 4) {
+    constructor(elem_per_page = 3) {
         this.elements = document.querySelectorAll('.portfolio-item');
         this.portfolio_scrolling = document.querySelector('.portfolio-scrolling-block');
         this.elements_count_perpage = elem_per_page;
         this.elements_actual_count = this.elements.length;
         this.elements_width = this.elementWidthCalculate();
-        this.scroll_step = this.elements_width * 2;
+        this.scroll_step = this.elements_width;
         this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
 
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {

@@ -1,7 +1,7 @@
 /* Router module */
 let Menu = require('./menu');
 let History = require('./history');
-// let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
+let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let routerConfig = require('../../js/configurations/router');
 module.exports = class Router {
   constructor() {
@@ -15,7 +15,7 @@ module.exports = class Router {
     this.pages_length = this.pages.length;
 
     this.pagesWrap = document.querySelector('.pages');
-    // this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
+    this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
 
     document.addEventListener('change_page', this.changePage.bind(this));
 
@@ -54,7 +54,7 @@ module.exports = class Router {
     };
     document.dispatchEvent(new CustomEvent('set_navigation', event_detail));
     document.querySelector(this.active).classList.add('show');
-    // this.scrollbar.update();
+    this.scrollbar.update();
   }
 
   hidePages() {

@@ -8,11 +8,20 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     overflow hidden
   .portfolio-items-wrapper
     absolute 0 false false 0
-    height 10000vh
-    width 10000vw
+    height 10000px
+    width 10000px
     transform-origin left center
     transform translate3d(0, -50%, 0) rotate(45deg)
     overflow hidden
+  // .portfolio-title
+  //     flex 1 1 auto
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  // .portfolio-title-text
+  //   color $white
+  //   font-size 24px
+  //   text-shadow 0px 0px 4px $white
   .portfolio-scrolling-block
     display flex
     flex-wrap nowrap
@@ -29,16 +38,16 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     border-right 1px solid $purple
     .portfolio-item-title
       absolute 50% false false 50%
-      transform translate3d(-50%, -50%, 0) rotate(-45deg)
+      transform translate3d(-50%, 0, 0) rotate(-45deg)
       color $white
       font-size 24px
       text-shadow 0px 0px 4px $white
-    &:first-child
-      .portfolio-item-title
-        transform translate3d(100px,  270px, 0) rotate(-45deg)
-    &:last-child
-      .portfolio-item-title
-        transform translate3d(-140px, -430px, 0) rotate(-45deg)
+    // &:first-child
+    //   .portfolio-item-title
+    //     transform translate3d(100px,  270px, 0)
+    // &:last-child
+    //   .portfolio-item-title
+    //     transform translate3d(-140px, -430px, 0)
 
 for val, key in portfolio_routes
   #portfolio
