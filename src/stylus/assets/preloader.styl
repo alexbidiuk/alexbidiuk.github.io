@@ -2,20 +2,17 @@
 json('../../js/configurations/animation.json');
 
 .logo.preloader-logo
-    transform translate3d(-50%, -50%,0) scale3d(1.6,1.6,1.6)
     stroke-dasharray 1000
     stroke-dashoffset 1000
     animation dash preloader-logo_drawer ease-in-out forwards preloader-logo_drawer_delay,
-                neon logo-glowing ease-in-out infinite alternate
-
+    neon logo-glowing ease-in-out infinite alternate
+    transform translate3d(-50%, -50%,0) scale3d(1.6,1.6,1.6)
     transition all preloader-logo_changing ease-in-out
     overflow visible
 .preloader
     position absolute
     opacity 1
     visibility visible
-    opacity 0 //for dev
-    visibility hidden //for dev
     top 0
     left 0
     right 0

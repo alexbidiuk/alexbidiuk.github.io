@@ -27,5 +27,8 @@
         "close_trigger_bar_before": "300ms",
         "close_trigger_bar_right": "500ms",
         "close_trigger_bar_right_delay": "100ms"
+    },
+    "pages": {
+        "in_out": "500ms"
     }
 }

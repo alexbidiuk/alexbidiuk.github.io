@@ -5,15 +5,6 @@ require('./utilities/ie_fixes');
     'use strict';
     let initialize = function () {
 
-
-        // let Logger = require('./utilities/logger');
-        // new Logger();
-
-        // let Vivus = require('./lib/vivus.min.js');
-
-        // new Vivus('creato-logo', {duration: 300, delay: 100});
-
-
         // let ImageHover = require('./assets/image_hover');
         // new ImageHover('#hoverable', '.hover-1');
         // console.log('ImageHover')
@@ -30,31 +21,19 @@ require('./utilities/ie_fixes');
         // new Next();
         // console.log('Next')
 
-        let Router = require('./assets/router');
-        new Router();
-
         let Preloader = require('./assets/preloader');
         new Preloader();
 
         let WebglAnim = require('./assets/webglAnim');
         new WebglAnim();
 
+        let Router = require('./assets/router');
+        new Router();
+
         let Portfolio = require('./assets/portfolio');
+        // can receive argument of a count of portfolio items(integer) by default it equals 4
         new Portfolio();
 
-
-        //
-        // var menu_toggle = document.querySelectorAll('.menu-toggle')[0],
-        //     menu_close = document.querySelectorAll('.menu-trigger')[0],
-        //     menu_open = document.querySelectorAll('.close-trigger')[0],
-        //     menu = document.querySelectorAll('.menu')[0];
-        //
-        // menu_toggle.addEventListener('click', function (e) {
-        //     menu_open.classList.toggle('is-active');
-        //     menu_close.classList.toggle('is-active');
-        //     menu.classList.toggle('is-active');
-        //     abstractionStop();
-        // });
 
     };
     document.addEventListener('DOMContentLoaded', initialize);

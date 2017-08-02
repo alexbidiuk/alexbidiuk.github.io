@@ -12,38 +12,34 @@
         padding 0 20px
         font-size 16px
         line-height 1.5
-        .data
-          text-align center
-          .circle
-            position relative
-            margin 20px
-            size 250px 250px
-            border-radius 50%
-            overflow hidden
-            .circle-border
-              absolute 50% false false 50%
-              fill none
-              stroke $white
-              stroke-dasharray 1000
-              stroke-dashoffset 1000
-              transform translate(-50%, -50%)
-              //animation contact-dash 10s ease-in-out
-              &:hover
-                animation dash 1.5s ease-in
-            .photo
-              display block
-              size 100% 100%
-              object-fit cover
-              &:hover
-                animation border 2s ease 1 forwards
-          .position
-             font-size 14px
+      .data
+        text-align center
+      .circle
+        position relative
+        margin 20px
+        size 250px 250px
+        border-radius 50%
+        overflow hidden
+      .circle-border
+        absolute 50% false false 50%
+        fill none
+        stroke $white
+        stroke-dasharray 1000
+        stroke-dashoffset 1000
+        transform translate(-50%, -50%)
+        &:hover
+          animation dash 1.5s ease-in
+      .photo
+        display block
+        size 100% 100%
+        object-fit cover
+        &:hover
+          animation border 2s ease forwards
+      .position
+        font-size 14px
 
 +media-query(only screen, max-width $medium)
   #team
-    .page-content
-      .persons
-        .person
-          .data
-            .circle
-              size 200px
+    persons
+      .circle
+        size 200px
