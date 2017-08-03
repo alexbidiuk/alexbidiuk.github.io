@@ -3,15 +3,17 @@
     section.page-content
         .portfolio-items-wrapper
             .portfolio-scrolling-block
-                each val, index in portfolio_routes
-                    a.portfolio-item(href=val, id=val, data-text=index)=index
-                        .portfolio-item-title=index
-                        div(id=index).page
-                            header.header.page-header
-                                h1.header-title The Nodio
-                                p.header-text Page with modern style and smart-grid.
-                            section.page-content
+                each val, key in portfolio_routes
+                    a.portfolio-item(href=val, id=val, data-text=key)
+                        .portfolio-item-text=key
 
+        .portfolio-pages-wrapper
+            each val, key in portfolio_routes
+                div(id=key).page
+                    header.header.page-header
+                        h1.header-title The Nodio
+                        p.header-text Page with modern style and smart-grid.
+                    section.page-content
 
 
 

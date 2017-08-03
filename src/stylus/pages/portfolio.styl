@@ -4,24 +4,17 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
 #portfolio
   .page-content
     position: relative
-    overflow-x auto
     overflow hidden
+  .portfolio-pages-wrapper
+    absolute 0
+    size 100vw 100vh
+    z-index -1
   .portfolio-items-wrapper
     absolute 0 false false 0
     height 10000px
     width 10000px
     transform-origin left center
-    transform translate3d(0, -50%, 0) rotate(45deg)
     overflow hidden
-  // .portfolio-title
-  //     flex 1 1 auto
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  // .portfolio-title-text
-  //   color $white
-  //   font-size 24px
-  //   text-shadow 0px 0px 4px $white
   .portfolio-scrolling-block
     display flex
     flex-wrap nowrap
@@ -30,24 +23,32 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     transform-origin left center
     will-change transform
   .portfolio-item
-    display block
+    display flex
+    align-items: center;
+    justify-content: center;
     position relative
     height 100%
     overflow hidden
     border-left 1px solid $purple
     border-right 1px solid $purple
-    .portfolio-item-title
-      absolute 50% false false 50%
-      transform translate3d(-50%, 0, 0) rotate(-45deg)
+    .portfolio-item-text
+      relative false
       color $white
-      font-size 24px
+      font-size 26px
       text-shadow 0px 0px 4px $white
-    // &:first-child
-    //   .portfolio-item-title
-    //     transform translate3d(100px,  270px, 0)
-    // &:last-child
-    //   .portfolio-item-title
-    //     transform translate3d(-140px, -430px, 0)
+    &#go_back
+      cursor pointer
+      &
+        .portfolio-item-text:after
+          display: block
+          content ''
+          size 20% 100%
+          margin-right 10px
+          absolute 0 100% false false
+          transform rotate(180deg)
+          background url("/images/double-arrow.svg") no-repeat center center;
+          background-size cover
+
 
 for val, key in portfolio_routes
   #portfolio
@@ -59,6 +60,6 @@ for val, key in portfolio_routes
         content ''
         size 1000vmax
         background-size cover
-        z-index -1
-        background s('url(%s)', '/images/portfolio/' + val + '.png') no-repeat 50% center
+        z-index -2
+        //background s('url(%s)', '/images/portfolio/' + val + '.png') no-repeat 50% center
 

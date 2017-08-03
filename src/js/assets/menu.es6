@@ -24,6 +24,7 @@ module.exports = class Menu {
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
         for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
+            if(this.porfolio_links[i].id == 'go_back') { continue; }
             this.porfolio_links[i].addEventListener('click', this.selectItemHandler.bind(this), false);
             // this.links[i].addEventListener('mouseenter', this.mouseEnterHandler.bind(this), false);
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
@@ -72,8 +73,11 @@ module.exports = class Menu {
         event.preventDefault();
         let page = event.currentTarget.getAttribute('href');
         let pageFilter = page.split('-');
-        pageFilter.length <= 1 ? this.toggleMenu() : page = '#' + pageFilter[1];
-        console.log(page)
+        if (pageFilter.length > 1) {
+            page = '#' + pageFilter[1];
+        } else {
+            this.toggleMenu()
+        }
         let event_detail = {
             detail: {
                 page: page,

@@ -3,34 +3,53 @@
 let Animate = require('./animate');
 module.exports = class Portfolio {
     constructor(elem_per_page = 3) {
+        this.portfolio_page = document.querySelector('#portfolio');
+        this.go_back_link = document.querySelector('#go_back');
+        console.log(this.go_back_link)
+        this.go_back_link.addEventListener('click', this.setInitialTranslate.bind(this), false);
         this.elements = document.querySelectorAll('.portfolio-item');
+        this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
+        this.elements_wrapper.setAttribute('style', `transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
+
         this.portfolio_scrolling = document.querySelector('.portfolio-scrolling-block');
         this.elements_count_perpage = elem_per_page;
         this.elements_actual_count = this.elements.length;
         this.elements_width = this.elementWidthCalculate();
         this.scroll_step = this.elements_width;
-        this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
 
+        this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {
             this.elements[i].setAttribute('style', `flex: 0 0 ${this.elements_width}px`);
         }
-        window.addEventListener('touchstart', (event) => this.touchstartHandler(event));
-        window.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.delta = 0;
-        this.touching = false;
         this.isTransitioning = false;
         this.lastScrollWorking = new Date().getTime();
         this.currTranslateX = 0;
         this.touch_start = null;
         this.touch_event = null;
-        this.touch_move_step = 40;
         this.setMousewheelHandler();
+        window.addEventListener('set_portfolio', () => this.setPortfolioPage());
+        window.addEventListener('touchstart', (event) => this.touchstartHandler(event));
+        window.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
+    }
+    radToDeg(rad) {
+        return rad / Math.PI * 180;
     }
 
+    angleofRotateCalculate() {
+        let rad = Math.atan(window.innerHeight/window.innerWidth);
+        return this.radToDeg(rad);
+    }
     elementWidthCalculate() {
+        return Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
+    }
+
+    diagonalLengthCalculate() {
         let pyth = (window.innerWidth * window.innerWidth) + (window.innerHeight * window.innerHeight);
-        let diagonal = Math.round(Math.sqrt(pyth));
-        return Math.round(diagonal / this.elements_count_perpage);
+        return Math.round(Math.sqrt(pyth));
+    }
+    setPortfolioPage() {
+        this.portfolio_page.classList.add('show');
     }
 
     setMousewheelHandler() {
@@ -73,6 +92,15 @@ module.exports = class Portfolio {
         return trigger;
     }
 
+    animationStart(timeFunc, drawFunc, callback=() => {}) {
+        new Animate({
+            duration: 900,
+            timing: (timeFraction) => timeFunc(timeFraction),
+            draw: (progress) => drawFunc(progress),
+            callbackFunction: () => callback()
+        });
+    }
+
     touchstartHandler(event) {
         this.touching = true;
         this.touch_start = event.touches[0].pageY;
@@ -95,27 +123,41 @@ module.exports = class Portfolio {
     scrollHandler() {
         if (this.checkTransitionCoordinate() && !this.isTransitioning) {
             this.isTransitioning = true;
-            new Animate({
-                duration: 900,
-                timing: (timeFraction) => this.timeFunc(timeFraction),
-                draw: (progress) => this.changeScroll(progress),
-                callbackFunction: () => this.scrollAnimCallback()
-            });
+            this.animationStart(this.timeFunc, this.changeScroll.bind(this), this.scrollAnimCallback.bind(this));
         }
+    }
+
+    setInitialTranslate(e) {
+        e.preventDefault();
+        if (!this.isTransitioning) {
+            this.animationStart(this.timeFunc, this.setInitialScroll.bind(this), this.scrollAnimToInitialCallback.bind(this));
+        }
+    }
+
+    setInitialScroll(progress) {
+        let translatingX = this.currTranslateX - progress*this.currTranslateX ;
+        this.animationTransformApply(this.portfolio_scrolling, translatingX);
     }
 
     changeScroll(progress) {
         let translatingX = progress * this.scroll_step * this.delta + this.currTranslateX;
-        let t = `matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,${translatingX},0,0,1)`;
-        let s = this.portfolio_scrolling.style;
-        s["transform"] = t;
-        s["webkitTransform"] = t;
-        s["mozTransform"] = t;
-        s["msTransform"] = t;
+        this.animationTransformApply(this.portfolio_scrolling, translatingX);
+    }
+
+    animationTransformApply(elem, translatingX) {
+        let val = `matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,${translatingX},0,0,1)`;
+        elem.style["transform"] = val;
+        elem.style["webkitTransform"] = val;
+        elem.style["mozTransform"] = val;
+        elem.style["msTransform"] = val;
     }
 
     scrollAnimCallback() {
         this.currTranslateX += this.scroll_step * this.delta;
+        this.isTransitioning = false;
+    }
+    scrollAnimToInitialCallback() {
+        this.currTranslateX = 0;
         this.isTransitioning = false;
     }
 
