@@ -62,6 +62,13 @@ module.exports = class Router {
       this.pages[i].classList.remove('show');
     }
   }
+  checkSubpaging(page) {
+      if(page.split('-').length > 1) {
+          document.querySelector(page.split('-')[0]).classList.add('show');
+          document.querySelector(page.split('-')[0] + ' .portfolio-items-wrapper').classList.add('hide');
+      }
+      page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
+  }
 
   changePage(event) {
     // let page = event.detail.page;
@@ -72,6 +79,7 @@ module.exports = class Router {
     this.active = page;
     // this.active = this.checkPage(page);
     this.hidePages();
+    this.checkSubpaging(page);
     this.setPage();
   }
 

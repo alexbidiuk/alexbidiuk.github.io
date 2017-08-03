@@ -84,7 +84,7 @@
     +placeholder()
       color $white-20
       opacity 1 !important
-    &:hover
+    .no-touch &:hover
     &:focus
       border-color $white
       background-color transparent
@@ -108,7 +108,7 @@
     color $white
     border 1px solid $white
     transition border-color 0.2s linear
-    &:hover
+    .no-touch &:hover
       border-color $white-50
       color $white-50
 
@@ -197,7 +197,7 @@
         margin auto
         absolute 0 false 0 61px
         background-color $contacts-button-border-color
-      &:hover
+      .no-touch &:hover
         fill $turquoise
       &:last-of-type:before
         content ''
@@ -217,16 +217,7 @@
           absolute 0 false 0 0
           z-index 0
           size 120px 61px
-    .nodio
-      margin-left 8px
-      display inline-block
-      vertical-align middle
-      span
-        font-size 16px
-        font-weight 300
-        transition text-shadow 0.3s linear
-        &:hover
-          text-shadow 0 0 2px $white
+
   .links
     margin-top 27px
     padding 10px 0 20px 7px

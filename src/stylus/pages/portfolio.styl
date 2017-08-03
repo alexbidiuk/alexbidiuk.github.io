@@ -15,6 +15,11 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     width 10000px
     transform-origin left center
     overflow hidden
+    transition opacity pages-in_out cubic-bezier(0.250, 0.250, 0.750, 0.750),
+                visibility 0s linear
+    &.hide
+      visibility hidden
+      opacity 0
   .portfolio-scrolling-block
     display flex
     flex-wrap nowrap
@@ -43,7 +48,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
           display: block
           content ''
           size 20% 100%
-          margin-right 10px
+          margin 2px 10px 0 0
           absolute 0 100% false false
           transform rotate(180deg)
           background url("/images/double-arrow.svg") no-repeat center center;

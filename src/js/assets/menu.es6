@@ -72,12 +72,8 @@ module.exports = class Menu {
     selectItemHandler(event) {
         event.preventDefault();
         let page = event.currentTarget.getAttribute('href');
-        let pageFilter = page.split('-');
-        if (pageFilter.length > 1) {
-            page = '#' + pageFilter[1];
-        } else {
-            this.toggleMenu()
-        }
+        (page.split('-').length <= 1) && this.toggleMenu();
+        console.log(page)
         let event_detail = {
             detail: {
                 page: page,
