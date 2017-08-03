@@ -167,7 +167,7 @@ json('../../js/configurations/animation.json');
 .close-trigger
   z-index 5
   margin-top -20px
-  transition opacity  menu-close_trigger linear
+  transition opacity menu-close_trigger linear
   &.is-active
     .close-trigger-bar
       &.left
@@ -207,7 +207,7 @@ json('../../js/configurations/animation.json');
   height 4px
   background-color #fff
   position relative
-  transition all menu-close_trigger_bar cubic-bezier(0, 0.46, 0.36, 0.96)
+  transition all menu-close_trigger_bar cubic-bezier(0.02, 0.76, 0.85, 0.93)
   &:before
     content ""
     position absolute
@@ -223,11 +223,10 @@ json('../../js/configurations/animation.json');
   &.right
     transform translate3d(-100px, -100px, 0) rotate(45deg)
     top -3px
-    transition all menu-close_trigger_bar_right cubic-bezier(0, 0.46, 0.36, 0.96) menu-close_trigger_bar_right_delay
 
 +media-query(only screen, max-width $large)
   .menu-bg
-    flex 0 0 350px
+    flex 0 0 460px
     &.middle
       flex 0 0 350px
   .menu-list

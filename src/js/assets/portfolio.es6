@@ -3,6 +3,8 @@
 let Animate = require('./animate');
 module.exports = class Portfolio {
     constructor(elem_per_page = 3) {
+        this.go_back_link = document.querySelector('#go_back');
+        this.go_back_link.addEventListener('click', (e) => this.setInitialTranslate(e));
         this.portfolio_page = document.querySelector('#portfolio');
         this.elements = document.querySelectorAll('.portfolio-item');
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
@@ -25,8 +27,6 @@ module.exports = class Portfolio {
         this.touch_start = null;
         this.touch_event = null;
         this.setMousewheelHandler();
-        window.addEventListener('initial_scroll', this.setInitialTranslate.bind(this), false);
-        window.addEventListener('set_portfolio', () => this.setPortfolioPage());
         window.addEventListener('touchstart', (event) => this.touchstartHandler(event));
         window.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
     }

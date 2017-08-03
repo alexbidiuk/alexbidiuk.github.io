@@ -9,7 +9,9 @@ module.exports = class WebglAnim {
         this.mouseX = 0;
         this.mouseY = 0;
         this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 10000);
-        this.camera.position.z = 100;
+        this.camera.position.z = 200;
+        this.camera.position.x = 600;
+        this.camera.position.y = 600;
         this.scene = new THREE.Scene();
         this.renderer = new THREE.CanvasRenderer({ alpha: true });
         this.renderer.setPixelRatio(window.devicePixelRatio);

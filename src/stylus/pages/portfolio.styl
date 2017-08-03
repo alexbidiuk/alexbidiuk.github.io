@@ -3,11 +3,11 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
 /* Porttfolio styles */
 #portfolio
   .page-content
-    position: relative
+    position relative
     overflow hidden
   .portfolio-pages-wrapper
     absolute 0
-    size 100vw 100vh
+    size 100%
     z-index -1
   .portfolio-items-wrapper
     absolute 0 false false 0
@@ -15,6 +15,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     width 10000px
     transform-origin left center
     overflow hidden
+    z-index 1300
     transition opacity pages-in_out cubic-bezier(0.250, 0.250, 0.750, 0.750),
                 visibility 0s linear
     &.hide
@@ -36,19 +37,21 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     overflow hidden
     border-left 1px solid $purple
     border-right 1px solid $purple
+    cursor default
     .portfolio-item-text
       relative false
       color $white
       font-size 26px
       text-shadow 0px 0px 4px $white
+      cursor pointer
     &#go_back
       cursor pointer
       &
         .portfolio-item-text:after
           display: block
           content ''
-          size 20% 100%
-          margin 2px 10px 0 0
+          size 25px 100%
+          margin -3px 10px 0 0
           absolute 0 100% false false
           transform rotate(180deg)
           background url("/images/double-arrow.svg") no-repeat center center;
@@ -68,3 +71,7 @@ for val, key in portfolio_routes
         z-index -2
         //background s('url(%s)', '/images/portfolio/' + val + '.png') no-repeat 50% center
 
++media-query(only screen, max-width $medium)
+  .portfolio-item
+    .portfolio-item-text
+      font-size 18px
