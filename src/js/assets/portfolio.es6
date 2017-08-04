@@ -1,5 +1,6 @@
 /* Portfolio module */
 // let print_config = require('../configurations/print');
+let animationConfig = require('../configurations/animation.json');
 let Animate = require('./animate');
 module.exports = class Portfolio {
     constructor(elem_per_page = 3) {
@@ -8,14 +9,14 @@ module.exports = class Portfolio {
         this.portfolio_page = document.querySelector('#portfolio');
         this.elements = document.querySelectorAll('.portfolio-item');
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
-        this.elements_wrapper.setAttribute('style', `transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
+        this.leftWrapperX = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? 50 : 0;
+        this.elements_wrapper.setAttribute('style',  `left: ${this.leftWrapperX}%; transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
 
         this.portfolio_scrolling = document.querySelector('.portfolio-scrolling-block');
         this.elements_count_perpage = elem_per_page;
         this.elements_actual_count = this.elements.length;
         this.elements_width = this.elementWidthCalculate();
-        this.scroll_step = this.elements_width;
-
+        this.scroll_step = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? this.elements_width*2 : this.elements_width;
         this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {
             this.elements[i].setAttribute('style', `flex: 0 0 ${this.elements_width}px`);
@@ -33,17 +34,20 @@ module.exports = class Portfolio {
     radToDeg(rad) {
         return rad / Math.PI * 180;
     }
-
     angleofRotateCalculate() {
-        let rad = Math.atan(window.innerHeight/window.innerWidth);
-        return this.radToDeg(rad);
+        let rad = Math.atan(document.documentElement.clientHeight/document.documentElement.clientWidth);
+        let angle = this.radToDeg(rad);
+        if (window.innerWidth < 900) {
+            angle = 90;
+        };
+        return angle;
     }
     elementWidthCalculate() {
         return Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
     }
 
     diagonalLengthCalculate() {
-        let pyth = (window.innerWidth * window.innerWidth) + (window.innerHeight * window.innerHeight);
+        let pyth = (document.documentElement.clientWidth * document.documentElement.clientWidth) + (document.documentElement.clientHeight * document.documentElement.clientHeight);
         return Math.round(Math.sqrt(pyth));
     }
     setPortfolioPage() {
@@ -73,7 +77,7 @@ module.exports = class Portfolio {
     mousewheelHandler(event) {
         if (new Date().getTime() - this.lastScrollWorking >= 700 && !this.isTransitioning) {
             this.lastScrollWorking = new Date().getTime();
-            this.delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+            this.delta = Math.max(-1, Math.min(1, (-event.deltaY || -event.detail )));
             this.scrollHandler();
         }
     }
@@ -92,7 +96,7 @@ module.exports = class Portfolio {
 
     animationStart(timeFunc, drawFunc, callback=() => {}) {
         new Animate({
-            duration: 900,
+            duration: animationConfig.portfolio.scroll_duration,
             timing: (timeFraction) => timeFunc(timeFraction),
             draw: (progress) => drawFunc(progress),
             callbackFunction: () => callback()

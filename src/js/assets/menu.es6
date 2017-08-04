@@ -8,6 +8,8 @@ module.exports = class Menu {
         // this.timeout = 500;
         // this.active = null;
         // this.printing = null;
+        this.menu_bg_container = document.querySelector('.menu-bg-container');
+        this.menu_bg_container.setAttribute('style',  `transform: translate3d(-50%, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
         this.menu_toggle = document.querySelector('.menu-toggle');
         this.menu_close = document.querySelector('.menu-trigger');
         this.menu_open = document.querySelector('.close-trigger');
@@ -34,8 +36,12 @@ module.exports = class Menu {
         document.addEventListener('unset_menu', this.unsetMenu.bind(this));
     }
 
-    getCurrent() {
-        return this.active;
+    radToDeg(rad) {
+        return rad / Math.PI * 180;
+    }
+    angleofRotateCalculate() {
+        let rad = Math.atan(document.documentElement.clientHeight/document.documentElement.clientWidth);
+        return this.radToDeg(rad);
     }
     toggleMenu() {
         this.menu.classList.contains('is-active') ? this.unsetMenu() : this.setMenu();
@@ -45,7 +51,12 @@ module.exports = class Menu {
         this.menu.classList.add('is-active');
         this.menu_open.classList.toggle('is-active');
         this.menu_close.classList.toggle('is-active');
-        document.dispatchEvent(new CustomEvent('pause_webgl'));
+        let event_detail = {
+            detail: {
+                pause: true
+            }
+        };
+        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
     }
     unsetMenu() {
         this.menu.classList.remove('is-active');
@@ -53,7 +64,7 @@ module.exports = class Menu {
         this.menu_close.classList.toggle('is-active');
         let event_detail = {
             detail: {
-                state: false
+                pause: false
             }
         };
         document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));

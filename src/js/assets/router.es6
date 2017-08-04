@@ -35,12 +35,17 @@ module.exports = class Router {
     if(page == '/' || page == '#home') {
         let event_detail = {
             detail: {
-                state: false
+                pause: false
             }
         };
         document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
     } else {
-        document.dispatchEvent(new CustomEvent('pause_webgl'));
+        let event_detail = {
+            detail: {
+                pause: true
+            }
+        };
+        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
     }
     return page;
   }

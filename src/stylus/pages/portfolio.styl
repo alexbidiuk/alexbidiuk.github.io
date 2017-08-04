@@ -27,7 +27,6 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     overflow visible
     size 100%
     transform-origin left center
-    will-change transform
   .portfolio-item
     display flex
     align-items: center;
@@ -51,7 +50,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
           display: block
           content ''
           size 25px 100%
-          margin -3px 10px 0 0
+          margin 3% 10px 0 0
           absolute 0 100% false false
           transform rotate(180deg)
           background url("/images/double-arrow.svg") no-repeat center center;
@@ -70,8 +69,14 @@ for val, key in portfolio_routes
         background-size cover
         z-index -2
         //background s('url(%s)', '/images/portfolio/' + val + '.png') no-repeat 50% center
++media-query(only screen, max-width $large)
+  #portfolio
+    .portfolio-item
+      .portfolio-item-text
+        transform rotate(-90deg)
 
 +media-query(only screen, max-width $medium)
-  .portfolio-item
-    .portfolio-item-text
-      font-size 18px
+  #portfolio
+    .portfolio-item
+      .portfolio-item-text
+        font-size 18px

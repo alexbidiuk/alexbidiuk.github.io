@@ -1,6 +1,7 @@
 global.THREE = require('../lib/Three.js');
 require('../lib/Projector.js');
 require('../lib/CanvasRenderer.js');
+let OrbitControls = require('three-orbit-controls')(THREE);
 module.exports = class WebglAnim {
     constructor() {
         this.isPaused = false;
@@ -13,30 +14,42 @@ module.exports = class WebglAnim {
         this.camera.position.x = 600;
         this.camera.position.y = 600;
         this.scene = new THREE.Scene();
-        this.renderer = new THREE.CanvasRenderer({ alpha: true });
+        this.renderer = new THREE.CanvasRenderer({alpha: true});
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.container.appendChild(this.renderer.domElement);
+        this.controls = new OrbitControls( this.camera );
         this.windowHalfX = window.innerWidth / 2;
         this.windowHalfY = window.innerHeight / 2;
-        document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
         document.addEventListener('pause_webgl', this.pause.bind(this));
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
+        document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
+        document.addEventListener( 'touchstart', this.onDocumentTouchStart.bind(this), false );
+        document.addEventListener( 'touchmove', this.onDocumentTouchMove.bind(this), false );
+
         this.drawAbstraction();
         this.start();
     }
+
     pause(event) {
-        this.isPaused = event.detail===null ? true : false;
+        this.isPaused = event.detail.pause ? true : false;
+        this.controls.enabled = event.detail.pause ? false : true;
     }
 
     drawAbstraction() {
         let points = this.pointDrawer();
         this.lineDrawer(points);
     }
+
     lineDrawer(pointsGeometry) {
-        let line = new THREE.Line(pointsGeometry, new THREE.LineBasicMaterial({ color: '#a75065', linewidth: 2, opacity: 1 }));
+        let line = new THREE.Line(pointsGeometry, new THREE.LineBasicMaterial({
+            color: '#a75065',
+            linewidth: 2,
+            opacity: 1
+        }));
         this.scene.add(line);
     }
+
     pointDrawer() {
         let PI2 = Math.PI * 2;
         let material = new THREE.SpriteCanvasMaterial({
@@ -66,6 +79,7 @@ module.exports = class WebglAnim {
         }
         return geometry;
     }
+
     requestAnimFrame() {
         return window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
@@ -74,6 +88,7 @@ module.exports = class WebglAnim {
                 window.setTimeout(callback, 1000 / 60);
             };
     }
+
     onWindowResize() {
 
         this.windowHalfX = window.innerWidth / 2;
@@ -90,6 +105,23 @@ module.exports = class WebglAnim {
         this.mouseX = (event.clientX - this.windowHalfX);
         this.mouseY = (event.clientY - this.windowHalfY);
     }
+
+    onDocumentTouchStart(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+            mouseX = event.touches[0].pageX - windowHalfX;
+            mouseY = event.touches[0].pageY - windowHalfY;
+        }
+    }
+
+    onDocumentTouchMove(event) {
+        if (event.touches.length == 1) {
+            event.preventDefault();
+            mouseX = event.touches[0].pageX - windowHalfX;
+            mouseY = event.touches[0].pageY - windowHalfY;
+        }
+    }
+
 
     start() {
         if (!this.isPaused) {

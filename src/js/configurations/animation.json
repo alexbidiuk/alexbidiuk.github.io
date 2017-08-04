@@ -1,4 +1,11 @@
 {
+    "viewport": {
+        "x_large": "1200px",
+        "large": "900px",
+        "medium": "700px",
+        "small": "400px",
+        "x_small": "320px"
+    },
     "preloader": {
         "fading": "550ms",
         "fading_delay": "800ms",
@@ -30,5 +37,8 @@
     },
     "pages": {
         "in_out": "500ms"
+    },
+    "portfolio": {
+        "scroll_duration": "900"
     }
 }

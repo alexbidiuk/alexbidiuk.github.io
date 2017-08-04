@@ -3,8 +3,8 @@ json('../../js/configurations/animation.json');
 
 .logo.preloader-logo
     opacity 0
-    stroke-dasharray 1000
-    stroke-dashoffset 1000
+    stroke-dasharray 1500
+    stroke-dashoffset 1500
     animation transitionLogo 0s linear forwards preloader-logo_drawer_delay,
                 dash preloader-logo_drawer ease-in-out forwards preloader-logo_drawer_delay,
                 neon logo-glowing ease-in-out infinite alternate
@@ -33,3 +33,8 @@ json('../../js/configurations/animation.json');
 +media-query(only screen, max-width $medium)
   .logo.preloader-logo
     transform translate3d(-50%, -50%, 0) scale3d(1.2,1.2,1.2)
+
+@supports (-ms-ime-align:auto)
+    .logo.preloader-logo
+        stroke-dashoffset 0
+
