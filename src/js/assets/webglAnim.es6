@@ -23,10 +23,9 @@ module.exports = class WebglAnim {
         this.windowHalfY = window.innerHeight / 2;
         document.addEventListener('pause_webgl', this.pause.bind(this));
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
-        document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
-        document.addEventListener( 'touchstart', this.onDocumentTouchStart.bind(this), false );
-        document.addEventListener( 'touchmove', this.onDocumentTouchMove.bind(this), false );
-
+        this.container.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
+        this.container.addEventListener( 'touchstart', this.onDocumentTouchStart.bind(this), false );
+        this.container.addEventListener( 'touchmove', this.onDocumentTouchMove.bind(this), false );
         this.drawAbstraction();
         this.start();
     }
@@ -34,6 +33,7 @@ module.exports = class WebglAnim {
     pause(event) {
         this.isPaused = event.detail.pause ? true : false;
         this.controls.enabled = event.detail.pause ? false : true;
+        
     }
 
     drawAbstraction() {
@@ -108,17 +108,15 @@ module.exports = class WebglAnim {
 
     onDocumentTouchStart(event) {
         if (event.touches.length > 1) {
-            event.preventDefault();
-            mouseX = event.touches[0].pageX - windowHalfX;
-            mouseY = event.touches[0].pageY - windowHalfY;
+            this.mouseX = event.touches[0].pageX - this.windowHalfX;
+            this.mouseY = event.touches[0].pageY - this.windowHalfY;
         }
     }
 
     onDocumentTouchMove(event) {
         if (event.touches.length == 1) {
-            event.preventDefault();
-            mouseX = event.touches[0].pageX - windowHalfX;
-            mouseY = event.touches[0].pageY - windowHalfY;
+            this.mouseX = event.touches[0].pageX - this.windowHalfX;
+            this.mouseY = event.touches[0].pageY - this.windowHalfY;
         }
     }
 
@@ -133,8 +131,9 @@ module.exports = class WebglAnim {
     render() {
         this.camera.position.x += (this.mouseX - this.camera.position.x) * .001;
         this.camera.position.y += (this.mouseY - this.camera.position.y) * .001;
-        this.camera.lookAt(this.scene.position);
 
+        this.camera.lookAt(this.scene.position);
+        
         this.renderer.render(this.scene, this.camera);
     }
 }

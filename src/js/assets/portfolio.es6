@@ -4,9 +4,9 @@ let animationConfig = require('../configurations/animation.json');
 let Animate = require('./animate');
 module.exports = class Portfolio {
     constructor(elem_per_page = 3) {
+        this.portfolio_page = document.querySelector('#portfolio');
         this.go_back_link = document.querySelector('#go_back');
         this.go_back_link.addEventListener('click', (e) => this.setInitialTranslate(e));
-        this.portfolio_page = document.querySelector('#portfolio');
         this.elements = document.querySelectorAll('.portfolio-item');
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
         this.leftWrapperX = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? 50 : 0;
@@ -27,9 +27,9 @@ module.exports = class Portfolio {
         this.currTranslateX = 0;
         this.touch_start = null;
         this.touch_event = null;
+        this.portfolio_page.addEventListener('touchstart', (event) => this.touchstartHandler(event));
+        this.portfolio_page.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.setMousewheelHandler();
-        window.addEventListener('touchstart', (event) => this.touchstartHandler(event));
-        window.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
     }
     radToDeg(rad) {
         return rad / Math.PI * 180;
@@ -37,13 +37,17 @@ module.exports = class Portfolio {
     angleofRotateCalculate() {
         let rad = Math.atan(document.documentElement.clientHeight/document.documentElement.clientWidth);
         let angle = this.radToDeg(rad);
-        if (window.innerWidth < 900) {
+        if (window.innerWidth < animationConfig.viewport.large.replace('px', '')) {
             angle = 90;
         };
         return angle;
     }
     elementWidthCalculate() {
-        return Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
+        let element_width = Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
+         if (window.innerWidth < animationConfig.viewport.large.replace('px', '')) {
+            element_width = Math.round(document.documentElement.clientHeight / this.elements_count_perpage);
+        };
+        return element_width;
     }
 
     diagonalLengthCalculate() {
