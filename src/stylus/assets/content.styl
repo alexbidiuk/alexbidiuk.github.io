@@ -128,7 +128,7 @@ json('../../js/configurations/animation.json');
     background-color #d1c5c8
     transform translate3d(-100%, -100%, 0)
   &.middle
-    flex 0 0 600px
+    flex 0 0 900px
     background-color #a48b91
     transform scale3d(0, 1, 1)
   &.bottom
@@ -160,14 +160,14 @@ json('../../js/configurations/animation.json');
       &:before
         width 100%
 .menu-trigger
-  margin-top 9px
+  margin-top 50%
   &.is-active
     .menu-trigger-bar
       transform translate3d(0, 0, 0) rotate(-45deg)
 
 .close-trigger
   z-index 5
-  margin-top -20px
+  margin-top -50%
   transition opacity menu-close_trigger linear
   &.is-active
     .close-trigger-bar
@@ -225,6 +225,11 @@ json('../../js/configurations/animation.json');
     transform translate3d(-100px, -100px, 0) rotate(45deg)
     top -3px
 
++media-query(only screen, max-width $xxl_large)
+  .menu-bg
+    &.middle
+      flex 0 0 600px
+
 +media-query(only screen, max-width $x_large)
   .menu-bg
     &.middle
@@ -249,7 +254,7 @@ json('../../js/configurations/animation.json');
     .menu-toggle
       size 35px 35px
     .menu-trigger
-      margin-top 1px
+      margin-top 25%
 
 +media-query(only screen, max-width $small)
   .main-greeting

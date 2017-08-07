@@ -1,5 +1,6 @@
 {
     "viewport": {
+        "xxl_large": "1800px",
         "x_large": "1200px",
         "large": "900px",
         "medium": "700px",
