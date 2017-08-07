@@ -16,7 +16,8 @@ module.exports = class Portfolio {
         this.elements_count_perpage = elem_per_page;
         this.elements_actual_count = this.elements.length;
         this.elements_width = this.elementWidthCalculate();
-        this.scroll_step = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? this.elements_width*2 : this.elements_width;
+        // this.scroll_step = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? this.elements_width*2 : this.elements_width;
+        this.scroll_step = this.elements_width*2;        
         this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {
             this.elements[i].setAttribute('style', `flex: 0 0 ${this.elements_width}px`);
