@@ -1,11 +1,15 @@
 {
+    "suffix": {
+        "pixels": "px",
+        "percents": "%"
+    },
     "viewport": {
-        "xxl_large": "1800px",
-        "x_large": "1200px",
-        "large": "900px",
-        "medium": "700px",
-        "small": "400px",
-        "x_small": "320px"
+        "xxl_large": "1800",
+        "x_large": "1200",
+        "large": "900",
+        "medium": "700",
+        "small": "400",
+        "x_small": "320"
     },
     "preloader": {
         "fading": "550ms",

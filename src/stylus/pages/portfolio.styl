@@ -33,6 +33,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     justify-content: center;
     position relative
     height 100%
+    box-sizing border-box
     overflow hidden
     border-left 1px solid $purple
     border-right 1px solid $purple
@@ -50,7 +51,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
           display: block
           content ''
           size 25px 100%
-          margin -3% 5px 0 0
+          margin .3rem 1rem 0 0
           absolute 0 100% false false
           transform rotate(180deg)
           background url("/images/double-arrow.svg") no-repeat center center;
@@ -78,6 +79,7 @@ for val, key in portfolio_routes
         &
           .portfolio-item-text:after
             size 20px 100%
+            margin-top 0
             transform rotate(-90deg)
 
 +media-query(only screen, max-width $medium)

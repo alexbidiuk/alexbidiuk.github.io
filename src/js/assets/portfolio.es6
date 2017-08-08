@@ -9,14 +9,14 @@ module.exports = class Portfolio {
         this.go_back_link.addEventListener('click', (e) => this.setInitialTranslate(e));
         this.elements = document.querySelectorAll('.portfolio-item');
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
-        this.leftWrapperX = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? 50 : 0;
+        this.leftWrapperX = window.innerWidth < animationConfig.viewport.large ? 50 : 0;
         this.elements_wrapper.setAttribute('style',  `left: ${this.leftWrapperX}%; transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
 
         this.portfolio_scrolling = document.querySelector('.portfolio-scrolling-block');
         this.elements_count_perpage = elem_per_page;
         this.elements_actual_count = this.elements.length;
         this.elements_width = this.elementWidthCalculate();
-        // this.scroll_step = window.innerWidth < animationConfig.viewport.large.replace('px', '') ? this.elements_width*2 : this.elements_width;
+        // this.scroll_step = window.innerWidth < animationConfig.viewport.large ? this.elements_width*2 : this.elements_width;
         this.scroll_step = this.elements_width*2;        
         this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {
@@ -38,14 +38,14 @@ module.exports = class Portfolio {
     angleofRotateCalculate() {
         let rad = Math.atan(document.documentElement.clientHeight/document.documentElement.clientWidth);
         let angle = this.radToDeg(rad);
-        if (window.innerWidth < animationConfig.viewport.large.replace('px', '')) {
+        if (window.innerWidth < animationConfig.viewport.large) {
             angle = 90;
         };
         return angle;
     }
     elementWidthCalculate() {
         let element_width = Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
-         if (window.innerWidth < animationConfig.viewport.large.replace('px', '')) {
+         if (window.innerWidth < animationConfig.viewport.large) {
             element_width = Math.round(document.documentElement.clientHeight / this.elements_count_perpage);
         };
         return element_width;
