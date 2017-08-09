@@ -21,6 +21,12 @@ require('./utilities/ie_fixes');
         // new Next();
         // console.log('Next')
 
+        /* OS, device, browser detector */
+
+        // let Mobd = require('./lib/mobile_detect');
+        // let md = new Mobd(window.navigator.userAgent);
+        // console.log( md.os());
+
         let Preloader = require('./assets/preloader');
         new Preloader();
 

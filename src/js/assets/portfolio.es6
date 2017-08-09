@@ -80,7 +80,9 @@ module.exports = class Portfolio {
     }
 
     mousewheelHandler(event) {
-        if (new Date().getTime() - this.lastScrollWorking >= 700 && !this.isTransitioning) {
+        event.preventDefault();
+        let currScrollWorking = new Date().getTime();
+        if (currScrollWorking - this.lastScrollWorking > 700 && !this.isTransitioning) {
             this.lastScrollWorking = new Date().getTime();
             this.delta = Math.max(-1, Math.min(1, (-event.deltaY || -event.detail )));
             this.scrollHandler();

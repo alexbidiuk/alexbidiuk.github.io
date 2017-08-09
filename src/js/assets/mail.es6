@@ -9,14 +9,12 @@ module.exports = class Mail {
     this.type = '';
     this.email = '';
     this.message = '';
-    this.forms = document.querySelectorAll('.send-form');
-    this.forms_length = this.forms.length;
+    this.form = document.querySelector('.send-form');
     this.timeout = null;
     this.timeout_delay = 3000;
-    this.sending = ''; 
-    for(let i = this.forms_length - 1; i >= 0; i--) {
-      this.forms[i].addEventListener('submit', this.submithandler.bind(this), false);
-    }
+    this.sending = '';
+    this.form.addEventListener('submit', this.submithandler.bind(this), false);
+
   }
   ajaxRequest() {
     let activexmodes = ["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] // activeX versions to check for in IE
