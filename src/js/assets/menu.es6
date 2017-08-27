@@ -33,6 +33,7 @@ module.exports = class Menu {
         }
         document.addEventListener('set_navigation', this.selectItemAction.bind(this), false);
         this.menu_toggle.addEventListener('click', this.toggleMenu.bind(this));
+        document.addEventListener('keydown', this.keyUnsetMenu.bind(this));
         document.addEventListener('unset_menu', this.unsetMenu.bind(this));
     }
 
@@ -68,6 +69,10 @@ module.exports = class Menu {
             }
         };
         document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+    }
+
+    keyUnsetMenu(e) {
+        e.keyCode === 27 &&  this.menu.classList.contains('is-active') && this.unsetMenu()
     }
 
     checkActive(page) {

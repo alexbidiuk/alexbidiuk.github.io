@@ -10,33 +10,39 @@ module.exports = class Portfolio {
         this.elements = document.querySelectorAll('.portfolio-item');
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
         this.leftWrapperX = window.innerWidth < animationConfig.viewport.large ? 50 : 0;
-        this.elements_wrapper.setAttribute('style',  `left: ${this.leftWrapperX}%; transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
+        this.elements_wrapper.setAttribute('style', `left: ${this.leftWrapperX}%; transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
 
         this.portfolio_scrolling = document.querySelector('.portfolio-scrolling-block');
         this.elements_count_perpage = elem_per_page;
         this.elements_actual_count = this.elements.length;
         this.elements_width = this.elementWidthCalculate();
         // this.scroll_step = window.innerWidth < animationConfig.viewport.large ? this.elements_width*2 : this.elements_width;
-        this.scroll_step = this.elements_width*2;        
+        this.scroll_step = this.elements_width * 2;
         this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {
             this.elements[i].setAttribute('style', `flex: 0 0 ${this.elements_width}px`);
         }
         this.delta = 0;
+        this.scrollings = [];
         this.isTransitioning = false;
+        this.isPaused = false;
         this.lastScrollWorking = new Date().getTime();
         this.currTranslateX = 0;
         this.touch_start = null;
         this.touch_event = null;
+        document.addEventListener('pause_portfolio', this.pause.bind(this));
         this.portfolio_page.addEventListener('touchstart', (event) => this.touchstartHandler(event));
         this.portfolio_page.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.setMousewheelHandler();
+    }
+    pause(event) {
+        this.isPaused = event.detail.pause ? true : false;
     }
     radToDeg(rad) {
         return rad / Math.PI * 180;
     }
     angleofRotateCalculate() {
-        let rad = Math.atan(document.documentElement.clientHeight/document.documentElement.clientWidth);
+        let rad = Math.atan(document.documentElement.clientHeight / document.documentElement.clientWidth);
         let angle = this.radToDeg(rad);
         if (window.innerWidth < animationConfig.viewport.large) {
             angle = 90;
@@ -45,7 +51,7 @@ module.exports = class Portfolio {
     }
     elementWidthCalculate() {
         let element_width = Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
-         if (window.innerWidth < animationConfig.viewport.large) {
+        if (window.innerWidth < animationConfig.viewport.large) {
             element_width = Math.round(document.documentElement.clientHeight / this.elements_count_perpage);
         };
         return element_width;
@@ -55,6 +61,19 @@ module.exports = class Portfolio {
         let pyth = (document.documentElement.clientWidth * document.documentElement.clientWidth) + (document.documentElement.clientHeight * document.documentElement.clientHeight);
         return Math.round(Math.sqrt(pyth));
     }
+
+    getAverage(elements, number) {
+        let sum = 0;
+
+        //taking `number` elements from the end to make the average, if there are not enought, 1
+        let lastElements = elements.slice(Math.max(elements.length - number, 1));
+
+        for (let i = 0; i < lastElements.length; i++) {
+            sum = sum + lastElements[i];
+        }
+
+        return Math.ceil(sum / number);
+    }
     setPortfolioPage() {
         this.portfolio_page.classList.add('show');
     }
@@ -63,29 +82,53 @@ module.exports = class Portfolio {
         if (document.addEventListener) {
             if ('onwheel' in document) {
                 // IE9+, FF17+, Ch31+
-                document.addEventListener("wheel", this.mousewheelHandler.bind(this));
+                this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
             }
             else if ('onmousewheel' in document) {
                 // устаревший вариант события
-                document.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
+                this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
             }
             else {
                 // Firefox < 17
-                document.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
+                this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
             }
         }
         else { // IE8-
-            document.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
+            this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
         }
     }
 
     mousewheelHandler(event) {
         event.preventDefault();
+        event.stopPropagation();
+
         let currScrollWorking = new Date().getTime();
-        if (currScrollWorking - this.lastScrollWorking > 700 && !this.isTransitioning) {
-            this.lastScrollWorking = new Date().getTime();
-            this.delta = Math.max(-1, Math.min(1, (-event.deltaY || -event.detail )));
-            this.scrollHandler();
+
+        let value = event.wheelDelta || -event.deltaY || -event.detail;
+
+        this.scrollings.push(Math.abs(value));
+
+        console.log(this.delta);
+
+        if (this.scrollings.length > 149) {
+            this.scrollings.shift();
+        }
+
+        let timeDiff = currScrollWorking - this.lastScrollWorking;
+
+        if (timeDiff > animationConfig.portfolio.scroll_delay && !this.isTransitioning && !this.isPaused) {
+            this.lastScrollWorking = currScrollWorking;
+
+            this.delta = Math.max(-1, Math.min(1, value));
+
+            let averageEnd = this.getAverage(this.scrollings, 10);
+            let averageMiddle = this.getAverage(this.scrollings, 70);
+            let isAccelerating = averageEnd >= averageMiddle;
+
+
+            if (isAccelerating) {
+                this.scrollHandler();
+            }
         }
     }
 
@@ -101,7 +144,7 @@ module.exports = class Portfolio {
         return trigger;
     }
 
-    animationStart(timeFunc, drawFunc, callback=() => {}) {
+    animationStart(timeFunc, drawFunc, callback = () => { }) {
         new Animate({
             duration: animationConfig.portfolio.scroll_duration,
             timing: (timeFraction) => timeFunc(timeFraction),
@@ -117,7 +160,7 @@ module.exports = class Portfolio {
 
     touchmoveHandler(event) {
         this.touch_event = event.touches[0].pageY;
-        if (new Date().getTime() - this.lastScrollWorking >= 700 && !this.isTransitioning) {
+        if (new Date().getTime() - this.lastScrollWorking >= animationConfig.portfolio.scroll_delay && !this.isTransitioning) {
             this.lastScrollWorking = new Date().getTime();
             if (this.touch_start > this.touch_event) {
                 this.delta = -1;
@@ -132,6 +175,7 @@ module.exports = class Portfolio {
     scrollHandler() {
         if (this.checkTransitionCoordinate() && !this.isTransitioning) {
             this.isTransitioning = true;
+            this.scrollings = [];
             this.animationStart(this.timeFunc, this.changeScroll.bind(this), this.scrollAnimCallback.bind(this));
         }
     }
@@ -144,7 +188,7 @@ module.exports = class Portfolio {
     }
 
     setInitialScroll(progress) {
-        let translatingX = this.currTranslateX - progress*this.currTranslateX ;
+        let translatingX = this.currTranslateX - progress * this.currTranslateX;
         this.animationTransformApply(this.portfolio_scrolling, translatingX);
     }
 

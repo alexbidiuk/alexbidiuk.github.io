@@ -21,7 +21,7 @@ module.exports = class WebglAnim {
         this.controls = new OrbitControls( this.camera );
         this.windowHalfX = window.innerWidth / 2;
         this.windowHalfY = window.innerHeight / 2;
-        document.addEventListener('pause_webgl', this.pause.bind(this));
+        document.addEventListener('pause_webgl', this.pause.bind(this));        
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
         this.container.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false);
         this.container.addEventListener( 'touchstart', this.onDocumentTouchStart.bind(this), false );
@@ -32,8 +32,7 @@ module.exports = class WebglAnim {
 
     pause(event) {
         this.isPaused = event.detail.pause ? true : false;
-        this.controls.enabled = event.detail.pause ? false : true;
-        
+        this.controls.enabled = event.detail.pause ? false : true;   
     }
 
     drawAbstraction() {

@@ -15,7 +15,7 @@ module.exports = class Router {
     this.pages_length = this.pages.length;
 
     this.pagesWrap = document.querySelector('.pages');
-    this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
+    this.scrollbar = new GeminiScrollbar({ element: this.pagesWrap }).create();
 
     document.addEventListener('change_page', this.changePage.bind(this));
 
@@ -29,23 +29,27 @@ module.exports = class Router {
   }
 
   checkPage(page) {
-    if(!page || page == '/' || !document.querySelector(page)) {
+    let event_detail = {
+      detail: {
+        pause: false
+      }
+    };
+    if (!page || page == '/' || !document.querySelector(page)) {
       return this.default_page;
     }
-    if(page == '/' || page == '#home') {
-        let event_detail = {
-            detail: {
-                pause: false
-            }
-        };
-        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+    if (page == '#portfolio') {
+      event_detail.detail.pause = false;
+      document.dispatchEvent(new CustomEvent('pause_portfolio', event_detail));
     } else {
-        let event_detail = {
-            detail: {
-                pause: true
-            }
-        };
-        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+      event_detail.detail.pause = true;
+      document.dispatchEvent(new CustomEvent('pause_portfolio', event_detail));
+    }
+    if (page == '/' || page == '#home') {
+      event_detail.detail.pause = false;
+      document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+    } else {
+      event_detail.detail.pause = true;
+      document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
     }
     return page;
   }
@@ -63,22 +67,22 @@ module.exports = class Router {
   }
 
   hidePages() {
-    for(let i = this.pages_length - 1; i >= 0; i--) {
+    for (let i = this.pages_length - 1; i >= 0; i--) {
       this.pages[i].classList.remove('show');
     }
   }
   checkSubpaging(page) {
-      if(page.split('-').length > 1) {
-          document.querySelector(page.split('-')[0]).classList.add('show');
-          document.querySelector(page.split('-')[0] + ' .portfolio-items-wrapper').classList.add('hide');
-      }
-      page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
+    if (page.split('-').length > 1) {
+      document.querySelector(page.split('-')[0]).classList.add('show');
+      document.querySelector(page.split('-')[0] + ' .portfolio-items-wrapper').classList.add('hide');
+    }
+    page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
   }
 
   changePage(event) {
     // let page = event.detail.page;
     let page = this.checkPage(event.detail.page);
-    if(this.active == page) {
+    if (this.active == page) {
       return false;
     }
     this.active = page;

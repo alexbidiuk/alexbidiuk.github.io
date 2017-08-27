@@ -2,8 +2,9 @@
 let logoDrawingTime = require('../../js/configurations/animation.json').preloader.logo_drawer;
 module.exports = class Preloader {
     constructor() {
-        this.preloader = document.querySelectorAll('.preloader')[0];
-        this.container = document.querySelectorAll('.container')[0];
+        this.preloader = document.querySelector('.preloader');
+        this.preloaderLogo = document.querySelector('.logo.preloader-logo');
+        this.container = document.querySelector('.container');
         this.logoDrawTimeout = this.timeParser(logoDrawingTime);
         this.preloaderEnder();
     }
@@ -29,6 +30,7 @@ module.exports = class Preloader {
        return Promise.all([this.contentLoadPromise(), this.logoDrawPromise()])
             .then(() => {
                 this.preloader.classList.toggle('ended');
+                this.preloaderLogo.style.willChange = 'auto';
                 this.container.classList.toggle('loaded');
             });
     }

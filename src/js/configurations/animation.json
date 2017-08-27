@@ -44,6 +44,7 @@
         "in_out": "500ms"
     },
     "portfolio": {
-        "scroll_duration": "900"
+        "scroll_duration": "800",
+        "scroll_delay": "0"                
     }
 }
