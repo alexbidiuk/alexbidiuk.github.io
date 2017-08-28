@@ -37,9 +37,6 @@ require('./utilities/ie_fixes');
         // can receive argument of a count of portfolio items(integer) by default it equals 4
         new Portfolio();
 
-        let Router = require('./assets/router');
-        new Router();
-
     };
     document.addEventListener('DOMContentLoaded', initialize);
 

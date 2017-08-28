@@ -122,7 +122,7 @@ module.exports = class Portfolio {
             this.delta = Math.max(-1, Math.min(1, value));
 
             let averageEnd = this.getAverage(this.scrollings, 10);
-            let averageMiddle = this.getAverage(this.scrollings, 70);
+            let averageMiddle = this.getAverage(this.scrollings, 80);
             let isAccelerating = averageEnd >= averageMiddle;
 
 

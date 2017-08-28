@@ -24,6 +24,7 @@
     },
     "menu": {
         "in_out": "600ms",
+        "data-text_fade-out": "500ms",
         "menu_container": "500ms",
         "menu_container_delay": "600ms",
         "menu_list_link_decor": "300ms",
@@ -45,6 +46,6 @@
     },
     "portfolio": {
         "scroll_duration": "800",
-        "scroll_delay": "0"                
+        "scroll_delay": "300"               
     }
 }
