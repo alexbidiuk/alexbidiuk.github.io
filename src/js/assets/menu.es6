@@ -1,7 +1,7 @@
 /* Menu module */
 let print_config = require('../configurations/print');
 let printString = require('../utilities/print_string');
-let preloaderAnimTimes = require('../../js/configurations/animation.json').preloader;
+let animationConfig = require('../../js/configurations/animation.json');
 module.exports = class Menu {
     constructor() {
         this.printString = printString;
@@ -41,11 +41,13 @@ module.exports = class Menu {
     initialShowing() {
         setTimeout( () => {
         let options = this.print_config.printer_settings.header_string;
-        this.printing = document.createElement('span');
-        this.printing.style = 'display: inline-block; margin-left: -130%; transform: translate(0%, -50%); animation: border .5 linear infinite alternate;';
-        this.menu_toggle.appendChild(this.printing);
-        let text = this.menu_toggle.getAttribute('data-text');
-        this.printString(this.printing, text, options);
+        if(!this.printing && window.innerWidth > animationConfig.viewport.medium) {
+            this.printing = document.createElement('span');
+            this.printing.classList.add('menu-text');
+            this.menu_toggle.appendChild(this.printing);
+            let text = this.menu_toggle.getAttribute('data-text');
+            this.printString(this.printing, text, options);
+        }
         }, 2000)
 
     }
@@ -166,7 +168,7 @@ module.exports = class Menu {
             if (text) {
                 let options = this.print_config.printer_settings.header_string;
                 this.printing = document.createElement('span');
-                this.printing.style = 'display: inline-block; margin-left: -130%; transform: translate(0%, -50%);';
+                this.printing.classList.add('menu-text');
                 target.appendChild(this.printing);
                 this.printString(this.printing, text, options);
             }

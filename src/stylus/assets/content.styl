@@ -49,7 +49,13 @@ json('../../js/configurations/animation.json');
   padding-bottom 0  
   box-sizing border-box
   background-color $transparent
+  pointer-events none
   z-index 1100
+.creato-home
+  float left
+  margin-right auto
+  font-size 24px
+  text-transform capitalize
 .menu
   position absolute
   left 0
@@ -147,7 +153,13 @@ json('../../js/configurations/animation.json');
   width 45px
   height 45px
   padding-left 100px
+  pointer-events all
   cursor pointer
+  .menu-text
+    display inline-block;
+    margin-left -130%
+    transform translate(0%, -50%)
+    animation neon menu-data-text_glowing ease-in-out infinite alternate
 .menu-trigger,
 .close-trigger
   display block
@@ -257,6 +269,8 @@ json('../../js/configurations/animation.json');
       size 35px 35px
     .menu-trigger
       margin-top .1rem
+  .creato-home
+    display none
 
 +media-query(only screen, max-width $small)
   .main-greeting

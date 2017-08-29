@@ -30,12 +30,15 @@ require('./utilities/ie_fixes');
         let Preloader = require('./assets/preloader');
         new Preloader();
 
+        let Router = require('./assets/router');
+        new Router();
+
         let WebglAnim = require('./assets/webglAnim');
         new WebglAnim();
 
-        let Portfolio = require('./assets/portfolio');
+        // let Portfolio = require('./assets/portfolio');
         // can receive argument of a count of portfolio items(integer) by default it equals 4
-        new Portfolio();
+        // new Portfolio();
 
     };
     document.addEventListener('DOMContentLoaded', initialize);
