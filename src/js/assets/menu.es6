@@ -163,7 +163,7 @@ module.exports = class Menu {
     //     }
     // }
     mouseEnterHandler(event) {
-        if (!this.printing && !(event.target.lastChild.nodeName == 'SPAN') && this.menu_close.classList.contains('is-active')) {
+        if (!this.printing && window.innerWidth > animationConfig.viewport.medium && !(event.target.lastChild.nodeName == 'SPAN') && this.menu_close.classList.contains('is-active')) {
             let target = event.target;
             let text = target.getAttribute('data-text');
             if (text) {
