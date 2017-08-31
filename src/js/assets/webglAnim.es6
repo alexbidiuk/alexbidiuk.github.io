@@ -128,8 +128,8 @@ module.exports = class WebglAnim {
     }
 
     render() {
-        this.camera.position.x += (this.mouseX - this.camera.position.x) * .001;
-        this.camera.position.y += (this.mouseY - this.camera.position.y) * .001;
+        this.camera.position.x += (this.mouseX - this.camera.position.x) * .0015;
+        this.camera.position.y += (this.mouseY - this.camera.position.y) * .002;
 
         this.camera.lookAt(this.scene.position);
         

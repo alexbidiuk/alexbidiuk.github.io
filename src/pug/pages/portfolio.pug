@@ -1,3 +1,10 @@
+- var portfolio_routes = require('../../js/configurations/portfolio_routes.json');
 #portfolio.page(data-title="portfolio")
-
+    a.creato-home(href='#home' id="home-link") creato
+    section.page-content
+        .portfolio-items-wrapper
+            .portfolio-scrolling-block
+                each val, key in portfolio_routes
+                    a.portfolio-item(href=val, id=val, data-text=key)
+                        .portfolio-item-text=key
 

@@ -9,6 +9,8 @@ module.exports = class Menu {
         this.timeout = 500;
         this.active = null;
         this.printing = null;
+        this.home_links = document.querySelectorAll('.creato-home');
+        this.home_links_length = this.home_links.length;
         this.menu_bg_container = document.querySelector('.menu-bg-container');
         this.menu_bg_container.setAttribute('style', `transform: translate3d(-50%, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
         this.menu_toggle = document.querySelector('.menu-toggle');
@@ -19,16 +21,15 @@ module.exports = class Menu {
         this.elements_length = this.elements.length;
         this.links = document.querySelectorAll('.menu-link');
         this.links_length = this.links.length;
-        this.porfolio_links = document.querySelectorAll('.portfolio-item');
-        this.porfolio_links_length = this.porfolio_links.length;
         for (let i = this.links_length - 1; i >= 0; i--) {
             this.links[i].addEventListener('click', this.selectItemHandler.bind(this), false);
             // this.links[i].addEventListener('mouseenter', this.mouseEnterHandler.bind(this), false);
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
-        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
-            if (this.porfolio_links[i].id == 'go_back') { continue; }
-            this.porfolio_links[i].addEventListener('click', this.selectItemHandler.bind(this), false);
+        for (let i = this.home_links_length - 1; i >= 0; i--) {
+            this.home_links[i].addEventListener('click', this.selectItemHandler.bind(this), false);
+            // this.links[i].addEventListener('mouseenter', this.mouseEnterHandler.bind(this), false);
+            // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
         document.addEventListener('set_navigation', this.selectItemAction.bind(this), false);
         this.menu_toggle.addEventListener('click', this.toggleMenu.bind(this));
@@ -108,9 +109,9 @@ module.exports = class Menu {
 
     selectItemHandler(event) {
         event.preventDefault();
-        let page = event.currentTarget.getAttribute('href');
-        (page.split('-').length <= 1) && this.toggleMenu();
-        console.log(page)
+        let page = event.target.getAttribute('href');
+        let isHomeLink = event.target.id === 'home-link' ? true : false;
+        (page.split('-').length <= 1 && !isHomeLink) && this.toggleMenu();
         let event_detail = {
             detail: {
                 page: page,
@@ -175,7 +176,6 @@ module.exports = class Menu {
         }
     }
     mouseLeaveHandler(event) {
-        console.log(event.target)
         if (this.printing && event.target !== this.printing) {
             this.printing.style.animation = 'fade-out .2s linear forwards'
             setTimeout(() => {

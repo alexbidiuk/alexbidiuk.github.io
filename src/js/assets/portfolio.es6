@@ -30,10 +30,26 @@ module.exports = class Portfolio {
         this.currTranslateX = 0;
         this.touch_start = null;
         this.touch_event = null;
+        this.porfolio_links_length = this.elements.length;
+        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
+            if (this.elements[i].id == 'go_back') { continue; }
+            this.elements[i].addEventListener('click', this.portfolioItemHandler.bind(this), false);
+        }
         document.addEventListener('pause_portfolio', this.pause.bind(this));
         this.portfolio_page.addEventListener('touchstart', (event) => this.touchstartHandler(event));
         this.portfolio_page.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.setMousewheelHandler();
+    }
+    portfolioItemHandler(event) {
+        event.preventDefault();
+        let page = event.currentTarget.getAttribute('href');
+        let event_detail = {
+            detail: {
+                page: page,
+                source: 'portfolio'
+            }
+        };
+        document.dispatchEvent(new CustomEvent('change_page', event_detail));
     }
     pause(event) {
         this.isPaused = event.detail.pause ? true : false;

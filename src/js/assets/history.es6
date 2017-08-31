@@ -8,26 +8,12 @@ module.exports = class History {
         this.replace = false;
         this.defaultRoute = routes.home;
         window.addEventListener('popstate', this.popstateHandler.bind(this));
-        window.addEventListener('hashchange', this.hashChangeHandler.bind(this));
     }
 
     popstateHandler(event) {
         if (this.states !== event.state) {
             this.replace = true;
             let page = event.state.page || this.defaultRoute;
-            let event_detail = {
-                detail: {
-                    page: page,
-                    source: 'history'
-                }
-            };
-            document.dispatchEvent(new CustomEvent('change_page', event_detail));
-        }
-    }
-
-    hashChangeHandler() {
-        if (this.states !== location.hash) {
-            let page = location.hash;
             let event_detail = {
                 detail: {
                     page: page,
@@ -59,7 +45,6 @@ module.exports = class History {
     }
 
     setState(page) {
-        console.log('hi');
         let state = this.getStateData(page);
         this.states[this.states.length] = state.data;
         if (history && history.pushState) {

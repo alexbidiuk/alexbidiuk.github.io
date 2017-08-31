@@ -1,5 +1,6 @@
 /* Preloader module */
 let Menu = require('./menu');
+let Router = require('./router');
 let logoDrawingTime = require('../../js/configurations/animation.json').preloader.logo_drawer;
 module.exports = class Preloader {
     constructor() {
@@ -34,6 +35,7 @@ module.exports = class Preloader {
                 this.preloaderLogo.style.willChange = 'auto';
                 this.container.classList.toggle('loaded');
                 new Menu();
+                new Router();
             });
     }
 

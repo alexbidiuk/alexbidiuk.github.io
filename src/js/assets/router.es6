@@ -9,8 +9,6 @@ module.exports = class Router {
         this.page_fade_time = routerConfig.page_fade_time;
         this.active = null;
         this.history = new History();
-        this.pages = document.querySelectorAll('.page');
-        this.pages_length = this.pages.length;
 
         this.pagesWrap = document.querySelector('.pages');
         this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
@@ -37,8 +35,9 @@ module.exports = class Router {
         }
         if (page == '#portfolio') {
             import('../../pug/pages/portfolio_async.pug').then(portfolioHTML => {
-                let portfolio_page = document.querySelector('#portfolio');
-                portfolio_page.innerHTML = portfolioHTML();
+                let portfolio_page = document.querySelector('#portfolio > .page-content');
+                let portfolio_pages_wrapper = document.querySelector('#portfolio > .page-content .portfolio-pages-wrapper');
+                if(!portfolio_pages_wrapper) portfolio_page.innerHTML += portfolioHTML();
                 new Portfolio();
             });
             // require.ensure([], function(require) {
@@ -75,8 +74,9 @@ module.exports = class Router {
     }
 
     hidePages() {
-        for (let i = this.pages_length - 1; i >= 0; i--) {
-            this.pages[i].classList.remove('show');
+        let pages = document.querySelectorAll('.page');
+        for (let i = pages.length - 1; i >= 0; i--) {
+            pages[i].classList.remove('show');
         }
     }
 
@@ -85,8 +85,8 @@ module.exports = class Router {
             document.querySelector(page.split('-')[0]).classList.add('show');
             document.querySelector(page.split('-')[0] + ' .portfolio-items-wrapper').classList.add('hide');
         }
-        if (document.querySelector(page + ' .portfolio-items-wrapper')) {
-            page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
+        if (page.split('-').length < 2) {
+          page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
         }
     }
 

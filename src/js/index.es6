@@ -29,10 +29,7 @@ require('./utilities/ie_fixes');
 
         let Preloader = require('./assets/preloader');
         new Preloader();
-
-        let Router = require('./assets/router');
-        new Router();
-
+        
         let WebglAnim = require('./assets/webglAnim');
         new WebglAnim();
 

@@ -43,7 +43,8 @@
         "close_trigger_bar_right_delay": "0ms"
     },
     "pages": {
-        "in_out": "500ms"
+        "in_out": "500ms",
+        "home_link_glowing": "1000ms"
     },
     "portfolio": {
         "scroll_duration": "800",
