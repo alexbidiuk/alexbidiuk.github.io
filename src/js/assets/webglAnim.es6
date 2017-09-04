@@ -2,9 +2,10 @@ global.THREE = require('../lib/Three.js');
 require('../lib/Projector.js');
 require('../lib/CanvasRenderer.js');
 let OrbitControls = require('three-orbit-controls')(THREE);
+let webglAnimInstance = null;
 module.exports = class WebglAnim {
     constructor() {
-        this.isPaused = false;
+        this.isPaused = true;
         this.pause = this.pause.bind(this);
         this.container = document.querySelectorAll('#home')[0];
         this.mouseX = 0;

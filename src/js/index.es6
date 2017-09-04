@@ -23,14 +23,13 @@ require('./utilities/ie_fixes');
         // new Audio();
         // console.log('Audio')
 
+        let WebglAnim = require('./assets/webglAnim');
+
+        new WebglAnim();
 
         let Preloader = require('./assets/preloader');
 
         new Preloader();
-
-        let WebglAnim = require('./assets/webglAnim');
-
-        new WebglAnim();
 
         let Router = require('./assets/router');
 
