@@ -32,42 +32,47 @@ module.exports = class Menu {
             // this.links[i].addEventListener('mouseleave', this.mouseLeaveHandler.bind(this), false);
         }
         document.addEventListener('set_navigation', this.selectItemAction.bind(this), false);
+        document.addEventListener('initialize_menu', this.initializeMenu.bind(this), false);
         this.menu_toggle.addEventListener('click', this.toggleMenu.bind(this));
         this.menu_toggle.addEventListener('mouseenter', this.mouseEnterHandler.bind(this));
         this.menu_toggle.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
         document.addEventListener('keydown', this.keyUnsetMenu.bind(this));
         document.addEventListener('unset_menu', this.unsetMenu.bind(this));
-        this.initialShowing();
     }
-    initialShowing() {
-        setTimeout( () => {
-        let options = this.print_config.printer_settings.header_string;
-        if(!this.printing && window.innerWidth > animationConfig.viewport.medium) {
-            this.printing = document.createElement('span');
-            this.printing.classList.add('menu-text');
-            this.menu_toggle.appendChild(this.printing);
-            let text = this.menu_toggle.getAttribute('data-text');
-            this.printString(this.printing, text, options);
-        }
-        }, 2000)
 
+    initializeMenu() {
+        setTimeout(() => {
+            let options = this.print_config.printer_settings.header_string;
+            if (!this.printing && window.innerWidth > animationConfig.viewport.medium) {
+                this.printing = document.createElement('span');
+                this.printing.classList.add('menu-text');
+                this.menu_toggle.appendChild(this.printing);
+                let text = this.menu_toggle.getAttribute('data-text');
+                this.printString(this.printing, text, options);
+            }
+        }, 2000)
     }
+
     radToDeg(rad) {
         return rad / Math.PI * 180;
     }
+
     angleofRotateCalculate() {
         let rad = Math.atan(document.documentElement.clientHeight / document.documentElement.clientWidth);
         return this.radToDeg(rad);
     }
+
     toggleMenu() {
         this.menu.classList.contains('is-active') ? this.unsetMenu() : this.setMenu();
     }
+
     printingRemoval() {
         if (this.printing) {
             this.printing.remove();
             this.printing = null;
         }
     }
+
     setMenu() {
         this.printingRemoval();
         this.printing = null;
@@ -81,6 +86,7 @@ module.exports = class Menu {
         };
         document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
     }
+
     unsetMenu() {
         this.menu.classList.remove('is-active');
         this.menu_open.classList.toggle('is-active');
@@ -163,7 +169,7 @@ module.exports = class Menu {
     //     }
     // }
     mouseEnterHandler(event) {
-        if (!this.printing && window.innerWidth > animationConfig.viewport.medium && !(event.target.lastChild.nodeName == 'SPAN') && this.menu_close.classList.contains('is-active')) {
+        if (!this.printing && (window.innerWidth > animationConfig.viewport.medium) && !(event.target.lastChild.nodeName == 'SPAN') && this.menu_close.classList.contains('is-active')) {
             let target = event.target;
             let text = target.getAttribute('data-text');
             if (text) {
@@ -175,6 +181,7 @@ module.exports = class Menu {
             }
         }
     }
+
     mouseLeaveHandler(event) {
         if (this.printing && event.target !== this.printing) {
             this.printing.style.animation = 'fade-out .2s linear forwards'

@@ -1,6 +1,6 @@
 /***** Print config *****/
 let config = {};
-config.frame_timeout = 30; 
+config.frame_timeout = 50;
 config.printer_settings = {
   info: {
     print_all: true,

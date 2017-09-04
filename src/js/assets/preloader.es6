@@ -1,6 +1,4 @@
 /* Preloader module */
-let Menu = require('./menu');
-let Router = require('./router');
 let logoDrawingTime = require('../../js/configurations/animation.json').preloader.logo_drawer;
 module.exports = class Preloader {
     constructor() {
@@ -10,12 +8,14 @@ module.exports = class Preloader {
         this.logoDrawTimeout = this.timeParser(logoDrawingTime);
         this.preloaderEnder();
     }
+
     timeParser(logoDrawingTime) {
         return logoDrawingTime.replace(/[^0-9]+/, '');
     }
+
     contentLoadPromise() {
-       return new Promise((resolve, reject) => {
-            window.addEventListener('load', function() {
+        return new Promise((resolve, reject) => {
+            window.addEventListener('load', function () {
                 resolve();
             });
         });
@@ -28,14 +28,14 @@ module.exports = class Preloader {
             }, this.logoDrawTimeout);
         });
     }
+
     preloaderEnder() {
-       return Promise.all([this.contentLoadPromise(), this.logoDrawPromise()])
+        return Promise.all([this.contentLoadPromise(), this.logoDrawPromise()])
             .then(() => {
                 this.preloader.classList.toggle('ended');
                 this.preloaderLogo.style.willChange = 'auto';
                 this.container.classList.toggle('loaded');
-                new Menu();
-                new Router();
+                document.dispatchEvent(new CustomEvent('initialize_menu'));
             });
     }
 

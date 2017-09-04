@@ -8,6 +8,13 @@ module.exports = class Portfolio {
         this.go_back_link = document.querySelector('#go_back');
         this.go_back_link.addEventListener('click', (e) => this.setInitialTranslate(e));
         this.elements = document.querySelectorAll('.portfolio-item');
+        this.porfolio_links_length = this.elements.length;
+        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
+            if (this.elements[i].id == 'go_back') {
+                continue;
+            }
+            this.elements[i].addEventListener('click', this.initialPortfolioItemsHandler.bind(this), false);
+        }
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
         this.leftWrapperX = window.innerWidth < animationConfig.viewport.large ? 50 : 0;
         this.elements_wrapper.setAttribute('style', `left: ${this.leftWrapperX}%; transform: translate3d(0, -50%, 0) rotate(${this.angleofRotateCalculate()}deg)`);
@@ -30,15 +37,22 @@ module.exports = class Portfolio {
         this.currTranslateX = 0;
         this.touch_start = null;
         this.touch_event = null;
-        this.porfolio_links_length = this.elements.length;
-        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
-            if (this.elements[i].id == 'go_back') { continue; }
-            this.elements[i].addEventListener('click', this.portfolioItemHandler.bind(this), false);
-        }
         document.addEventListener('pause_portfolio', this.pause.bind(this));
         this.portfolio_page.addEventListener('touchstart', (event) => this.touchstartHandler(event));
         this.portfolio_page.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.setMousewheelHandler();
+    }
+    initialPortfolioItemsHandler(event) {
+        alert(event.target);
+    }
+    setPortfolioItemsHandler() {
+        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
+            if (this.elements[i].id == 'go_back') {
+                continue;
+            }
+            this.elements[i].removeEventListener('click', this.initialPortfolioItemsHandler, false);
+            // this.elements[i].addEventListener('click', this.portfolioItemHandler.bind(this), false);
+        }
     }
     portfolioItemHandler(event) {
         event.preventDefault();
@@ -51,25 +65,31 @@ module.exports = class Portfolio {
         };
         document.dispatchEvent(new CustomEvent('change_page', event_detail));
     }
+
     pause(event) {
         this.isPaused = event.detail.pause ? true : false;
     }
+
     radToDeg(rad) {
         return rad / Math.PI * 180;
     }
+
     angleofRotateCalculate() {
         let rad = Math.atan(document.documentElement.clientHeight / document.documentElement.clientWidth);
         let angle = this.radToDeg(rad);
         if (window.innerWidth < animationConfig.viewport.large) {
             angle = 90;
-        };
+        }
+        ;
         return angle;
     }
+
     elementWidthCalculate() {
         let element_width = Math.round(this.diagonalLengthCalculate() / this.elements_count_perpage);
         if (window.innerWidth < animationConfig.viewport.large) {
             element_width = Math.round(document.documentElement.clientHeight / this.elements_count_perpage);
-        };
+        }
+        ;
         return element_width;
     }
 
@@ -90,6 +110,7 @@ module.exports = class Portfolio {
 
         return Math.ceil(sum / number);
     }
+
     setPortfolioPage() {
         this.portfolio_page.classList.add('show');
     }
@@ -123,8 +144,6 @@ module.exports = class Portfolio {
         let value = event.wheelDelta || -event.deltaY || -event.detail;
 
         this.scrollings.push(Math.abs(value));
-
-        console.log(this.delta);
 
         if (this.scrollings.length > 149) {
             this.scrollings.shift();
@@ -160,7 +179,8 @@ module.exports = class Portfolio {
         return trigger;
     }
 
-    animationStart(timeFunc, drawFunc, callback = () => { }) {
+    animationStart(timeFunc, drawFunc, callback = () => {
+    }) {
         new Animate({
             duration: animationConfig.portfolio.scroll_duration,
             timing: (timeFraction) => timeFunc(timeFraction),
@@ -225,6 +245,7 @@ module.exports = class Portfolio {
         this.currTranslateX += this.scroll_step * this.delta;
         this.isTransitioning = false;
     }
+
     scrollAnimToInitialCallback() {
         this.currTranslateX = 0;
         this.isTransitioning = false;

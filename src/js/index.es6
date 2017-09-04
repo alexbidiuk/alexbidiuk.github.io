@@ -5,6 +5,12 @@ require('./utilities/ie_fixes');
     'use strict';
     let initialize = function () {
 
+        /* OS, device, browser detector */
+
+        // let Mobd = require('./lib/mobile_detect');
+        // let md = new Mobd(window.navigator.userAgent);
+        // console.log( md.os());
+
         // let ImageHover = require('./assets/image_hover');
         // new ImageHover('#hoverable', '.hover-1');
         // console.log('ImageHover')
@@ -17,21 +23,18 @@ require('./utilities/ie_fixes');
         // new Audio();
         // console.log('Audio')
 
-        // let Next = require('./assets/next');
-        // new Next();
-        // console.log('Next')
-
-        /* OS, device, browser detector */
-
-        // let Mobd = require('./lib/mobile_detect');
-        // let md = new Mobd(window.navigator.userAgent);
-        // console.log( md.os());
 
         let Preloader = require('./assets/preloader');
+
         new Preloader();
-        
+
         let WebglAnim = require('./assets/webglAnim');
+
         new WebglAnim();
+
+        let Router = require('./assets/router');
+
+        new Router();
 
         // let Portfolio = require('./assets/portfolio');
         // can receive argument of a count of portfolio items(integer) by default it equals 4

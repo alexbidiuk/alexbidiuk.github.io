@@ -31,7 +31,7 @@ module.exports = class WebglAnim {
     }
 
     pause(event) {
-        this.isPaused = event.detail.pause ? true : false;
+        event.detail.pause ? this.isPaused = true : this.restart();
         this.controls.enabled = event.detail.pause ? false : true;   
     }
 
@@ -121,10 +121,13 @@ module.exports = class WebglAnim {
 
 
     start() {
-        if (!this.isPaused) {
-            this.render();
-        }
+        if (this.isPaused) return;
+        this.render();
         window.requestAnimationFrame(this.start.bind(this));
+    }
+    restart() {
+        this.isPaused = false;
+        this.start();
     }
 
     render() {
