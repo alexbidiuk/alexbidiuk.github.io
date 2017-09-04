@@ -13,7 +13,7 @@ module.exports = class Portfolio {
             if (this.elements[i].id == 'go_back') {
                 continue;
             }
-            this.elements[i].addEventListener('click', this.initialPortfolioItemsHandler.bind(this), false);
+            this.elements[i].addEventListener('click', this.portfolioItemHandler.bind(this), false);
         }
         this.elements_wrapper = document.querySelector('.portfolio-items-wrapper');
         this.leftWrapperX = window.innerWidth < animationConfig.viewport.large ? 50 : 0;
@@ -42,16 +42,12 @@ module.exports = class Portfolio {
         this.portfolio_page.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.setMousewheelHandler();
     }
-    initialPortfolioItemsHandler(event) {
-        alert(event.target);
-    }
-    setPortfolioItemsHandler() {
-        for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
-            if (this.elements[i].id == 'go_back') {
-                continue;
-            }
-            this.elements[i].removeEventListener('click', this.initialPortfolioItemsHandler, false);
-            // this.elements[i].addEventListener('click', this.portfolioItemHandler.bind(this), false);
+    imagesLazyLoading() {
+        let portfolio_pages_images = document.querySelectorAll('#portfolio img[data-src]');
+        for (let i = portfolio_pages_images.length - 1; i >= 0; i--) {
+            let img = portfolio_pages_images[i];
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = () => img.removeAttribute('data-src');
         }
     }
     portfolioItemHandler(event) {

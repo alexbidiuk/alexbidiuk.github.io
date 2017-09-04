@@ -41,14 +41,9 @@ module.exports = class Router {
         if (page == '#portfolio') {
             event_detail.detail.pause = false;
             document.dispatchEvent(new CustomEvent('pause_portfolio', event_detail));
-            let portfolio_pages_wrapper = document.querySelector('#portfolio > .page-content .portfolio-pages-wrapper');
-            if(!portfolio_pages_wrapper) {
-                import('../../pug/pages/portfolio_async.pug').then(portfolioHTML => {
-                    let portfolio_page = document.querySelector('#portfolio > .page-content');
-                    portfolio_page.insertAdjacentHTML('beforeend', portfolioHTML())
-                    this.portfolio.setPortfolioItemsHandler();
-                });
-            };
+        }
+        if (page == '#portfolio' || ( page.split('-').length > 1 && page.split('-')[0] == '#portfolio') ) {
+            this.portfolio.imagesLazyLoading();
         }
         if (page == '/' || page == '#home') {
             event_detail.detail.pause = false;
