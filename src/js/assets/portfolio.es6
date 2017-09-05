@@ -1,5 +1,6 @@
 /* Portfolio module */
 // let print_config = require('../configurations/print');
+let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let animationConfig = require('../configurations/animation.json');
 let Animate = require('./animate');
 module.exports = class Portfolio {
@@ -44,10 +45,12 @@ module.exports = class Portfolio {
     }
     imagesLazyLoading() {
         let portfolio_pages_images = document.querySelectorAll('#portfolio img[data-src]');
-        for (let i = portfolio_pages_images.length - 1; i >= 0; i--) {
-            let img = portfolio_pages_images[i];
-            img.setAttribute('src', img.getAttribute('data-src'));
-            img.onload = () => img.removeAttribute('data-src');
+        if(portfolio_pages_images.length) {
+            for (let i = portfolio_pages_images.length - 1; i >= 0; i--) {
+                let img = portfolio_pages_images[i];
+                img.setAttribute('src', img.getAttribute('data-src'));
+                img.onload = () => img.removeAttribute('data-src');
+            }
         }
     }
     portfolioItemHandler(event) {
@@ -132,33 +135,35 @@ module.exports = class Portfolio {
     }
 
     mousewheelHandler(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        if(!this.isPaused) {
+            event.preventDefault();
+            event.stopPropagation();
 
-        let currScrollWorking = new Date().getTime();
+            let currScrollWorking = new Date().getTime();
 
-        let value = event.wheelDelta || -event.deltaY || -event.detail;
+            let value = event.wheelDelta || -event.deltaY || -event.detail;
 
-        this.scrollings.push(Math.abs(value));
+            this.scrollings.push(Math.abs(value));
 
-        if (this.scrollings.length > 149) {
-            this.scrollings.shift();
-        }
+            if (this.scrollings.length > 149) {
+                this.scrollings.shift();
+            }
 
-        let timeDiff = currScrollWorking - this.lastScrollWorking;
+            let timeDiff = currScrollWorking - this.lastScrollWorking;
 
-        if (timeDiff > animationConfig.portfolio.scroll_delay && !this.isTransitioning && !this.isPaused) {
-            this.lastScrollWorking = currScrollWorking;
+            if (timeDiff > animationConfig.portfolio.scroll_delay && !this.isTransitioning) {
+                this.lastScrollWorking = currScrollWorking;
 
-            this.delta = Math.max(-1, Math.min(1, value));
+                this.delta = Math.max(-1, Math.min(1, value));
 
-            let averageEnd = this.getAverage(this.scrollings, 10);
-            let averageMiddle = this.getAverage(this.scrollings, 80);
-            let isAccelerating = averageEnd >= averageMiddle;
+                let averageEnd = this.getAverage(this.scrollings, 10);
+                let averageMiddle = this.getAverage(this.scrollings, 80);
+                let isAccelerating = averageEnd >= averageMiddle;
 
 
-            if (isAccelerating) {
-                this.scrollHandler();
+                if (isAccelerating) {
+                    this.scrollHandler();
+                }
             }
         }
     }
@@ -186,20 +191,24 @@ module.exports = class Portfolio {
     }
 
     touchstartHandler(event) {
-        this.touching = true;
-        this.touch_start = event.touches[0].pageY;
+        if(!this.isPaused) {
+            this.touching = true;
+            this.touch_start = event.touches[0].pageY;
+        }
     }
 
     touchmoveHandler(event) {
-        this.touch_event = event.touches[0].pageY;
-        if (new Date().getTime() - this.lastScrollWorking >= animationConfig.portfolio.scroll_delay && !this.isTransitioning) {
-            this.lastScrollWorking = new Date().getTime();
-            if (this.touch_start > this.touch_event) {
-                this.delta = -1;
-                this.scrollHandler();
-            } else {
-                this.delta = 1;
-                this.scrollHandler();
+        if(!this.isPaused) {
+            this.touch_event = event.touches[0].pageY;
+            if (new Date().getTime() - this.lastScrollWorking >= animationConfig.portfolio.scroll_delay && !this.isTransitioning) {
+                this.lastScrollWorking = new Date().getTime();
+                if (this.touch_start > this.touch_event) {
+                    this.delta = -1;
+                    this.scrollHandler();
+                } else {
+                    this.delta = 1;
+                    this.scrollHandler();
+                }
             }
         }
     }
@@ -208,6 +217,7 @@ module.exports = class Portfolio {
         if (this.checkTransitionCoordinate() && !this.isTransitioning) {
             this.isTransitioning = true;
             this.scrollings = [];
+            console.log('working')
             this.animationStart(this.timeFunc, this.changeScroll.bind(this), this.scrollAnimCallback.bind(this));
         }
     }

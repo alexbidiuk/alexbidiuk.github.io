@@ -47,8 +47,8 @@
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#ffffff",
-	"start_url": "https:\/\/nod.io\/",
+	"theme_color": "#a48b91",
+	"start_url": "https:\/\/creato\/",
 	"display": "standalone",
 	"orientation": "portrait"
 }

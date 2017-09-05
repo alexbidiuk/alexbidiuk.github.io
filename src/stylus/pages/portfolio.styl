@@ -8,10 +8,15 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
   .page-content
     position relative
     overflow hidden
+    padding 0
+  .portfolio-image
+    width 65%
+    padding 20px
   .portfolio-pages-wrapper
-    absolute 0
-    size 100%
-    z-index -1
+    size 100% 100vh
+    box-sizing border-box
+    &.gm-prevented
+      overflow-y auto
   .portfolio-items-wrapper
     absolute 0 false false 0
     height 10000px
@@ -24,6 +29,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     &.hide
       visibility hidden
       opacity 0
+      z-index -1
   .portfolio-scrolling-block
     display flex
     flex-wrap nowrap

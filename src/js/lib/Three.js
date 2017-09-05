@@ -7989,7 +7989,7 @@
 
 		intersectsPlane: function ( plane ) {
 
-			// We compute the minimum and maximum dot product values. If those values
+			// We compute the minimum and maximum dot portfolio values. If those values
 			// are on the same side (back or front) of the plane, then there is no intersection.
 
 			var min, max;
@@ -24858,7 +24858,7 @@
 
 				}
 
-				// cross product of tangent vectors returns surface normal
+				// cross portfolio of tangent vectors returns surface normal
 
 				normal.crossVectors( pu, pv ).normalize();
 				normals.push( normal.x, normal.y, normal.z );

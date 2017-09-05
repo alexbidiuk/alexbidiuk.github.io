@@ -13,7 +13,10 @@ module.exports = class Router {
         this.page_fade_time = routerConfig.page_fade_time;
         this.active = null;
         this.pagesWrap = document.querySelector('.pages');
+        this.portfolioPagesWrap = document.querySelector('.portfolio-pages-wrapper');
+
         this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
+        this.portfolioScrollbar = new GeminiScrollbar({element: this.portfolioPagesWrap}).create();
 
         document.addEventListener('change_page', this.changePage.bind(this));
 
@@ -35,7 +38,11 @@ module.exports = class Router {
         document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
         document.dispatchEvent(new CustomEvent('pause_portfolio', event_detail));
 
-        if (!page || page == '/' || !document.querySelector(page)) {
+        if (page == '' || page == '#home') {
+            event_detail.detail.pause = false;
+            document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+        }
+        if (!page || page == '' || !document.querySelector(page)) {
             return this.default_page;
         }
         if (page == '#portfolio') {
@@ -44,10 +51,6 @@ module.exports = class Router {
         }
         if (page == '#portfolio' || ( page.split('-').length > 1 && page.split('-')[0] == '#portfolio') ) {
             this.portfolio.imagesLazyLoading();
-        }
-        if (page == '/' || page == '#home') {
-            event_detail.detail.pause = false;
-            document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
         }
         return page;
     }
@@ -62,6 +65,7 @@ module.exports = class Router {
         document.dispatchEvent(new CustomEvent('set_navigation', event_detail));
         document.querySelector(this.active).classList.add('show');
         this.scrollbar.update();
+
     }
 
     hidePages() {
@@ -75,6 +79,7 @@ module.exports = class Router {
         if (page.split('-').length > 1) {
             document.querySelector(page.split('-')[0]).classList.add('show');
             document.querySelector(page.split('-')[0] + ' .portfolio-items-wrapper').classList.add('hide');
+            this.portfolioScrollbar.update();
         }
         if (page.split('-').length < 2) {
           page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
