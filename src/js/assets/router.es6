@@ -6,17 +6,15 @@ let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let routerConfig = require('../../js/configurations/router');
 module.exports = class Router {
     constructor() {
-        new Menu();
+        this.menu = new Menu();
         this.portfolio = new Portfolio();
         this.history = new History();
         this.default_page = routerConfig.default.page;
         this.page_fade_time = routerConfig.page_fade_time;
         this.active = null;
         this.pagesWrap = document.querySelector('.pages');
-        this.portfolioPagesWrap = document.querySelector('.portfolio-pages-wrapper');
 
         this.scrollbar = new GeminiScrollbar({element: this.pagesWrap}).create();
-        this.portfolioScrollbar = new GeminiScrollbar({element: this.portfolioPagesWrap}).create();
 
         document.addEventListener('change_page', this.changePage.bind(this));
 
@@ -79,7 +77,6 @@ module.exports = class Router {
         if (page.split('-').length > 1) {
             document.querySelector(page.split('-')[0]).classList.add('show');
             document.querySelector(page.split('-')[0] + ' .portfolio-items-wrapper').classList.add('hide');
-            this.portfolioScrollbar.update();
         }
         if (page.split('-').length < 2) {
           page == '#portfolio' && document.querySelector(page + ' .portfolio-items-wrapper').classList.remove('hide');
@@ -92,6 +89,7 @@ module.exports = class Router {
             return false;
         }
         this.active = page;
+        this.menu.checkActiveHome(page);
         this.hidePages();
         this.checkSubpaging(page);
         this.setPage();

@@ -8,6 +8,7 @@ module.exports = class Menu {
         this.print_config = print_config;
         this.timeout = 500;
         this.active = null;
+        this.isActiveHome = null;
         this.printing = null;
         this.home_links = document.querySelectorAll('.creato-home');
         this.home_links_length = this.home_links.length;
@@ -38,6 +39,7 @@ module.exports = class Menu {
         this.menu_toggle.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
         document.addEventListener('keydown', this.keyUnsetMenu.bind(this));
         document.addEventListener('unset_menu', this.unsetMenu.bind(this));
+        this.checkActiveHome = this.checkActiveHome.bind(this);
     }
 
     initializeMenu() {
@@ -96,21 +98,17 @@ module.exports = class Menu {
                 pause: false
             }
         };
-        document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+        if(this.isActiveHome) {
+            document.dispatchEvent(new CustomEvent('pause_webgl', event_detail));
+        }
     }
 
     keyUnsetMenu(e) {
         e.keyCode === 27 && this.menu.classList.contains('is-active') && this.unsetMenu()
     }
 
-    checkActive(page) {
-        if (page == '#home') {
-            return true;
-        }
-        if (document.querySelector(page).classList.contains('show')) {
-            return false;
-        }
-        return true;
+    checkActiveHome(page) {
+        this.isActiveHome = ( page == '#home' ) ? true : false;
     }
 
     selectItemHandler(event) {
