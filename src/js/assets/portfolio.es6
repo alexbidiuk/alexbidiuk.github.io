@@ -9,6 +9,8 @@ module.exports = class Portfolio {
         this.go_back_link = document.querySelector('#go_back');
         this.go_back_link.addEventListener('click', (e) => this.setInitialTranslate(e));
         this.elements = document.querySelectorAll('.portfolio-item');
+        this.elements_text = document.querySelectorAll('.portfolio-item-text');
+        console.log(this.elementsAfter);
         this.porfolio_links_length = this.elements.length;
         for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
             if (this.elements[i].id == 'go_back') {
@@ -29,6 +31,7 @@ module.exports = class Portfolio {
         this.hidden_width = this.elements_width * (this.elements_actual_count - this.elements_count_perpage);
         for (let i = this.elements_actual_count - 1; i >= 0; i--) {
             this.elements[i].setAttribute('style', `flex: 0 0 ${this.elements_width}px`);
+            this.elements_text[i].setAttribute('style', `transform: rotate(-${this.angleofRotateCalculate()}deg)`);
         }
         this.delta = 0;
         this.scrollings = [];

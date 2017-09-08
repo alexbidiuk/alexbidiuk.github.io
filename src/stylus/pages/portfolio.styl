@@ -52,6 +52,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
       relative false
       color $white
       font-size 26px
+      font-size  0 // be carefull
       text-shadow 0px 0px 4px $white
     &#go_back
       cursor pointer
@@ -70,15 +71,16 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
 for val, key in portfolio_routes
   #portfolio
     .portfolio-item
-      &[id*=\'{key}\']:after
-        display block
-        absolute 50% false false 50%
-        transform translate3d(-50%, -50%, 0) rotate(-45deg)
-        content ''
-        size 1000vmax
-        background-size cover
-        z-index -2
-        //background s('url(%s)', '/images/portfolio/' + val + '.png') no-repeat 50% center
+      .portfolio-item-text
+        &[id*=\'{key}\']:after
+          display block
+          absolute 50% false false 50%
+          transform translate3d(-50%, -50%, 0)
+          content ''
+          size 1000vw 1000vh
+          background-size cover
+          z-index -2
+          background s('url(%s)', '/images/portfolio/thumb/' + val + '.jpg') no-repeat center center
 +media-query(only screen, max-width $large)
   #portfolio
     .portfolio-item

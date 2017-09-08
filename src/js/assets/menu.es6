@@ -39,7 +39,7 @@ module.exports = class Menu {
         this.menu_toggle.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
         document.addEventListener('keydown', this.keyUnsetMenu.bind(this));
         document.addEventListener('unset_menu', this.unsetMenu.bind(this));
-        this.checkActiveHome = this.checkActiveHome.bind(this);
+        // this.checkActiveHome = this.checkActiveHome.bind(this);
     }
 
     initializeMenu() {
