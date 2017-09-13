@@ -20,8 +20,8 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
       overflow-y auto
   .portfolio-items-wrapper
     absolute 0 false false 0
-    height 10000px
-    width 10000px
+    height 5000px
+    width 5000px
     transform-origin left center
     overflow hidden
     z-index 1300
@@ -48,27 +48,23 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     border-left 1px solid $purple
     border-right 1px solid $purple
     cursor pointer
+    &[data-text=studio]
+      .portfolio-item-text
+        color $light-purple
+        text-shadow 0px 0px 1px $purple
     .portfolio-item-text
       relative false
       color $white
-      font-size 26px
-      // font-size  0 // be carefull
+      font-size 42px
+      //font-size  0 // be carefull
       text-shadow 0px 0px 4px $white
       &:after
-        content ''
         display block
         absolute 50% false false 50%
-        size 175vw 200vh
         transform translate3d(-50%, -50%, 0)
+        content ''
+        size 110vw 180vh
         z-index -2
-      &:before
-        display block
-        absolute 50% false false 50%
-        transform translate3d(-50%, -50%, 0)
-        content ''
-        size 175vw 200vh
-        background-color $black-30
-        z-index -1
     &#go_back
       cursor pointer
       &
@@ -86,10 +82,15 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
 for val, key in portfolio_routes
   #portfolio
     .portfolio-item[id*=\'{key}\']
-      .portfolio-item-text:after
-        // background s('url(%s)', '/images/portfolio/thumb/' + val + '.png') 50% 50% no-repeat
-        // background-size contain      
-          
+      .portfolio-item-text
+        &:after
+          image-rendering -webkit-optimize-contrast
+          image-rendering optimizeQuality
+          image-rendering optimizeSpeed
+          image-rendering -moz-crisp-edges
+          background s('url(%s)', '/images/portfolio/thumb/' + val + '.jpg') no-repeat center center
+          background-size cover
+
 +media-query(only screen, max-width $large)
   #portfolio
     .portfolio-item
