@@ -220,7 +220,6 @@ module.exports = class Portfolio {
         if (this.checkTransitionCoordinate() && !this.isTransitioning) {
             this.isTransitioning = true;
             this.scrollings = [];
-            console.log('working')
             this.animationStart(this.timeFunc, this.changeScroll.bind(this), this.scrollAnimCallback.bind(this));
         }
     }

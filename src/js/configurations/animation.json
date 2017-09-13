@@ -48,6 +48,6 @@
     },
     "portfolio": {
         "scroll_duration": "800",
-        "scroll_delay": "300"               
+        "scroll_delay": "700"               
     }
 }
