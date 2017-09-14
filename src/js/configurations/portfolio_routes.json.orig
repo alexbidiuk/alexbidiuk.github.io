@@ -1,0 +1,17 @@
+{
+<<<<<<< HEAD
+    "itv": "#portfolio-itv",
+    "unitick": "#portfolio-unitick",
+    "itvsystems": "#portfolio-itvsystems",
+    "kickstore": "#portfolio-kickstore",
+=======
+    "nodio": "#portfolio-nodio",
+    "odontomed": "#portfolio-odontomed",
+>>>>>>> aecd24405d0942f5b86ea6cc0be08e9dd68372a6
+    "live on moon": "#portfolio-lnm",
+    "meat": "#portfolio-meat",
+    "unitick": "#portfolio-unitick",
+    "studio": "#portfolio-studio",
+    "kickstore": "#portfolio-kickstore",
+    "go back": "go_back"
+}
