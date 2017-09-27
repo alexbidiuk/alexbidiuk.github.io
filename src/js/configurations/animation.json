@@ -47,7 +47,7 @@
         "home_link_glowing": "1000ms"
     },
     "portfolio": {
-        "scroll_duration": "800",
-        "scroll_delay": "700"               
+        "scroll_duration": "900",
+        "scroll_delay": "10"               
     }
 }

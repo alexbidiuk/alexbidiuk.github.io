@@ -107,7 +107,7 @@ json('../../js/configurations/animation.json');
       height 4px
       opacity 0
       background-color #222222
-      transform translate3d(100px,0,0)
+      transform translateX(100px)
       transition all menu-menu_list_link_decor cubic-bezier(.55, 0, .1, 1)
     .no-touch &:hover:before
     &.active:before
@@ -131,6 +131,8 @@ json('../../js/configurations/animation.json');
   height 100%
   background-color rgba(255, 255, 255, 1)
   transition all menu-menu_bg ease-in-out
+  backface-visibility hidden
+  will-change transform
   &.top
     background-color #d1c5c8
     transform translate3d(-100%, -100%, 0)
@@ -178,7 +180,7 @@ json('../../js/configurations/animation.json');
   margin-top .5rem
   &.is-active
     .menu-trigger-bar
-      transform translate3d(0, 0, 0) rotate(-45deg)
+      transform translate(0, 0) rotate(-45deg)
 
 .close-trigger
   z-index 5
@@ -187,9 +189,9 @@ json('../../js/configurations/animation.json');
   &.is-active
     .close-trigger-bar
       &.left
-        transform translate3d(0, 0, 0) rotate(-45deg)
+        transform translate(0, 0) rotate(-45deg)
       &.right
-        transform translate3d(0, 0, 0) rotate(45deg)
+        transform translate(0, 0) rotate(45deg)
 .menu-trigger-bar
   display block
   width 100%
@@ -198,7 +200,7 @@ json('../../js/configurations/animation.json');
   margin-bottom 6px
   position relative
   transition all menu-menu_trigger_bar cubic-bezier(0.24, 0.65, 0.36, 0.96)
-  transform translate3d(100px, -100px, 0) rotate(-45deg)
+  transform translate(100px, -100px) rotate(-45deg)
   &:before
     display block
     content ""
@@ -235,9 +237,9 @@ json('../../js/configurations/animation.json');
     background-color rgba(255, 255, 255, 0.2)
     transition all menu-close_trigger_bar_before cubic-bezier(0.55, 0, 0.1, 1)
   &.left
-    transform translate3d(100px, -100px, 0) rotate(-45deg)
+    transform translate(100px, -100px) rotate(-45deg)
   &.right
-    transform translate3d(-100px, -100px, 0) rotate(45deg)
+    transform translate(-100px, -100px) rotate(45deg)
     top -3px
 
 +media-query(only screen, max-width $xxl_large)

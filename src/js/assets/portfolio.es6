@@ -3,6 +3,7 @@
 let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let animationConfig = require('../configurations/animation.json');
 let Animate = require('./animate');
+var TweenLite = require('gsap').TweenLite;
 module.exports = class Portfolio {
     constructor(elem_per_page = 4) {
         this.portfolio_page = document.querySelector('#portfolio');
@@ -10,7 +11,6 @@ module.exports = class Portfolio {
         this.go_back_link.addEventListener('click', (e) => this.setInitialTranslate(e));
         this.elements = document.querySelectorAll('.portfolio-item');
         this.elements_text = document.querySelectorAll('.portfolio-item-text');
-        console.log(this.elementsAfter);
         this.porfolio_links_length = this.elements.length;
         for (let i = this.porfolio_links_length - 1; i >= 0; i--) {
             if (this.elements[i].id == 'go_back') {
@@ -118,27 +118,28 @@ module.exports = class Portfolio {
     }
 
     setMousewheelHandler() {
-        if (document.addEventListener) {
-            if ('onwheel' in document) {
-                // IE9+, FF17+, Ch31+
-                this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
+         if(!this.isPaused) {
+            if (document.addEventListener) {
+                if ('onwheel' in document) {
+                    // IE9+, FF17+, Ch31+
+                    this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
+                }
+                else if ('onmousewheel' in document) {
+                    // устаревший вариант события
+                    this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
+                }
+                else {
+                    // Firefox < 17
+                    this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
+                }
             }
-            else if ('onmousewheel' in document) {
-                // устаревший вариант события
-                this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
+            else { // IE8-
+                this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
             }
-            else {
-                // Firefox < 17
-                this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
-            }
-        }
-        else { // IE8-
-            this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
-        }
+         }
     }
 
     mousewheelHandler(event) {
-        if(!this.isPaused) {
             event.preventDefault();
             event.stopPropagation();
 
@@ -160,7 +161,7 @@ module.exports = class Portfolio {
                 this.delta = Math.max(-1, Math.min(1, value));
 
                 let averageEnd = this.getAverage(this.scrollings, 10);
-                let averageMiddle = this.getAverage(this.scrollings, 80);
+                let averageMiddle = this.getAverage(this.scrollings, 100);
                 let isAccelerating = averageEnd >= averageMiddle;
 
 
@@ -168,7 +169,6 @@ module.exports = class Portfolio {
                     this.scrollHandler();
                 }
             }
-        }
     }
 
     willTranslateXcalculate() {
@@ -261,6 +261,6 @@ module.exports = class Portfolio {
 
     timeFunc(t) {
         //cubicInOut func
-        return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+        return t<.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t
     }
 }

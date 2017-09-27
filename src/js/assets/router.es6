@@ -3,6 +3,7 @@ let History = require('./history');
 let Menu = require('./menu');
 let Portfolio = require('./portfolio');
 let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
+let animationConfig = require('../../js/configurations/animation.json');
 let routerConfig = require('../../js/configurations/router');
 module.exports = class Router {
     constructor() {
@@ -11,6 +12,7 @@ module.exports = class Router {
         this.history = new History();
         this.default_page = routerConfig.default.page;
         this.page_fade_time = routerConfig.page_fade_time;
+        this.menu_fade_time = parseInt(animationConfig.menu.in_out, 10);
         this.active = null;
         this.pagesWrap = document.querySelector('.pages');
 
@@ -48,7 +50,7 @@ module.exports = class Router {
             document.dispatchEvent(new CustomEvent('pause_portfolio', event_detail));
         }
         if (page == '#portfolio' || ( page.split('-').length > 1 && page.split('-')[0] == '#portfolio') ) {
-            this.portfolio.imagesLazyLoading();
+            setTimeout(this.portfolio.imagesLazyLoading, this.menu_fade_time);
         }
         return page;
     }

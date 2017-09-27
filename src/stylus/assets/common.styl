@@ -14,12 +14,11 @@ body
   font-size $common-body-font-size
   color: $white
   background #050614
-  background-image linear-gradient(to bottom, #050614 0%, #01020a 100%)
+  backface-visibility hidden
+  -webkit-backface-visibility hidden
 body
    -webkit-font-smoothing antialiased
    -moz-osx-font-smoothing grayscale
-   -webkit-transform-style preserve-3d
-   -webkit-backface-visibility hidden
    -webkit-tap-highlight-color rgba(255, 255, 255, 0)
 svg
   size 100%

@@ -113,6 +113,7 @@ module.exports = class Menu {
 
     selectItemHandler(event) {
         event.preventDefault();
+        event.stopPropagation();
         let page = event.target.getAttribute('href');
         let isHomeLink = event.target.id === 'home-link' ? true : false;
         (page.split('-').length <= 1 && !isHomeLink) && this.toggleMenu();

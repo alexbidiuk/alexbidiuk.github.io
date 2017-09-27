@@ -98,14 +98,14 @@
       $errors = checkSubscribe($email, $errors, $file_name);
       if(!count($errors)) {
         addSubscriber($email, $file_name);
-        $subject = 'New subscriber in Nodio!';
-        $message = 'New subscriber in Nodio!<br>E-mail: '.$email;
+        $subject = 'New subscriber in Creato!';
+        $message = 'New subscriber in Creato!<br>E-mail: '.$email;
         $responce = 'Subscribed!';
       }
       break;
     case 'message':
       $errors = checkMessage($msg, $errors);
-      $subject = 'Nodio: message from '.$email;
+      $subject = 'Creato: message from '.$email;
       $message = $subject.'<br>Message: '.$msg;
       $responce = 'Message sent';
       break;

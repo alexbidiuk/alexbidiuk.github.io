@@ -100,11 +100,11 @@ if (isProd) {
                 drop_console: true,
                 unsafe: true
             }
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            filename: 'js/commons.js',
-            name: 'commons'
         })
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     filename: 'js/commons.js',
+        //     name: 'commons'
+        // })
     )
 
 } else {
