@@ -118,28 +118,27 @@ module.exports = class Portfolio {
     }
 
     setMousewheelHandler() {
-         if(!this.isPaused) {
-            if (document.addEventListener) {
-                if ('onwheel' in document) {
-                    // IE9+, FF17+, Ch31+
-                    this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
-                }
-                else if ('onmousewheel' in document) {
-                    // устаревший вариант события
-                    this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
-                }
-                else {
-                    // Firefox < 17
-                    this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
-                }
+        if (document.addEventListener) {
+            if ('onwheel' in document) {
+                // IE9+, FF17+, Ch31+
+                this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
             }
-            else { // IE8-
-                this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
+            else if ('onmousewheel' in document) {
+                // устаревший вариант события
+                this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
             }
-         }
+            else {
+                // Firefox < 17
+                this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
+            }
+        }
+        else { // IE8-
+            this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
+        }
     }
 
     mousewheelHandler(event) {
+        if(!this.isPaused) {
             event.preventDefault();
             event.stopPropagation();
 
@@ -169,6 +168,7 @@ module.exports = class Portfolio {
                     this.scrollHandler();
                 }
             }
+        }
     }
 
     willTranslateXcalculate() {
