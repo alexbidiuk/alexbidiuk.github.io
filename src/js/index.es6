@@ -35,6 +35,10 @@ require('./utilities/ie_fixes');
 
         new Preloader();
 
+        let Mail = require('./assets/mail');
+
+        new Mail();
+
     };
     document.addEventListener('DOMContentLoaded', initialize);
 

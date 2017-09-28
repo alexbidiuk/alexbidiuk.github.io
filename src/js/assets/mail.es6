@@ -59,12 +59,12 @@ module.exports = class Mail {
   sendData(form) {
     let data = "type=" + this.type + "&email=" + this.email + "&message=" + this.message;
     let request = new this.ajaxRequest();
-    let responceHandler = this.responceHandler.bind(this);
+    let responseHandler = this.responseHandler.bind(this);
     request.responseType = 'json';
     request.onreadystatechange = function() {
       if (request.readyState == 4) {
         if(request.status == 200) {
-          responceHandler(request.response);
+          responseHandler(request.response);
         }
         else {
           console.error("An error has occured making the request");
@@ -75,8 +75,8 @@ module.exports = class Mail {
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.send(data);
   }
-  sentHandler(responce) {
-    let form = document.querySelector('form[name="'+responce.type+'"]');
+  sentHandler(response) {
+    let form = document.querySelector('form[name="'+response.type+'"]');
     form.classList.add('sent');
     let send_message = form.querySelector('.send-message');
     let text = send_message.getAttribute('data-text');
@@ -104,23 +104,23 @@ module.exports = class Mail {
       }
     }, 200);
   }
-  errorHandler(responce) {
+  errorHandler(response) {
     clearInterval(this.sending);
-    let form = document.querySelector('form[name="'+responce.type+'"]');
+    let form = document.querySelector('form[name="'+response.type+'"]');
     form.classList.add('error');
     let error_title = form.querySelector('.error-title');
     let error_text = form.querySelector('.error-text');
-    for(let i = responce.errors.length; i > 0; i--) {
+    for(let i = response.errors.length; i > 0; i--) {
       let index = i - 1;
-      let target= form[responce.errors[index].target];
+      let target= form[response.errors[index].target];
       target.classList.add('error');
       target.addEventListener('input', function() {
         this.classList.remove('error');
       })
       if(!index) {
         let options = this.print_config.printer_settings.header_string;
-        this.printString(error_title, responce.errors[index].title, options);
-        this.printString(error_text, responce.errors[index].text, options);
+        this.printString(error_title, response.errors[index].title, options);
+        this.printString(error_text, response.errors[index].text, options);
       }
     }
     let unsetError = this.unsetError.bind(this);
@@ -137,12 +137,12 @@ module.exports = class Mail {
     let options = this.print_config.printer_settings.header_string;
     this.printString(button, text, options);
   }
-  responceHandler(responce) {
-    if(responce.errors.length) {
-      this.errorHandler(responce);
+  responseHandler(response) {
+    if(response.errors.length) {
+      this.errorHandler(response);
     }
     else {
-      this.sentHandler(responce);
+      this.sentHandler(response);
     }
   }
 };

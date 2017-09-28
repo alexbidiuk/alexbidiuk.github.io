@@ -45,73 +45,16 @@
     return $errors;
   }
 
-  function checkSubscribe($email, $errors, $file_name) {
-    if(!file_exists($file_name)) {
-      return $errors;
-    }
-    $error = array(
-      'target' => 'email',
-      'title' => 'Already subscribed',
-      'text' => 'This email is already subscribed'
-    );
-    $subscribers = Array();
-    $file = fopen($file_name, 'r');
-    while(!feof($file)) {
-      $row = fgetcsv($file, 0, ';');
-      $subscriber = $row[1];
-      if($subscriber != 'E-mail' && !empty($subscriber)) {
-        array_push($subscribers, $subscriber);
-      }
-    }
-    fclose($file);
-    if(in_array($email, $subscribers)) {
-      array_push($errors, $error);
-    };
-    return $errors;
-  }
-
-  function addSubscriber($email, $file_name) {
-    $data = Array();
-    if(!file_exists($file_name)) {
-      $headers = Array('Date', 'E-mail', 'Language', 'Timestamp');
-      $data[] = $headers;
-    }
-    $timestamp = time();
-    $date = date('Y-m-d H:m:s');
-    $language = 'en';
-    $subscriber = Array($date, $email, $language, $timestamp);
-    $data[] = $subscriber;
-    $file = fopen($file_name, 'a');
-    foreach($data as $row) {
-      fputcsv($file, $row, ';');
-    }
-    fclose($file);
-  };
-
   $type = $_POST['type'];
   $email = $_POST['email'];
   $msg = $_POST['message'];
   $errors = checkEmail($email, $errors);
 
-  switch($type) {
-    case 'subscribe':
-      $errors = checkSubscribe($email, $errors, $file_name);
-      if(!count($errors)) {
-        addSubscriber($email, $file_name);
-        $subject = 'New subscriber in Creato!';
-        $message = 'New subscriber in Creato!<br>E-mail: '.$email;
-        $responce = 'Subscribed!';
-      }
-      break;
-    case 'message':
-      $errors = checkMessage($msg, $errors);
-      $subject = 'Creato: message from '.$email;
-      $message = $subject.'<br>Message: '.$msg;
-      $responce = 'Message sent';
-      break;
-    default:
-      exit();
-  };
+
+  $errors = checkMessage($msg, $errors);
+  $subject = 'Creato: message from '.$email;
+  $message = $subject.'<br>Message: '.$msg;
+  $response = 'Message sent';
 
   if(count($errors)) {
     $json_data = array(
@@ -132,7 +75,7 @@
   $mail->SMTPAuth = true;                               // Enable SMTP authentication
   $mail->Username = $username;                          // SMTP username
   $mail->Password = $password;                          // SMTP password
-  $mail->SMTPSecure = 'tls';                            // Enable SSL encryption, `tsl` also accepted
+  $mail->SMTPSecure = 'ssl';                            // Enable SSL encryption, `tsl` also accepted
   $mail->Port = $mail_port;                             // TCP port to connect to
 
   $mail->setFrom($admin, $admin);

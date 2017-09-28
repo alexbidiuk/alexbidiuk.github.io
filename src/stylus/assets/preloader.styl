@@ -37,6 +37,10 @@ json('../../js/configurations/animation.json');
   .logo.preloader-logo
     transform translate3d(-50%, -50%, 0) scale3d(1.2,1.2,1.2)
 
++media-query(only screen, max-width $large)
+  .logo.preloader-logo
+    transform translate3d(-50%, -50%, 0) scale3d(1.4,1.4,1.4)
+
 @supports (-ms-ime-align:auto)
     .logo.preloader-logo
         stroke-dashoffset 0
