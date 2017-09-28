@@ -2,7 +2,6 @@
 portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash: true, leave-strings: true });
 /* Porttfolio styles */
 #portfolio
-  overflow hidden
   .creato-home
     fixed 50px false false 50px
     z-index 10000
@@ -61,14 +60,14 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
       relative false
       color $white
       font-size 42px
-      will-change transform
       //font-size  0 // be carefull
       text-shadow 0px 0px 4px $white
       &:after
+        content ''
         display block
         fixed 50% false false 50%
         transform translate(-50%, -50%)
-        content ''
+        will-change transform
         size 110vw 180vh
         z-index -2
     &#go_back
@@ -77,9 +76,9 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
         .portfolio-item-text:after
           display: block
           content ''
-          size 25px 100%
-          margin .3rem 1rem 0 0
-          absolute 0 100% false false
+          size 1em 100%
+          margin 0.3rem 1rem 0 0
+          absolute 0 100% false inherit
           transform rotate(180deg)
           background url("/images/double-arrow.svg") no-repeat center center;
           background-size cover

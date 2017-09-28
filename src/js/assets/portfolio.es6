@@ -3,7 +3,6 @@
 let GeminiScrollbar = require('../lib/gemini-scrollbar.js');
 let animationConfig = require('../configurations/animation.json');
 let Animate = require('./animate');
-var TweenLite = require('gsap').TweenLite;
 module.exports = class Portfolio {
     constructor(elem_per_page = 4) {
         this.portfolio_page = document.querySelector('#portfolio');
@@ -46,9 +45,10 @@ module.exports = class Portfolio {
         this.portfolio_page.addEventListener('touchmove', (event) => this.touchmoveHandler(event));
         this.setMousewheelHandler();
     }
+
     imagesLazyLoading() {
         let portfolio_pages_images = document.querySelectorAll('#portfolio img[data-src]');
-        if(portfolio_pages_images.length) {
+        if (portfolio_pages_images.length) {
             for (let i = portfolio_pages_images.length - 1; i >= 0; i--) {
                 let img = portfolio_pages_images[i];
                 img.setAttribute('src', img.getAttribute('data-src'));
@@ -56,6 +56,7 @@ module.exports = class Portfolio {
             }
         }
     }
+
     portfolioItemHandler(event) {
         event.preventDefault();
         let page = event.currentTarget.getAttribute('href');
@@ -118,28 +119,29 @@ module.exports = class Portfolio {
     }
 
     setMousewheelHandler() {
-         if(!this.isPaused) {
-            if (document.addEventListener) {
-                if ('onwheel' in document) {
-                    // IE9+, FF17+, Ch31+
-                    this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
-                }
-                else if ('onmousewheel' in document) {
-                    // устаревший вариант события
-                    this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
-                }
-                else {
-                    // Firefox < 17
-                    this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
-                }
+        if (document.addEventListener) {
+            if ('onwheel' in document) {
+                // IE9+, FF17+, Ch31+
+                this.portfolio_page.addEventListener("wheel", this.mousewheelHandler.bind(this));
             }
-            else { // IE8-
-                this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
+            else if ('onmousewheel' in document) {
+                // устаревший вариант события
+                this.portfolio_page.addEventListener("mousewheel", this.mousewheelHandler.bind(this));
             }
-         }
+            else {
+                // Firefox < 17
+                this.portfolio_page.addEventListener("MozMousePixelScroll", this.mousewheelHandler.bind(this));
+            }
+        }
+        else { // IE8-
+            this.portfolio_page.attachEvent("onmousewheel", this.mousewheelHandler.bind(this));
+        }
+
     }
 
     mousewheelHandler(event) {
+        if (!this.isPaused) {
+
             event.preventDefault();
             event.stopPropagation();
 
@@ -169,6 +171,7 @@ module.exports = class Portfolio {
                     this.scrollHandler();
                 }
             }
+        }
     }
 
     willTranslateXcalculate() {
@@ -194,14 +197,14 @@ module.exports = class Portfolio {
     }
 
     touchstartHandler(event) {
-        if(!this.isPaused) {
+        if (!this.isPaused) {
             this.touching = true;
             this.touch_start = event.touches[0].pageY;
         }
     }
 
     touchmoveHandler(event) {
-        if(!this.isPaused) {
+        if (!this.isPaused) {
             this.touch_event = event.touches[0].pageY;
             if (new Date().getTime() - this.lastScrollWorking >= animationConfig.portfolio.scroll_delay && !this.isTransitioning) {
                 this.lastScrollWorking = new Date().getTime();
@@ -261,6 +264,6 @@ module.exports = class Portfolio {
 
     timeFunc(t) {
         //cubicInOut func
-        return t<.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t
+        return t < .5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t
     }
 }
