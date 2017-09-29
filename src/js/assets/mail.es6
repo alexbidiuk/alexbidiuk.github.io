@@ -54,14 +54,15 @@ module.exports = class Mail {
     let text = 'SENDING...';
     that.printString(button, text, options);
     this.sending = setInterval(function () {that.printString(button, text, options)}, 2000);
-    this.sendData(form);
+    this.sendData();
   }
-  sendData(form) {
-    let data = "type=" + this.type + "&email=" + this.email + "&message=" + this.message;
+  sendData() {
+    let data = "email=" + this.email + "&message=" + this.message;
     let request = new this.ajaxRequest();
     let responseHandler = this.responseHandler.bind(this);
     request.responseType = 'json';
     request.onreadystatechange = function() {
+      console.log(request)
       if (request.readyState == 4) {
         if(request.status == 200) {
           responseHandler(request.response);
@@ -76,43 +77,41 @@ module.exports = class Mail {
     request.send(data);
   }
   sentHandler(response) {
-    let form = document.querySelector('form[name="'+response.type+'"]');
-    form.classList.add('sent');
-    let send_message = form.querySelector('.send-message');
+    this.form.classList.add('sent');
+    let send_message = this.form.querySelector('.send-message');
     let text = send_message.getAttribute('data-text');
     clearInterval(this.sending);
     let options = this.print_config.printer_settings.header_string;
     this.printString(send_message, text, options);
     let unsetSent = this.unsetSent.bind(this);
-    this.timeout = setTimeout(function() {
-      unsetSent(form);
+    this.timeout = setTimeout(() => {
+      unsetSent(this.form);
     }, this.timeout_delay)
   }
-  unsetSent(form) {
+  unsetSent() {
     clearInterval(this.sending);
-    form.classList.remove('sent');
-    form.classList.add('hide-text');
-    let button = form.submit;
+    this.form.classList.remove('sent');
+    this.form.classList.add('hide-text');
+    let button = this.form.submit;
     let text = button.getAttribute('data-text');
     let options = this.print_config.printer_settings.header_string;
     this.printString(button, text, options);
-    this.timeout = setTimeout(function() {
-      form.classList.remove('hide-text');
-      form.email.value = '';
-      if(form.message) {
-        form.message.value = '';
+    this.timeout = setTimeout(() => {
+      this.form.classList.remove('hide-text');
+      this.form.email.value = '';
+      if(this.form.message) {
+        this.form.message.value = '';
       }
     }, 200);
   }
   errorHandler(response) {
     clearInterval(this.sending);
-    let form = document.querySelector('form[name="'+response.type+'"]');
-    form.classList.add('error');
-    let error_title = form.querySelector('.error-title');
-    let error_text = form.querySelector('.error-text');
+    this.form.classList.add('error');
+    let error_title = this.form.querySelector('.error-title');
+    let error_text = this.form.querySelector('.error-text');
     for(let i = response.errors.length; i > 0; i--) {
       let index = i - 1;
-      let target= form[response.errors[index].target];
+      let target= this.form[response.errors[index].target];
       target.classList.add('error');
       target.addEventListener('input', function() {
         this.classList.remove('error');
@@ -124,14 +123,13 @@ module.exports = class Mail {
       }
     }
     let unsetError = this.unsetError.bind(this);
-    this.timeout = setTimeout(function() {
-      unsetError(form);
+    this.timeout = setTimeout(() => {
+      unsetError();
     }, this.timeout_delay)
   }
-  unsetError(form) {
-    clearInterval(this.sending);
-    form.classList.remove('error');
-    let button = form.submit;
+  unsetError() {
+    this.form.classList.remove('error');
+    let button = this.form.submit;
     button.classList.remove('error');
     let text = button.getAttribute('data-text');
     let options = this.print_config.printer_settings.header_string;
@@ -142,7 +140,7 @@ module.exports = class Mail {
       this.errorHandler(response);
     }
     else {
-      this.sentHandler(response);
+      this.sentHandler();
     }
   }
 };

@@ -7,7 +7,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/Alex.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/Sergio.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/Vika.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/creato-logo-1.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/creato-logo.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/double-arrow.svg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-144x144.png" afterPath="" />
@@ -68,11 +67,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/index.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/index.min.js.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/assets/portfolio.es6" afterPath="$PROJECT_DIR$/src/js/assets/portfolio.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pug/pages/portfolio.pug" afterPath="$PROJECT_DIR$/src/pug/pages/portfolio.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stylus/pages/pages.styl" afterPath="$PROJECT_DIR$/src/stylus/pages/pages.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" afterPath="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pug/pages/contacts.pug" afterPath="$PROJECT_DIR$/src/pug/pages/contacts.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stylus/pages/contacts.styl" afterPath="$PROJECT_DIR$/src/stylus/pages/contacts.styl" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,34 +82,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3029595">
+    <splitter split-orientation="horizontal" split-proportion="0.13349131">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="portfolio.es6" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/js/assets/portfolio.es6">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="178">
-                  <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webpack.config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="567">
-                  <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+                  <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -132,7 +108,7 @@
           <file leaf-file-name="common.styl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/stylus/assets/common.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-96">
+                <state relative-caret-position="68">
                   <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
                   <folding />
                 </state>
@@ -154,20 +130,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="714">
                   <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-                  <folding>
-                    <marker date="1506605012663" expanded="true" signature="4857:5344" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="5153:5259" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="5175:5249" ph="{&quot;page&quot;: page...}" />
-                    <marker date="1506605012663" expanded="true" signature="5374:5450" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="5475:5835" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="5564:5829" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="5746:5819" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="5841:6431" ph="//..." />
-                    <marker date="1506605012663" expanded="true" signature="6437:6706" ph="//..." />
-                    <marker date="1506605012663" expanded="true" signature="6736:7390" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="6922:7384" ph="{...}" />
-                    <marker date="1506605012663" expanded="true" signature="7042:7374" ph="{...}" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -175,8 +138,8 @@
           <file leaf-file-name="router.es6" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/assets/router.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="73" column="46" lean-forward="true" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+                <state relative-caret-position="1241">
+                  <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
                   <folding>
                     <marker date="1506605012664" expanded="true" signature="3008:3136" ph="{...}" />
                   </folding>
@@ -208,16 +171,6 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="scroll.styl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/stylus/assets/scroll.styl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="portfolio.pug" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio.pug">
               <provider selected="true" editor-type-id="text-editor">
@@ -228,11 +181,47 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="portfolio-studio.pug" pinned="false" current-in-tab="true">
+          <file leaf-file-name="portfolio-studio.pug" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-studio.pug">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="85">
-                  <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+                  <caret line="5" column="73" lean-forward="false" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="contacts.pug" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pug/pages/contacts.pug">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="mail.es6" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/js/assets/mail.es6">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <marker date="1506698194557" expanded="true" signature="157:4837" ph="{...}" />
+                    <marker date="1506698194557" expanded="true" signature="1175:1783" ph="{...}" />
+                    <marker date="1506698194557" expanded="true" signature="4823:4831" ph="{...}" />
+                    <marker date="1506698194557" expanded="true" signature="4823:4835" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="contacts.styl" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/stylus/pages/contacts.styl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="206">
+                  <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -248,19 +237,11 @@
           <file leaf-file-name="portfolio.styl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/stylus/pages/portfolio.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pages.styl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/stylus/pages/pages.styl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-                  <folding />
+                <state relative-caret-position="170">
+                  <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+                  <folding>
+                    <marker date="1506672589381" expanded="true" signature="176:520" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -269,27 +250,7 @@
             <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-meat.pug">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="85">
-                  <caret line="5" column="44" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="71" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="portfolio-lnm.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-lnm.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="67" lean-forward="false" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="content.styl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/stylus/assets/content.styl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-323">
-                  <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+                  <caret line="5" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="71" />
                   <folding />
                 </state>
               </provider>
@@ -299,7 +260,7 @@
             <entry file="file://$PROJECT_DIR$/src/js/configurations/portfolio_routes.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                  <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -318,7 +279,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>path</find>
       <find>polygon</find>
       <find>dash</find>
       <find>getCurrent</find>
@@ -348,6 +308,7 @@
       <find>this.active</find>
       <find>hidden_width</find>
       <find>consol</find>
+      <find>plac</find>
     </findStrings>
     <replaceStrings>
       <replace>DRAW_LIB</replace>
@@ -362,7 +323,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/stylus/assets/custom-animations.styl" />
         <option value="$PROJECT_DIR$/src/js/lib/VirtualScroll.js" />
         <option value="$PROJECT_DIR$/src/stylus/pages/portfolio/itv.styl" />
         <option value="$PROJECT_DIR$/src/js/configurations/portfolio_routes.es6" />
@@ -372,17 +332,14 @@
         <option value="$PROJECT_DIR$/src/pug/assets/preloader.pug" />
         <option value="$PROJECT_DIR$/src/stylus/pages/team.styl" />
         <option value="$PROJECT_DIR$/src/pug/pages/home.pug" />
-        <option value="$PROJECT_DIR$/src/stylus/pages/contacts.styl" />
         <option value="$PROJECT_DIR$/src/stylus/pages/home.styl" />
         <option value="$PROJECT_DIR$/src/stylus/index.styl" />
         <option value="$PROJECT_DIR$/src/pug/assets/svg-icons.pug" />
         <option value="$PROJECT_DIR$/src/stylus/assets/preloader.styl" />
-        <option value="$PROJECT_DIR$/src/js/assets/mail.es6" />
         <option value="$PROJECT_DIR$/src/js/lib/alexa.js" />
         <option value="$PROJECT_DIR$/src/php/send.php" />
         <option value="$PROJECT_DIR$/src/js/configurations/animation.json" />
         <option value="$PROJECT_DIR$/src/js/assets/history.es6" />
-        <option value="$PROJECT_DIR$/src/pug/pages/contacts.pug" />
         <option value="$PROJECT_DIR$/src/pug/pages/team.pug" />
         <option value="$PROJECT_DIR$/src/stylus/pages/portfolio_async.pug" />
         <option value="$PROJECT_DIR$/.babelrc" />
@@ -413,6 +370,10 @@
         <option value="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" />
         <option value="$PROJECT_DIR$/src/pug/pages/portfolio.pug" />
         <option value="$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-studio.pug" />
+        <option value="K:/home/localhost/www/php/send.php" />
+        <option value="$PROJECT_DIR$/src/js/assets/mail.es6" />
+        <option value="$PROJECT_DIR$/src/stylus/pages/contacts.styl" />
+        <option value="$PROJECT_DIR$/src/pug/pages/contacts.pug" />
       </list>
     </option>
   </component>
@@ -429,9 +390,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1688" />
-    <option name="y" value="114" />
+    <option name="y" value="53" />
     <option name="width" value="1696" />
-    <option name="height" value="1066" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -576,29 +537,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pug" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alexbidiuk.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alexbidiuk.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="php" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -704,6 +643,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alexbidiuk.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alexbidiuk.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -712,12 +665,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NODIO" />
+    <property name="last_opened_file_path" value="K:/home/localhost/www/php/send.php" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="C:\Users\bas\Desktop\projects\alexbidiuk.github.io\node_modules\eslint" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.standard" value="" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -825,26 +781,28 @@
       <workItem from="1503991739690" duration="18380000" />
       <workItem from="1504195110126" duration="68119000" />
       <workItem from="1505726997845" duration="2256000" />
-      <workItem from="1506084250279" duration="5250000" />
+      <workItem from="1506084250279" duration="8438000" />
+      <workItem from="1506691560508" duration="894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319496000" />
+    <option name="totallyTimeSpent" value="323578000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1688" y="114" width="1696" height="1066" extended-state="7" />
+    <frame x="-1688" y="53" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22557297" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22798553" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -873,16 +831,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pug/navigation/navbar.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pug/pages/modal/modal.pug" />
-    <entry file="file://$PROJECT_DIR$/src/pug/pages/modal/menu.pug" />
-    <entry file="file://$PROJECT_DIR$/src/pug/browserconfig.xml" />
     <entry file="file://$PROJECT_DIR$/src/images/filters.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -948,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,12 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <marker date="1506605012671" expanded="true" signature="17:297" ph="..." />
-            <marker date="1506605012671" expanded="true" signature="55:297" ph="..." />
-            <marker date="1506605012671" expanded="true" signature="128:297" ph="..." />
-            <marker date="1506605012671" expanded="true" signature="174:297" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,16 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <marker date="1506605012668" expanded="true" signature="581:616" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pug/pages/contacts.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1059,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1087,20 +1016,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <marker date="1506605012663" expanded="true" signature="4857:5344" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="5153:5259" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="5175:5249" ph="{&quot;page&quot;: page...}" />
-            <marker date="1506605012663" expanded="true" signature="5374:5450" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="5475:5835" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="5564:5829" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="5746:5819" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="5841:6431" ph="//..." />
-            <marker date="1506605012663" expanded="true" signature="6437:6706" ph="//..." />
-            <marker date="1506605012663" expanded="true" signature="6736:7390" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="6922:7384" ph="{...}" />
-            <marker date="1506605012663" expanded="true" signature="7042:7374" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,23 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,13 +1039,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stylus/assets/common.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
+        <state relative-caret-position="68">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding />
         </state>
@@ -1154,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/assets/router.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="73" column="46" lean-forward="true" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+        <state relative-caret-position="1241">
+          <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
           <folding>
             <marker date="1506605012664" expanded="true" signature="3008:3136" ph="{...}" />
           </folding>
@@ -1166,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="67" lean-forward="false" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,30 +1071,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/assets/portfolio.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
-          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
-          <folding />
+          <caret line="118" column="5" lean-forward="false" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stylus/pages/portfolio.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <marker date="1506672589381" expanded="true" signature="176:520" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-meat.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="71" />
+          <caret line="5" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1218,7 +1115,7 @@
     <entry file="file://$PROJECT_DIR$/src/js/configurations/portfolio_routes.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1226,7 +1123,66 @@
     <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-studio.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+          <caret line="5" column="73" lean-forward="false" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://K:/home/localhost/www/php/send.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/assets/mail.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1506698194557" expanded="true" signature="157:4837" ph="{...}" />
+            <marker date="1506698194557" expanded="true" signature="1175:1783" ph="{...}" />
+            <marker date="1506698194557" expanded="true" signature="4823:4831" ph="{...}" />
+            <marker date="1506698194557" expanded="true" signature="4823:4835" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pug/pages/contacts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylus/pages/contacts.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding />
         </state>
       </provider>

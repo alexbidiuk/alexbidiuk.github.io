@@ -68,8 +68,6 @@
 
   $mail = new PHPMailer;
 
-  $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-
   $mail->isSMTP();                                      // Set mailer to use SMTP
   $mail->Host = $mail_host;                             // Specify main and backup SMTP servers
   $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -89,8 +87,6 @@
   $mail->AltBody = $message;
 
   if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
     $error = array(
       'target' => 'submit',
       'title' => 'Server error',
