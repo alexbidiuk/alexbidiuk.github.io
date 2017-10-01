@@ -2,14 +2,13 @@
 json('../../js/configurations/animation.json');
 
 .logo.preloader-logo
-    will-change stroke-dashoffset
+    // will-change stroke-dashoffset, stroke-dasharray
     // shape-rendering optimizeSpeed
     // image-rendering optimizeSpeed
     opacity 0
-    stroke-dasharray 1500
-    stroke-dashoffset 1500
-    animation transitionLogo 0s linear forwards preloader-logo_drawer_delay,
-                dash preloader-logo_drawer ease-in-out forwards preloader-logo_drawer_delay,
+    // stroke-dasharray 1500
+    // stroke-dashoffset 1500
+    animation transitionLogo 0.2s linear forwards preloader-logo_drawer_delay,
                 neon logo-glowing ease-in-out infinite alternate
     transform translate3d(-50%, -50%,0) scale3d(1.6,1.6,1.6)
     transition transform preloader-logo_changing ease-in-out
@@ -33,13 +32,14 @@ json('../../js/configurations/animation.json');
         .preloader-logo
             transform translate3d(-50%, -50%, 0) scale3d(1,1,1)
 
-+media-query(only screen, max-width $medium)
-  .logo.preloader-logo
-    transform translate3d(-50%, -50%, 0) scale3d(1.2,1.2,1.2)
 
 +media-query(only screen, max-width $large)
   .logo.preloader-logo
     transform translate3d(-50%, -50%, 0) scale3d(1.4,1.4,1.4)
+
++media-query(only screen, max-width $medium)
+  .logo.preloader-logo
+    transform translate3d(-50%, -50%, 0) scale3d(1.2,1.2,1.2)
 
 @supports (-ms-ime-align:auto)
     .logo.preloader-logo

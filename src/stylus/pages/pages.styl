@@ -50,7 +50,12 @@ p
 .page-footer
     // flex 1 0 auto
 
-
++media-query(only screen, max-width $large)
+  .page
+    .header.page-header
+      .header-title
+        font-size 40px
+        
 +media-query(only screen, max-width $medium)
   .page
     font-size 14px
@@ -64,8 +69,4 @@ p
         line-height 18px
         letter-spacing 1
 
-+media-query(only screen, max-width $large)
-  .page
-    .header.page-header
-      .header-title
-        font-size 40px
+

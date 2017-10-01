@@ -72,18 +72,19 @@
     box-sizing border-box
     outline none
     background-color transparent
-    color $white !important
+    color $white
     letter-spacing 1px
     border 1px solid $contacts-input-border-color
     -webkit-appearance none
+    -webkit-text-fill-color $white
     border-radius 0
     margin 0
     transition border-color 0.2s linear,
                color 0.2s linear,
                background-color 5000s ease-in-out 0s
     +placeholder()
-      color $white-20 !important
-      opacity 1 !important
+      opacity 1
+      transition color 0.2s linear
     .no-touch &:hover
     &:focus
       border-color $white
