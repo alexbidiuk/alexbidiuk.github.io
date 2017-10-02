@@ -1,5 +1,7 @@
 /* Preloader module */
-let logoDrawingTime = require('../configurations/animation.json').preloader.logo_drawer;
+let config = require('../configurations/animation.json');
+let logoDrawingTime = config.preloader.logo_drawer;
+let viewport =  config.viewport;
 let Walkway = require('../lib/walkway.min');
 
 module.exports = class Preloader {
@@ -8,7 +10,7 @@ module.exports = class Preloader {
         this.preloaderLogo = document.querySelector('.logo.preloader-logo');
         this.container = document.querySelector('.container');
         this.logoDrawTimeout = this.timeParser(logoDrawingTime);
-        this.startDrawing()
+        window.innerWidth > viewport.large && this.startDrawing()
         this.preloaderEnder();
     }
     startDrawing() {
