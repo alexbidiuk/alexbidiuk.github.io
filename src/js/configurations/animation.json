@@ -44,6 +44,7 @@
     },
     "pages": {
         "in_out": "500ms",
+        "delay": "1000ms",
         "home_link_glowing": "1000ms"
     },
     "portfolio": {

@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const koutoSwiss = require('kouto-swiss');
 

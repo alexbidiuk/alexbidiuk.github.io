@@ -1,11 +1,14 @@
 - var portfolio_routes = require('../../js/configurations/portfolio_routes.json');
+- var i = 0;
 #portfolio.page(data-title="portfolio")
+    <canvas style="position: absolute; top: 0; left: 0; z-index: -1;" id="canvas"></canvas>
     a.creato-home(href='#home' id="home-link") creato
     section.page-content
         .portfolio-items-wrapper
             .portfolio-scrolling-block
                 each val, key in portfolio_routes
-                    a.portfolio-item(href=val, id=val, data-text=key)
+                    - i++
+                    a.portfolio-item(href=val, id=val, data-text=key data-index=i data-img=key)
                         .portfolio-item-text=key
         .portfolio-pages-wrapper
             include portfolio/portfolio-trembit

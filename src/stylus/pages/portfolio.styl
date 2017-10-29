@@ -24,13 +24,14 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
     width 5000px
     transform-origin left center
     overflow hidden
+    visibility visible
     transition opacity pages-in_out cubic-bezier(0.250, 0.250, 0.750, 0.750),
-                visibility 0s linear
+                visibility 0s linear pages-in_out
     z-index 1300
     &.hide
-      visibility hidden
       opacity 0
       z-index -1
+     
   .portfolio-scrolling-block
     display flex
     flex-wrap nowrap
@@ -66,7 +67,7 @@ portfolio_routes = json('../../js/configurations/portfolio_routes.json', { hash:
         display block
         fixed 50% false false 50%
         transform translate(-50%, -50%)
-        size 110vw 180vh
+        size 100vw 180vh
         z-index -2
     &#go_back
       cursor pointer

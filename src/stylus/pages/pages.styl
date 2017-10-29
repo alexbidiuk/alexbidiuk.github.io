@@ -24,6 +24,8 @@ json('../../js/configurations/animation.json');
     opacity 1
     overflow visible
     z-index 1
+.portfolio-page
+  transition opacity pages-in_out cubic-bezier(0.250, 0.250, 0.750, 0.750) pages-delay
 p
     text-align left
 .header.page-header
@@ -55,7 +57,8 @@ p
     .header.page-header
       .header-title
         font-size 40px
-        
+  .portfolio-page
+    transition opacity pages-in_out cubic-bezier(0.250, 0.250, 0.750, 0.750)
 +media-query(only screen, max-width $medium)
   .page
     font-size 14px

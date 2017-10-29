@@ -2,7 +2,8 @@
 let config = require('../configurations/animation.json');
 let logoDrawingTime = config.preloader.logo_drawer;
 let viewport =  config.viewport;
-let Walkway = require('../lib/walkway.min');
+// let Walkway = require('../lib/walkway.min');
+// let TweenLite = require('gsap');
 
 module.exports = class Preloader {
     constructor() {
@@ -12,16 +13,19 @@ module.exports = class Preloader {
         this.logoDrawTimeout = this.timeParser(logoDrawingTime);
         window.innerWidth > viewport.large && this.startDrawing()
         this.preloaderEnder();
-    }
+    }   
     startDrawing() {
-        let svg = new Walkway({
-            selector: '#creato-logo',
-            duration: this.logoDrawTimeout
-        });
+        this.preloaderLogo.style.opacity = 1;
+        
+        // let svg = new Walkway({
+        //     selector: '#creato-logo',
+        //     duration: this.logoDrawTimeout
+        // });
 
-        svg.draw(function() {
-        console.log('Animation finished');
-        });
+        // svg.draw(function() {
+        //     console.log('Animation finished');
+        // });
+        // TweenLite.to(this.preloaderLogo.style, this.logoDrawTimeout, {strokeDashoffset: '0'});
     }
     timeParser(logoDrawingTime) {
         return logoDrawingTime.replace(/[^0-9]+/, '');
