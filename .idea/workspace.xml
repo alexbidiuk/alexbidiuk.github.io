@@ -2,73 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b8414f7-34da-4e44-ac5e-348df90596c9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/index.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/index.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/Alex.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/Sergio.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/Vika.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/creato-logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/double-arrow.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-144x144.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-192x192.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-256x256.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-36x36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-384x384.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-48x48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-512x512.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-72x72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/android-chrome-96x96.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/apple-touch-icon-57x57-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/apple-touch-icon-57x57.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/apple-touch-icon-60x60-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/browserconfig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/creato-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/creato.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/favicon-16x16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/favicon-32x32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/mstile-150x150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/favicon/safari-pinned-tab.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/filters.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/kickstore.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/lnm.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/meat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/nodio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/regexp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/studio.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/kickstore.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/live on moon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/meat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/nodio.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/kickstore.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/live on moon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/meat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/nodio.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/odontomed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/regexp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/studio.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/trembit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/not compressed/unitick.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/odontomed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/regexp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/studio.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/trembit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/thumb/unitick.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/trembit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/portfolio/unitick.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/socials/btt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/socials/facebook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/socials/github.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/socials/reddit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/socials/slack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/images/socials/twitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/index.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/index.min.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/assets/preloader.es6" afterPath="$PROJECT_DIR$/src/js/assets/preloader.es6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" afterPath="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -122,19 +57,6 @@
                   <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
                   <folding>
                     <marker date="1506931292784" expanded="true" signature="561:640" ph="{...}" />
-                    <marker date="1506931292784" expanded="true" signature="561:3454" ph="{...}" />
-                    <marker date="1506931292784" expanded="true" signature="710:732" ph="/** Animate logo ...*/" />
-                    <marker date="1506931292784" expanded="true" signature="737:1359" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="1365:1669" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="1675:1996" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="2002:2162" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="2168:2285" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="2291:2445" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="2451:2617" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="2623:2777" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="2783:3087" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="3093:3260" ph="//..." />
-                    <marker date="1506931292784" expanded="true" signature="3266:3333" ph="//..." />
                   </folding>
                 </state>
               </provider>
@@ -186,24 +108,14 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="portfolio.es6" pinned="false" current-in-tab="false">
+          <file leaf-file-name="portfolio.es6" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/js/assets/portfolio.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="20" column="80" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="80" />
+                <state relative-caret-position="85">
+                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
                   <folding>
                     <marker date="1506672589371" expanded="true" signature="6033:7026" ph="{...}" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="portfolio.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -213,10 +125,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="85">
                   <caret line="5" column="73" lean-forward="false" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
-                  <folding>
-                    <marker date="1506931292791" expanded="true" signature="17:249" ph="..." />
-                    <marker date="1506931292791" expanded="true" signature="162:249" ph="..." />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -234,14 +143,12 @@
           <file leaf-file-name="mail.es6" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/assets/mail.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="1156">
                   <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1506698194557" expanded="true" signature="157:4837" ph="{...}" />
                     <marker date="1506698194557" expanded="true" signature="1175:1783" ph="{...}" />
                     <marker date="1506698194557" expanded="true" signature="4823:4831" ph="{...}" />
-                    <marker date="1506698194557" expanded="true" signature="4823:4835" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -250,67 +157,53 @@
           <file leaf-file-name="contacts.styl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/stylus/pages/contacts.styl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
+                <state relative-caret-position="1292">
                   <caret line="76" column="31" lean-forward="false" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="portfolio.styl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/stylus/pages/portfolio.styl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
                   <folding>
-                    <marker date="1506931292796" expanded="true" signature="62:1701" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="1549:1701" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2109:2163" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2182:2270" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2308:2378" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2391:2609" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2564:2609" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2647:2747" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2768:2916" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="2938:3235" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3063:3125" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3149:3195" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3249:3617" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3627:3685" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3698:3822" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3842:3872" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3888:4086" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="3918:4086" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4156:4295" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4380:4496" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4515:4763" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4539:4661" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4696:4763" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4777:4946" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4863:4946" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="4995:5116" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5009:5116" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5029:5116" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5059:5116" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5163:5351" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5177:5351" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5197:5351" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5219:5351" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5279:5350" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5399:5479" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5413:5479" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5433:5479" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5526:5629" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5540:5629" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5560:5629" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5582:5629" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5677:6150" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5693:6150" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="5710:6150" ph="{...}" />
-                    <marker date="1506931292796" expanded="true" signature="6079:6150" ph="{...}" />
+                    <marker date="1507888375073" expanded="true" signature="176:520" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="preloader.es6" pinned="false" current-in-tab="true">
+          <file leaf-file-name="counter.es6" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/js/configurations/counter.es6">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="preloader.es6" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/assets/preloader.es6">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="204">
-                  <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+                  <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webpack.config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -320,23 +213,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="studio.jpg" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/images/portfolio/studio.jpg">
-              <provider selected="true" editor-type-id="images">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="portfolio_routes.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/configurations/portfolio_routes.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -442,7 +318,6 @@
         <option value="$PROJECT_DIR$/src/stylus/variables.styl" />
         <option value="$PROJECT_DIR$/src/stylus/pages/pages.styl" />
         <option value="$PROJECT_DIR$/src/js/assets/portfolio.es6" />
-        <option value="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" />
         <option value="$PROJECT_DIR$/src/pug/pages/portfolio.pug" />
         <option value="$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-studio.pug" />
         <option value="K:/home/localhost/www/php/send.php" />
@@ -450,6 +325,7 @@
         <option value="$PROJECT_DIR$/src/pug/pages/contacts.pug" />
         <option value="$PROJECT_DIR$/src/stylus/pages/contacts.styl" />
         <option value="$PROJECT_DIR$/src/js/assets/preloader.es6" />
+        <option value="$PROJECT_DIR$/src/stylus/pages/portfolio.styl" />
       </list>
     </option>
   </component>
@@ -695,13 +571,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="K:/home/localhost/www/php/send.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -818,27 +694,28 @@
       <workItem from="1504195110126" duration="68119000" />
       <workItem from="1505726997845" duration="2256000" />
       <workItem from="1506084250279" duration="8438000" />
-      <workItem from="1506691560508" duration="2542000" />
+      <workItem from="1506691560508" duration="3455000" />
+      <workItem from="1507888066253" duration="2166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325226000" />
+    <option name="totallyTimeSpent" value="328305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="53" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20808202" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138721" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -867,14 +744,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/images/double-arrow.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/lib/mobile_detect.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -995,19 +864,6 @@
           <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <marker date="1506931292784" expanded="true" signature="561:640" ph="{...}" />
-            <marker date="1506931292784" expanded="true" signature="561:3454" ph="{...}" />
-            <marker date="1506931292784" expanded="true" signature="710:732" ph="/** Animate logo ...*/" />
-            <marker date="1506931292784" expanded="true" signature="737:1359" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="1365:1669" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="1675:1996" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="2002:2162" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="2168:2285" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="2291:2445" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="2451:2617" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="2623:2777" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="2783:3087" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="3093:3260" ph="//..." />
-            <marker date="1506931292784" expanded="true" signature="3266:3333" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1024,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
           <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,26 +965,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylus/pages/portfolio.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <marker date="1506931292798" expanded="true" signature="176:520" ph="{...}" />
-            <marker date="1506931292798" expanded="true" signature="1090:1529" ph="{...}" />
-            <marker date="1506931292798" expanded="true" signature="1479:1529" ph="{...}" />
-            <marker date="1506931292798" expanded="true" signature="2726:2853" ph="{...}" />
-            <marker date="1506931292798" expanded="true" signature="2784:2853" ph="{...}" />
-            <marker date="1506931292798" expanded="true" signature="2796:2853" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pug/pages/portfolio/portfolio-meat.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,21 +996,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="73" lean-forward="false" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
-          <folding>
-            <marker date="1506931292791" expanded="true" signature="17:249" ph="..." />
-            <marker date="1506931292791" expanded="true" signature="162:249" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/php/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1197,14 +1024,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/assets/mail.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1156">
           <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1506698194557" expanded="true" signature="157:4837" ph="{...}" />
             <marker date="1506698194557" expanded="true" signature="1175:1783" ph="{...}" />
             <marker date="1506698194557" expanded="true" signature="4823:4831" ph="{...}" />
-            <marker date="1506698194557" expanded="true" signature="4823:4835" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1219,55 +1044,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stylus/pages/contacts.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="1292">
           <caret line="76" column="31" lean-forward="false" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
-          <folding>
-            <marker date="1506931292796" expanded="true" signature="62:1701" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="1549:1701" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2109:2163" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2182:2270" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2308:2378" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2391:2609" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2564:2609" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2647:2747" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2768:2916" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="2938:3235" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3063:3125" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3149:3195" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3249:3617" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3627:3685" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3698:3822" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3842:3872" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3888:4086" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="3918:4086" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4156:4295" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4380:4496" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4515:4763" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4539:4661" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4696:4763" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4777:4946" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4863:4946" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="4995:5116" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5009:5116" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5029:5116" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5059:5116" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5163:5351" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5177:5351" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5197:5351" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5219:5351" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5279:5350" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5399:5479" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5413:5479" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5433:5479" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5526:5629" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5540:5629" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5560:5629" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5582:5629" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5677:6150" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5693:6150" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="5710:6150" ph="{...}" />
-            <marker date="1506931292796" expanded="true" signature="6079:6150" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,22 +1058,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/assets/portfolio.es6">
+    <entry file="file://$PROJECT_DIR$/src/js/assets/preloader.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="80" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="80" />
+        <state relative-caret-position="204">
+          <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
           <folding>
-            <marker date="1506672589371" expanded="true" signature="6033:7026" ph="{...}" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/assets/preloader.es6">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+        <state relative-caret-position="136">
+          <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stylus/pages/portfolio.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1507888375073" expanded="true" signature="176:520" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/configurations/counter.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/assets/portfolio.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <marker date="1506672589371" expanded="true" signature="6033:7026" ph="{...}" />
           </folding>
         </state>
       </provider>
